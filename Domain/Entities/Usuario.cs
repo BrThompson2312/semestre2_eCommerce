@@ -23,7 +23,5 @@ namespace Entities
             email = _email;
             contrasenia = _contrasenia;
         }
-
     }
-
 }
