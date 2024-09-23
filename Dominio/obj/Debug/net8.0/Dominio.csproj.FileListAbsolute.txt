@@ -9,3 +9,15 @@
 /var/www/html/lenguajes/cPlus/eCommerce/Dominio/obj/Debug/net8.0/refint/Dominio.dll
 /var/www/html/lenguajes/cPlus/eCommerce/Dominio/obj/Debug/net8.0/Dominio.pdb
 /var/www/html/lenguajes/cPlus/eCommerce/Dominio/obj/Debug/net8.0/ref/Dominio.dll
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/bin/Debug/net8.0/Dominio.deps.json
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/bin/Debug/net8.0/Dominio.dll
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/bin/Debug/net8.0/Dominio.pdb
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/Dominio.GeneratedMSBuildEditorConfig.editorconfig
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfoInputs.cache
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfo.cs
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/Dominio.csproj.CoreCompileInputs.cache
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/Dominio.sourcelink.json
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/Dominio.dll
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/refint/Dominio.dll
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/Dominio.pdb
+/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/ref/Dominio.dll

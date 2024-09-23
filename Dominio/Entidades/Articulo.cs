@@ -3,7 +3,7 @@ namespace Dominio.Entidades
     public class Articulo
     {
         private int id;
-        private static int ultimoId = 0;
+            private static int ultimoId = 0;
         private string nombre;
         private string categoria;
         private int precio;
@@ -14,5 +14,6 @@ namespace Dominio.Entidades
             categoria = _categoria;
             precio = _precio;
         }
+        
     }
 }

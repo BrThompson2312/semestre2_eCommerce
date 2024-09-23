@@ -19,16 +19,21 @@ namespace Dominio.Entidades
 
         public override void Validar()
         {
-            if (saldo < 0) {
-                throw new Exception("Error, saldo negativo");
-            }   
-            base.Validar();
         }
 
-        // public override bool Equals(object obj)
-        // {
-        //     Cliente cliente = obj as Cliente;
-        //     return cliente != null && id == cliente.id;
-        // }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+        public override bool Equals(object obj)
+        {
+            Cliente cliente = obj as Cliente;
+            return cliente != null && id == cliente.id;
+        }
+
+        public void CrearPublicacion()
+        {
+        }
+
     }
 }

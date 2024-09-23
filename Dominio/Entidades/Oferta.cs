@@ -3,7 +3,7 @@ namespace Dominio.Entidades
     public class Oferta
     {
         private int id;
-        private static int ultimoId = 0;
+            private static int ultimoId = 0;
         private Usuario usuario;
         private int monto;
         private DateTime fecha;

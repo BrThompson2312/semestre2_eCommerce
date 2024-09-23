@@ -8,14 +8,11 @@ namespace Dominio.Entidades
         private string apellido;
         private string email;
         private string contrasenia;
-        private List<Publicacion> catalogos = new List<Publicacion>();
+        private List<Publicacion> _publicaciones = new List<Publicacion>();
 
-        // public int Id {get;}
-        // public string Nombre {get;}
-        // public string Apellido {get;}
-        // public string Email {get;}
-        // public string Contrasenia {get;}
-        public List<Publicacion> Catalogos { get { return catalogos; } }
+        public List<Publicacion> Publicaciones { 
+            get { return _publicaciones; } 
+        }
 
         // Constructor
         public Usuario(string _nombre, string _apellido, string _email, string _contrasenia)
@@ -37,5 +34,17 @@ namespace Dominio.Entidades
             Usuario usuario = obj as Usuario;
             return usuario != null && id == usuario.id;
         }
+
+        public override string ToString()
+        {
+            string res = "";
+            res += $"id: {id}, nombre: {nombre}, apellido: {apellido}, email: {email}, contraseña {contrasenia}";
+            foreach(Publicacion _publicacion in _publicaciones)
+            {
+                res += $"{_publicacion}";
+            }
+            return res;
+        }
+
     }
 }
