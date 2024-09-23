@@ -25,8 +25,13 @@ namespace Main
                 switch (salida)
                 {
                     case 0:
-                        AgregarAdministrador();
                         return;
+                    case 1:
+                        AgregarAdministrador();
+                        break;
+                    case 2:
+                        AgregarCliente();
+                        break;
                 }                
             } while (salida != 0);
         }
@@ -50,7 +55,7 @@ namespace Main
             _sistema.AgregarUsuario(administrador);
         }
 
-        public void AgregarCliente()
+        public static void AgregarCliente()
         {
             Console.WriteLine("Ingrese nombre: ");
             string _nombre = Console.ReadLine();

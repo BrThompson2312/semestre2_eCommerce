@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Main/Main.csproj": {}
+    "/var/www/html/lenguajes/cSharp/eCommerce/Main/Main.csproj": {}
   },
   "projects": {
-    "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Dominio/Dominio.csproj": {
+    "/var/www/html/lenguajes/cSharp/eCommerce/Dominio/Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Dominio/Dominio.csproj",
+        "projectUniqueName": "/var/www/html/lenguajes/cSharp/eCommerce/Dominio/Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Dominio/Dominio.csproj",
+        "projectPath": "/var/www/html/lenguajes/cSharp/eCommerce/Dominio/Dominio.csproj",
         "packagesPath": "/home/bruno/.nuget/packages/",
-        "outputPath": "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Dominio/obj/",
+        "outputPath": "/var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/bruno/.nuget/NuGet/NuGet.Config"
@@ -57,14 +57,14 @@
         }
       }
     },
-    "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Main/Main.csproj": {
+    "/var/www/html/lenguajes/cSharp/eCommerce/Main/Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Main/Main.csproj",
+        "projectUniqueName": "/var/www/html/lenguajes/cSharp/eCommerce/Main/Main.csproj",
         "projectName": "Main",
-        "projectPath": "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Main/Main.csproj",
+        "projectPath": "/var/www/html/lenguajes/cSharp/eCommerce/Main/Main.csproj",
         "packagesPath": "/home/bruno/.nuget/packages/",
-        "outputPath": "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Main/obj/",
+        "outputPath": "/var/www/html/lenguajes/cSharp/eCommerce/Main/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/bruno/.nuget/NuGet/NuGet.Config"
@@ -79,8 +79,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Dominio/Dominio.csproj": {
-                "projectPath": "/home/bruno/Documents/html/lenguajes/cPlus/eCommerce/Dominio/Dominio.csproj"
+              "/var/www/html/lenguajes/cSharp/eCommerce/Dominio/Dominio.csproj": {
+                "projectPath": "/var/www/html/lenguajes/cSharp/eCommerce/Dominio/Dominio.csproj"
               }
             }
           }
