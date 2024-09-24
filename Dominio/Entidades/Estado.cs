@@ -2,7 +2,7 @@ namespace Dominio.Entidades
 {
     public static class Estado
     {
-        private static int abierto = 0;
+        public static int abierto = 0;
         private static int cerrado = 1;
         private static int terminado = 2;
 

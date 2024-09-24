@@ -2,12 +2,12 @@ namespace Dominio.Entidades
 {
     public abstract class Usuario
     {
-        private int id;
-            private static int ultimoId = 0;
-        private string nombre;
-        private string apellido;
-        private string email;
-        private string contrasenia;
+        private int Id {get; set;}
+        private static int ultimoId = 0;
+        private string Nombre {get; set;}
+        private string Apellido {get; set;}
+        private string Email {get; set;}
+        private string Contrasenia {get; set;}
         private List<Publicacion> _publicaciones = new List<Publicacion>();
 
         public List<Publicacion> Publicaciones { 
@@ -17,11 +17,11 @@ namespace Dominio.Entidades
         // Constructor
         public Usuario(string _nombre, string _apellido, string _email, string _contrasenia)
         {
-            id = ultimoId++;
-            nombre = _nombre;
-            apellido = _apellido;
-            email = _email;
-            contrasenia = _contrasenia;
+            Id = ultimoId++;
+            Nombre = _nombre;
+            Apellido = _apellido;
+            Email = _email;
+            Contrasenia = _contrasenia;
         }
 
         public virtual void Validar()
@@ -32,13 +32,13 @@ namespace Dominio.Entidades
         public override bool Equals(object obj)
         {
             Usuario usuario = obj as Usuario;
-            return usuario != null && id == usuario.id;
+            return usuario != null && Id == usuario.Id;
         }
 
         public override string ToString()
         {
             string res = "";
-            res += $"id: {id}, nombre: {nombre}, apellido: {apellido}, email: {email}, contraseña {contrasenia}";
+            res += $"id: {Id}, nombre: {Nombre}, apellido: {Apellido}, email: {Email}, contraseña {Contrasenia}";
             foreach(Publicacion _publicacion in _publicaciones)
             {
                 res += $"{_publicacion}";

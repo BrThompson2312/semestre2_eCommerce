@@ -2,15 +2,15 @@ namespace Dominio.Entidades
 {
     public abstract class Publicacion
     {
-        private int id;
-            private static int ultimoId = 0;
-        private string nombre;
-        private int estado = Estado.Abierto;
-        private DateTime fecha_publicacion;
+        private int Id;
+        private static int ultimoId = 0;
+        private string Nombre;
+        private int EstadoPublicacion = Estado.Abierto;
+        private DateTime Fecha_publicacion;
         private List<Articulo> _articulos = new List<Articulo>();
-        private Cliente compra_realizada;
-        private Administrador compra_finalizada;
-        private DateTime fecha_finalizacion_compra;
+        private Cliente Compra_realizada;
+        private Administrador Compra_finalizada;
+        private DateTime Fecha_finalizacion_compra;
 
         public Publicacion(
             string _nombre, 
@@ -20,13 +20,13 @@ namespace Dominio.Entidades
             Administrador _compra_finalizada_administrador,
             DateTime _fecha_finalizacion_compra
         ){
-            id = ultimoId++;
-            nombre = _nombre;
-            fecha_publicacion = _fecha_publicacion;
+            Id = ultimoId++;
+            Nombre = _nombre;
+            Fecha_publicacion = _fecha_publicacion;
             _articulos.Add(_articulo);
-            compra_realizada = _compra_realizada_cliente;
-            compra_finalizada = _compra_finalizada_administrador;
-            fecha_finalizacion_compra = _fecha_finalizacion_compra;
+            Compra_realizada = _compra_realizada_cliente;
+            Compra_finalizada = _compra_finalizada_administrador;
+            Fecha_finalizacion_compra = _fecha_finalizacion_compra;
         }
 
         public virtual void Validar()

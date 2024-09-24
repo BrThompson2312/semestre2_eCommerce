@@ -2,19 +2,8 @@ namespace Dominio.Entidades
 {
     public class Venta : Publicacion
     {
-        private int id;
-            private static int ultimoId = 0;
-        private string nombre;
-        private int estado;
-        private DateTime fecha_publicacion;
-        private List<Articulo> articulos = new List<Articulo>();
-        private Cliente compra_realizada;
-        private Administrador compra_finalizada;
-        private DateTime fecha_finalizacion_compra;
-        /* -------------------------------------------- */
-        private bool oferta_relampago;
-        private decimal precio_final;
-        /* -------------------------------------------- */
+        private bool Oferta_relampago {get; set;}
+        private decimal Precio_final {get; set;}
 
         public Venta (
             string _nombre, 
@@ -23,13 +12,11 @@ namespace Dominio.Entidades
             Cliente _compra_realizada_cliente,
             Administrador _compra_finalizada_administrador,
             DateTime _fecha_finalizacion_compra,
-            /* -------------------------------------------- */
             bool _oferta_relampago,
             decimal _precio_final
         ) : base(_nombre, _fecha_publicacion, _articulo, _compra_realizada_cliente, _compra_finalizada_administrador, _fecha_finalizacion_compra) {
-            id = ultimoId++;
-            oferta_relampago = _oferta_relampago;
-            precio_final = _precio_final;
+            Oferta_relampago = _oferta_relampago;
+            Precio_final = _precio_final;
         }
 
         public override void Validar()

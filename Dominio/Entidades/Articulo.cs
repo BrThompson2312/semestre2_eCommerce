@@ -2,17 +2,17 @@ namespace Dominio.Entidades
 {
     public class Articulo
     {
-        private int id;
-            private static int ultimoId = 0;
-        private string nombre;
-        private string categoria;
-        private int precio;
+        private int Id {get; set;}
+        private static int ultimoId = 0;
+        private string Nombre {get; set;}
+        private string Categoria {get; set;}
+        private int Precio {get; set;}
         public Articulo(string _nombre, string _categoria, int _precio)
         {
-            id = ultimoId++;
-            nombre = _nombre;
-            categoria = _categoria;
-            precio = _precio;
+            Id = ultimoId++;
+            Nombre = _nombre;
+            Categoria = _categoria;
+            Precio = _precio;
         }
         
     }

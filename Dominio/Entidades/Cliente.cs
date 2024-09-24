@@ -2,9 +2,7 @@ namespace Dominio.Entidades
 {
     public class Cliente : Usuario
     {
-        private int id;
-        private static int ultimoId = 0;
-        private int saldo;
+        private int Saldo {get; set;}
 
         public Cliente(
             string _nombre,
@@ -13,8 +11,7 @@ namespace Dominio.Entidades
             string _contrasenia,
             int _saldo
         ) : base(_nombre, _apellido, _email, _contrasenia) {
-            id = ultimoId++;
-            saldo = _saldo;
+            Saldo = _saldo;
         }
 
         public override void Validar()
@@ -28,7 +25,7 @@ namespace Dominio.Entidades
         public override bool Equals(object obj)
         {
             Cliente cliente = obj as Cliente;
-            return cliente != null && id == cliente.id;
+            return cliente != null;
         }
 
         public void CrearPublicacion()
