@@ -6,7 +6,7 @@ namespace Dominio
     {
         private List<Usuario> _usuarios = new List<Usuario>();
         private List<Publicacion> _publicaciones = new List<Publicacion>();
-        private List<Articulo> _articulos = new List<Articulo>();
+        public List<Articulo> _auxArticulos = new List<Articulo>();
 
         public List<Usuario> Usuarios {
             get { return _usuarios; }
@@ -25,7 +25,6 @@ namespace Dominio
             unAdministrador.Validar();
             _usuarios.Add(unAdministrador);
         }
-
         public void AgregarCliente(object obj)
         {
             Usuario unCliente = obj as Cliente;
@@ -37,20 +36,24 @@ namespace Dominio
             _usuarios.Add(unCliente);
         }
 
-        public void CrearPublicacionVenta(Publicacion unaPublicacion)
+        public void CrearVenta(Publicacion unaPublicacion)
         {
+            Venta esVenta = unaPublicacion as Venta;
             if (unaPublicacion == null)
             {
                 throw new Exception("Invalido");
             }
+            _publicaciones.Add(unaPublicacion);
         }
 
-        public void CrearPublicacionSubasta(Publicacion unaPublicacion)
+        public void CrearSubasta(Publicacion unaPublicacion)
         {
-            if (unaPublicacion == null)
+            Subasta esSubasta = unaPublicacion as Subasta;
+            if (esSubasta == null)
             {
                 throw new Exception("Invalido");
             }
+            _publicaciones.Add(unaPublicacion);
         }
 
         public void AgregarOferta(Oferta unaOferta)
@@ -69,5 +72,33 @@ namespace Dominio
             }
         }
 
+        public void ListadoAdministradores()
+        {
+            foreach (Administrador unAdministrador in _usuarios)
+            {
+                Console.WriteLine(unAdministrador);
+            }
+        }
+        public void ListadoClientes()
+        {
+            foreach (Cliente unCliente in _usuarios)
+            {
+                Console.WriteLine(unCliente);
+            }
+        }
+        public void ListadoVentas()
+        {
+            foreach (Venta unaVenta in _publicaciones)
+            {
+                Console.WriteLine(unaVenta);
+            }
+        }
+        public void ListadoSubastas()
+        {
+            foreach (Subasta unaSubasta in _publicaciones)
+            {
+                Console.WriteLine(unaSubasta);
+            }
+        }
     }
 }

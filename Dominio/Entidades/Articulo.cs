@@ -21,12 +21,8 @@ namespace Dominio.Entidades
             precio = _precio;
         }
 
-        public void ValidarArticulo(Articulo unArticulo)
+        public void Validar()
         {
-            if (unArticulo == null)
-            {
-                throw new Exception("Invalido");
-            }
         }
 
         public override string ToString()

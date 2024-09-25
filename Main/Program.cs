@@ -8,34 +8,43 @@ namespace Main
         static Sistema sistema = new Sistema();
         public static void Main(string[] args)
         {
-            // Menu:
-            int salida;
-            do
-            {
-                Console.WriteLine(
-                    "Bienvenido al programa, que desea?\n" +
-                    "------------------------------------\n" +
-                    "0 - Salir\n" +
-                    "1 - Agregar Administrador\n" +
-                    "2 - Agregar Cliente\n" +
-                    "3 - Crear publicación\n" +
-                    "4 - Crear oferta\n" +
-                    "------------------------------------\n"
-                );
-
-                salida = int.Parse(Console.ReadLine());
-                switch (salida)
+            try {
+                int salida;
+                do
                 {
-                    case 0:
-                        return;
-                    case 1:
-                        AgregarAdministrador();
-                        break;
-                    case 2:
-                        AgregarCliente();
-                        break;
-                }                
-            } while (salida != 0);
+                    Console.WriteLine(
+                        "Bienvenido al programa, que desea?\n" +
+                        "------------------------------------\n" +
+                        "0- Salir\n" +
+                        "1- Agregar Administrador\n" +
+                        "2-     Listado\n" +
+                        "3- Agregar Cliente\n" +
+                        "4-     Listado\n" +
+                        "5- Crear publicacion\n" +
+                        "6-     Listado de ventas\n" +
+                        "7-     Listado de subastas\n" +
+                        "xx 8- Crear oferta\n" +
+                        "------------------------------------\n"
+                    );
+
+                    salida = int.Parse(Console.ReadLine());
+                    switch (salida)
+                    {
+                        case 0: return;
+                        case 1: AgregarAdministrador(); break;
+                        case 2: sistema.ListadoAdministradores(); break;
+                        case 3: AgregarCliente(); break;
+                        case 4: sistema.ListadoClientes(); break;
+                        case 5: CrearPublicacion(); break;
+                        case 6: sistema.ListadoVentas(); break;
+                        case 7: sistema.ListadoSubastas(); break;
+                        case 8: break;
+                    }                
+                } while (salida != 0);
+            } catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
         public static void AgregarAdministrador()
@@ -81,181 +90,109 @@ namespace Main
 
         public static void CrearPublicacion()
         {
-            try {
-                Console.WriteLine(" ¿Publicacion de tipo Venta o Subasta? ");
-                Console.WriteLine(" 1- Venta\n 2-Subasta");
-                int tipoPublicacion = int.Parse(Console.ReadLine());
+            Console.WriteLine(" ¿Publicacion de tipo Venta o Subasta? ");
+            Console.WriteLine(" 1- Venta\n 2-Subasta");
+            int tipoPublicacion = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Nombre de la publicacion: ");
-                string nombrePublicacion = Console.ReadLine();
-
-                string nombreArticulo;
-                string categoriaArticulo;
-                int precioArticulo;
-                Articulo unArticulo;
-
-                int salida = 1;
-                do {
-                    unArticulo = CrearArticulo();
-                    sistema.ValidarArticulo(unArticulo);
-
-                    Console.WriteLine("------------------ ");
-                    Console.WriteLine(" ¿Desea agregar otro artículo a su publicación? ");
-                    salida = int.Parse(Console.ReadLine());
-
-                } while (salida != 0);
-
-                //------------ ******** ------------//
-                if (tipoPublicacion != 1 || tipoPublicacion != 2)
-                {
-                    throw new Exception("Eliga una opcion correcta!");
-                }
-                //------------ ******** ------------//
-
-                switch (tipoPublicacion)
-                {
-                    case 1:
-                        CrearPublicacionVenta(nombrePublicacion, unArticulo); break;
-                    case 2:
-                        CrearPublicacionSubasta(nombrePublicacion, unArticulo); break;
-                }
-
-            } catch(Exception e) {
-                Console.WriteLine(e.Message);
+            //------------ Control de error ------------//
+            if (tipoPublicacion != 1 || tipoPublicacion != 2)
+            {
+                throw new Exception("Invalido");
             }
+            //------------ Control de error ------------//
 
+            CrearArticulo();
+
+            switch (tipoPublicacion)
+            {
+                case 1:
+                    CrearVenta(); break;
+                case 2:
+                    CrearSubasta(); break;
+            }
         }
 
-        public static Articulo CrearArticulo()
+        public static void CrearArticulo()
         {
-            Console.WriteLine("Agregue articulos: ");
-            Console.WriteLine("------------------ ");
+            string nombreArticulo;
+            string categoriaArticulo;
+            int precioArticulo;
+            Articulo unArticulo;
 
-            Console.WriteLine("Nombre: ");
-            string nombreArticulo = Console.ReadLine();
+            int salida = 1;
+            do {
+                Console.WriteLine("Agregue articulos: ");
+                Console.WriteLine("------------------ ");
 
-            Console.WriteLine("Categoria: ");
-            string categoriaArticulo = Console.ReadLine();
+                Console.WriteLine("Nombre: ");
+                nombreArticulo = Console.ReadLine();
 
-            Console.WriteLine("Precio: ");
-            int precioArticulo = int.Parse(Console.ReadLine());
+                Console.WriteLine("Categoria: ");
+                categoriaArticulo = Console.ReadLine();
 
-            Articulo unArticulo = new Articulo(nombreArticulo, categoriaArticulo, precioArticulo);
+                Console.WriteLine("Precio: ");
+                precioArticulo = int.Parse(Console.ReadLine());
 
-            return unArticulo;
+                unArticulo = new Articulo(nombreArticulo, categoriaArticulo, precioArticulo);
+                sistema.ValidarArticulo(unArticulo);
+                sistema._auxArticulos.Add(unArticulo);
+
+                Console.WriteLine("------------------ ");
+                Console.WriteLine(" ¿Desea agregar otro artículo a su publicación? ");
+                salida = int.Parse(Console.ReadLine());
+            } while (salida != 0);
         }
 
-        public static void CrearPublicacionVenta(string pNombrePublicacion, Articulo pArticulo)
+        public static void CrearVenta()
         {
-            List <Articulo> _auxArticulos = new List<Articulo>();
-            _auxArticulos.Add(pArticulo);
-
-            //------------ ******** ------------//
+            Console.WriteLine("Nombre de la publicacion: ");
+            string nombrePublicacion = Console.ReadLine();
+            
             decimal precioFinal = 0;
 
             Console.WriteLine(" ¿Oferta relámpago? ");
             Console.WriteLine(" 1- Si\n 2- No");
             int oferta = int.Parse(Console.ReadLine());
+
+            //------------ Control de error ------------//
             if (oferta != 1 || oferta != 2)
             {
-                throw new Exception("Eliga una opcion correcta!");
+                throw new Exception("Invalido");
             }
-
-            foreach (Articulo articuloVenta in _auxArticulos)
-            {
-                precioFinal += articuloVenta.Precio;
-            }
+            //------------ Control de error ------------//
 
             if (oferta == 1)
             {
                 precioFinal = (precioFinal * 20) / 100;
             }
 
-            // Creamos la publicacion y validamos cada articulo que se agrega a la lista del mismo, con un método
-            Publicacion unaVenta = new Venta(pNombrePublicacion, true, precioFinal);
-            foreach(Articulo articulo in _auxArticulos)
+            Publicacion unaVenta = new Venta(nombrePublicacion, true, precioFinal);
+            sistema.CrearVenta(unaVenta);
+
+            foreach (Articulo unArticulo in sistema._auxArticulos)
             {
-                unaVenta.AgregarArticulo(articulo);
+                unArticulo.Validar();
+                unaVenta.AgregarArticulo(unArticulo);
             }
-            sistema.CrearPublicacionVenta(unaVenta);
+
+            sistema._auxArticulos.Clear();
         }
 
-        public static void CrearPublicacionSubasta(string pNombrePublicacion, Articulo pArticulo)
+        public static void CrearSubasta()
         {
-            
-            List <Articulo> _auxArticulos = new List<Articulo>();
-            _auxArticulos.Add(pArticulo);
+            Console.WriteLine("Nombre de la publicacion: ");
+            string nombrePublicacion = Console.ReadLine();
 
-            //------------ ******** ------------//
-            Publicacion unaSubasta = new Subasta(pNombrePublicacion, null);
+            Publicacion unaSubasta = new Subasta(nombrePublicacion, null);
+            sistema.CrearSubasta(unaSubasta);
 
-            foreach (Articulo unArticulo in _auxArticulos)
+            foreach (Articulo unArticulo in sistema._auxArticulos)
             {
+                unArticulo.Validar();
                 unaSubasta.AgregarArticulo(unArticulo);
             }
 
-            sistema.CrearPublicacionSubasta(unaSubasta);
-        }
-        
-        
-        public static void CrearSubastaOferta()
-        {
-            Console.WriteLine("Cree una oferta");
-
-            string nombreOferta;
-            int usuarioId;
-            int monto;
-
-            int salida = 1;
-            do {
-                Console.WriteLine("Nombre de la oferta: ");
-                nombreOferta = Console.ReadLine();
-
-                Console.WriteLine("Id del usuario que hace la oferta: ");
-                usuarioId = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Monto ofrecido: ");
-                monto = int.Parse(Console.ReadLine());
-            } while (salida != 0);
-
-            // Busqueda de usuario;
-            Usuario unUsuario = BusquedaCliente(usuarioId);
-
-            Oferta unaOferta = new Oferta(unUsuario, monto, DateTime.Now);
-            sistema.AgregarOferta(unaOferta);
-
-            Console.WriteLine(" ¿A qué publicación desea agregar dicha oferta? ");
-            Console.WriteLine(" (Ingrese Id de la publicacion) ");
-            // int publicacionId = int.Parse(Console.ReadLine());
-
-            // if (publicacionId == null)
-            // {
-            //     throw new Exception("Invalido");
-            // }
-        }
-
-        public static Usuario BusquedaCliente(int pId)
-        {
-            foreach (Usuario unUsuario in sistema.Usuarios)
-            {
-                if (unUsuario.Id == pId)
-                {   
-                    return unUsuario;
-                }   
-            }
-            return null;
-        }
-
-        public static Publicacion BusquedaPublicacion(int pId)
-        {
-            foreach (Publicacion unaPublicacion in sistema.Publicaciones)
-            {
-                if (unaPublicacion.Id == pId)
-                {
-                    return unaPublicacion;
-                }
-            }
-            return null;
+            sistema._auxArticulos.Clear();
         }
 
     }

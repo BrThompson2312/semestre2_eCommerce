@@ -15,10 +15,5 @@ namespace Dominio.Entidades
             base.Validar();
         }
 
-        public bool EsOfertaRelampago()
-        {
-            return true;
-        }
-
     }
 }
