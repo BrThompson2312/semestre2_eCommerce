@@ -2,18 +2,35 @@ namespace Dominio.Entidades
 {
     public class Oferta
     {
-        private int Id {get; set;}
+        private int id {get; set;}
         private static int ultimoId = 0;
-        private Usuario Usuario {get; set;}
-        private int Monto {get; set;}
-        private DateTime Fecha {get; set;}
+        private Usuario usuario {get; set;}
+        private int monto {get; set;}
+        private DateTime fecha;
+
+        public int Id 
+        {
+            get { return id; }
+        }
+        public Usuario Usuario
+        {
+            get { return usuario; }
+        }
+        public int Monto
+        {
+            get { return monto; }
+        }
+        public DateTime Fecha
+        {
+            get { return fecha; }
+        }
 
         public Oferta(Usuario _usuario, int _monto, DateTime _fecha)
         {
-            Id = ultimoId++;
-            Usuario = _usuario;
-            Monto = _monto;
-            Fecha = _fecha;
+            id = ultimoId++;
+            usuario = _usuario;
+            monto = _monto;
+            fecha = _fecha;
         }
     }
 }

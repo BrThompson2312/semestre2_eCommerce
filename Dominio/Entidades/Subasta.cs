@@ -6,13 +6,8 @@ namespace Dominio.Entidades
 
         public Subasta (
             string _nombre,
-            DateTime _fecha_publicacion,
-            Articulo _articulo,
-            Cliente _cliente,
-            Administrador _administrador,
-            DateTime _fecha_finalizacion_compra,
             Oferta _oferta
-        ) : base(_nombre, _fecha_publicacion, _articulo, _cliente, _administrador, _fecha_finalizacion_compra) {
+        ) : base(_nombre) {
             _ofertas.Add(_oferta);
         }
 
@@ -24,6 +19,12 @@ namespace Dominio.Entidades
 
         public void ValidarSubasta()
         {
+        }
+
+        public override void AgregarListaOfertas(Oferta unaOferta)
+        {
+            base.AgregarListaOfertas(unaOferta);
+            _ofertas.Add(unaOferta);
         }
         
     }
