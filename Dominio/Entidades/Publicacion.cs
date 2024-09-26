@@ -1,53 +1,23 @@
 namespace Dominio.Entidades
 {
-    public abstract class Publicacion
+    public abstract class Publicacion : IValidar
     {
-        private int id;
+        private int Id {get; set;}
         private static int ultimoId = 0;
-        private string nombre;
-        private int estadoPublicacion = Estado.Abierto;
-        private DateTime fechaPublicacion = DateTime.Now;
-        private List<Articulo> _articulos = new List<Articulo>();
-        private Cliente compraRealizadaCliente;
-        private Administrador compraFinalizadaAdministrador;
-        private DateTime fechaFinalizacionCompra;
-
-        public int Id 
-        {
-            get { return id; }
-        }
-        public string Nombre 
-        {
-            get { return nombre; }
-        }
-        public int EstadoPublicacion 
-        {
-            get { return estadoPublicacion; }
-            set { estadoPublicacion = value; }
-        }
-        public DateTime FechaPublicacion
-        {
-            get { return fechaPublicacion; }
-        }
-        public List<Articulo> Articulos {
-            get { return _articulos; }
-        }
-        public Cliente CompraRealizadaCliente
-        {
-            get { return compraRealizadaCliente; }
-        }
-        public Administrador CompraFinalizadaAdministrador
-        {
-            get { return compraFinalizadaAdministrador; }
-        }
-        public DateTime FechaFinalizacionCompra
-        {
-            get { return fechaFinalizacionCompra; }
-        }
+        private string Nombre {get; set;}
+        private int EstadoPublicacion {get; set;}
+        private DateTime FechaPublicacion {get; set;}
+        private List<Articulo> _articulos {get;}
+        private Cliente CompraRealizadaCliente {get; set;}
+        private Administrador CompraFinalizadaAdministrador {get; set;}
+        private DateTime FechaFinalizacionCompra {get; set;}
 
         public Publicacion(string _nombre){
-            id = ultimoId++;
-            nombre = _nombre;
+            Id = ultimoId++;
+            Nombre = _nombre;
+            EstadoPublicacion = Estado.Abierto;
+            FechaPublicacion = DateTime.Now;
+            _articulos = new List<Articulo>();
         }
 
         public virtual void Validar()
@@ -57,10 +27,10 @@ namespace Dominio.Entidades
         public override string ToString()
         {
             string res = "";
-            res += $"Id: {id}";
-            res += $"Nombre: {nombre}";
-            res += $"EstadoPublicacion: {estadoPublicacion}";
-            res += $"Fecha_publicacion: {fechaPublicacion}";
+            res += $"Id: {Id}";
+            res += $"Nombre: {Nombre}";
+            res += $"EstadoPublicacion: {EstadoPublicacion}";
+            res += $"Fecha_publicacion: {FechaPublicacion}";
 
             res += $"Articulos: ";
             foreach (Articulo unArticulo in _articulos)
@@ -68,32 +38,26 @@ namespace Dominio.Entidades
                 res += $"///: {unArticulo}";
             }
 
-            res += $"Cliente que realizó la compra: {compraRealizadaCliente}";
-            res += $"Administrador que FINALIZÓ la compra: {compraFinalizadaAdministrador}";
-            res += $"Fecha de compra finalizada: {fechaFinalizacionCompra}";
+            res += $"Cliente que realizó la compra: {CompraRealizadaCliente}";
+            res += $"Administrador que FINALIZÓ la compra: {CompraFinalizadaAdministrador}";
+            res += $"Fecha de compra finalizada: {FechaFinalizacionCompra}";
             return res;
-        }
-
-        public virtual void ValidarArticulo(Articulo unArticulo)
-        {
-
         }
 
         public virtual void AgregarArticulo(Articulo unArticulo)
         {
-            ValidarArticulo(unArticulo);
+            unArticulo.Validar();
             _articulos.Add(unArticulo);
         }
 
         public virtual void FinalizarCompra()
         {
-
         }
 
         public virtual void AgregarOfertaSubasta()
         {
-
         }
+        
         public virtual void AgregarListaOfertas(Oferta unaOferta)
         {
             if (unaOferta == null)

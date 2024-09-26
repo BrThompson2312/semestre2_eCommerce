@@ -2,13 +2,8 @@ namespace Dominio.Entidades
 {
     public class Cliente : Usuario
     {
-        private int saldo;
+        private int Saldo {get; set;}
 
-        public int Saldo
-        {
-            get { return saldo; }
-        }
-        
         public Cliente(
             string _nombre,
             string _apellido, 
@@ -16,11 +11,12 @@ namespace Dominio.Entidades
             string _contrasenia,
             int _saldo
         ) : base(_nombre, _apellido, _email, _contrasenia) {
-            saldo = _saldo;
+            Saldo = _saldo;
         }
 
         public override void Validar()
         {
+            base.Validar();
         }
 
         public override string ToString()

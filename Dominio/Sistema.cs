@@ -2,17 +2,41 @@
 
 namespace Dominio
 {
-    public class Sistema
+    public class Sistema : IValidar
     {
         private List<Usuario> _usuarios = new List<Usuario>();
         private List<Publicacion> _publicaciones = new List<Publicacion>();
-        public List<Articulo> _auxArticulos = new List<Articulo>();
+        public List<Articulo> _articulos = new List<Articulo>();
 
         public List<Usuario> Usuarios {
             get { return _usuarios; }
         }
         public List<Publicacion> Publicaciones {
             get { return _publicaciones; }
+        }
+
+        public Sistema()
+        {
+            // PrecargarDatos();
+        }
+
+        public void PrecargarDatos()
+        {
+            PrecargarUsuarios();
+            PrecargarArticulos();
+            PrecargarPublicaciones();
+        }
+
+        private void PrecargarUsuarios()
+        {
+        }
+
+        private void PrecargarArticulos()
+        {
+        }
+
+        private void PrecargarPublicaciones()
+        {
         }
 
         public void AgregarAdministrador(object obj) 
@@ -72,33 +96,8 @@ namespace Dominio
             }
         }
 
-        public void ListadoAdministradores()
+        public void Validar()
         {
-            foreach (Administrador unAdministrador in _usuarios)
-            {
-                Console.WriteLine(unAdministrador);
-            }
-        }
-        public void ListadoClientes()
-        {
-            foreach (Cliente unCliente in _usuarios)
-            {
-                Console.WriteLine(unCliente);
-            }
-        }
-        public void ListadoVentas()
-        {
-            foreach (Venta unaVenta in _publicaciones)
-            {
-                Console.WriteLine(unaVenta);
-            }
-        }
-        public void ListadoSubastas()
-        {
-            foreach (Subasta unaSubasta in _publicaciones)
-            {
-                Console.WriteLine(unaSubasta);
-            }
         }
     }
 }

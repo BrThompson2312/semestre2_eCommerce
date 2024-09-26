@@ -2,20 +2,18 @@ namespace Dominio.Entidades
 {
     public class Subasta : Publicacion
     {
-        private List<Oferta> _ofertas = new List<Oferta>();
+        private List<Oferta> _ofertas {get; set;}
 
         public Subasta (
-            string _nombre,
-            Oferta _oferta
+            string _nombre
         ) : base(_nombre) {
-            _ofertas.Add(_oferta);
+            _ofertas = new List<Oferta>();
         }
 
         public override void Validar()
         {
             base.Validar();
         }
-
 
         public void ValidarSubasta()
         {

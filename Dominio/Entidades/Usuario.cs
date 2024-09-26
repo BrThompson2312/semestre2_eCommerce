@@ -1,52 +1,28 @@
 namespace Dominio.Entidades
 {
-    public abstract class Usuario
+    public abstract class Usuario : IValidar
     {
-        private int id;
+        private int Id {get; set;}
         private static int ultimoId = 0;
-        private string nombre;
-        private string apellido;
-        private string email;
-        private string contrasenia;
-        private List<Publicacion> _publicaciones = new List<Publicacion>();
-
-        public int Id
-        {
-            get { return id; }
-        }
-        public string Nombre
-        {
-            get { return nombre; }
-        }
-        public string Apellido
-        {
-            get { return apellido; }
-        }
-        public string Email
-        {
-            get { return email; }
-        }
-        public string Contrasenia {
-            get { return contrasenia; }
-        }
-        public List<Publicacion> Publicaciones 
-        { 
-            get { return _publicaciones; } 
-        }
+        private string Nombre {get; set;}
+        private string Apellido {get; set;}
+        private string Email {get; set;}
+        private string Contrasenia {get; set;}
+        private List<Publicacion> _publicaciones {get;}
 
         // Constructor
         public Usuario(string _nombre, string _apellido, string _email, string _contrasenia)
         {
-            id = ultimoId++;
-            nombre = _nombre;
-            apellido = _apellido;
-            email = _email;
-            contrasenia = _contrasenia;
+            Id = ultimoId++;
+            Nombre = _nombre;
+            Apellido = _apellido;
+            Email = _email;
+            Contrasenia = _contrasenia;
+            _publicaciones = new List<Publicacion>();
         }
 
         public virtual void Validar()
         {
-            return;
         }
 
         public override bool Equals(object obj)
@@ -58,7 +34,7 @@ namespace Dominio.Entidades
         public override string ToString()
         {
             string res = "";
-            res += $"id: {id}, nombre: {nombre}, apellido: {apellido}, email: {email}, contraseña {contrasenia}";
+            res += $"id: {Id}, nombre: {Nombre}, apellido: {Apellido}, email: {Email}, contraseña {Contrasenia}";
             foreach(Publicacion _publicacion in _publicaciones)
             {
                 res += $"{_publicacion}";
