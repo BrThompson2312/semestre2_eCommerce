@@ -2,27 +2,34 @@ namespace Dominio.Entidades
 {
     public abstract class Publicacion : IValidar
     {
-        private int Id {get; set;}
+        public int Id {get; set;}
         private static int ultimoId = 0;
-        private string Nombre {get; set;}
-        private int EstadoPublicacion {get; set;}
-        private DateTime FechaPublicacion {get; set;}
-        private List<Articulo> _articulos {get;}
-        private Cliente CompraRealizadaCliente {get; set;}
-        private Administrador CompraFinalizadaAdministrador {get; set;}
-        private DateTime FechaFinalizacionCompra {get; set;}
+        public string Nombre {get; set;}
+        public int EstadoPublicacion {get; set;}
+        public DateTime FechaPublicacion {get; set;}
+        private List<Articulo> _articulos = new List<Articulo>();
+        public Cliente CompraRealizadaCliente {get; set;}
+        public Administrador CompraFinalizadaAdministrador {get; set;}
+        public DateTime FechaFinalizacionCompra {get; set;}
 
         public Publicacion(string _nombre){
             Id = ultimoId++;
             Nombre = _nombre;
             EstadoPublicacion = Estado.Abierto;
             FechaPublicacion = DateTime.Now;
-            _articulos = new List<Articulo>();
         }
 
         public virtual void Validar()
         {
         }
+
+        public virtual void AgregarArticulo(Articulo unArticulo)
+        {
+            unArticulo.Validar();
+            _articulos.Add(unArticulo);
+        }
+
+        public abstract void AgregarOferta(Oferta unaOferta);
 
         public override string ToString()
         {
@@ -44,26 +51,10 @@ namespace Dominio.Entidades
             return res;
         }
 
-        public virtual void AgregarArticulo(Articulo unArticulo)
+        public override bool Equals(object obj)
         {
-            unArticulo.Validar();
-            _articulos.Add(unArticulo);
-        }
-
-        public virtual void FinalizarCompra()
-        {
-        }
-
-        public virtual void AgregarOfertaSubasta()
-        {
-        }
-        
-        public virtual void AgregarListaOfertas(Oferta unaOferta)
-        {
-            if (unaOferta == null)
-            {
-                throw new Exception("Invalido");
-            }
+            Publicacion publicacion = obj as Publicacion;
+            return publicacion != null && publicacion.Id != Id;
         }
 
     }

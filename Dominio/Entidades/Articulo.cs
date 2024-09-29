@@ -2,11 +2,11 @@ namespace Dominio.Entidades
 {
     public class Articulo : IValidar
     {
-        private int Id {get; set;}
+        public int Id {get; set;}
         private static int ultimoId = 0;
-        private string Nombre {get; set;}
-        private string Categoria {get; set;}
-        private int Precio {get; set;}
+        public string Nombre {get; set;}
+        public string Categoria {get; set;}
+        public int Precio {get; set;}
 
         public Articulo(string _nombre, string _categoria, int _precio)
         {
@@ -27,6 +27,12 @@ namespace Dominio.Entidades
             res += $"Categoria: {Categoria}";
             res += $"Precio: {Precio}";
             return res;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            Articulo articulo = obj as Articulo;
+            return articulo != null && articulo.Id != Id;
         }
     }
 }

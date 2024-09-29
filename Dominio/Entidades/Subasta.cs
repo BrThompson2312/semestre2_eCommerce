@@ -2,7 +2,7 @@ namespace Dominio.Entidades
 {
     public class Subasta : Publicacion
     {
-        private List<Oferta> _ofertas {get; set;}
+        private List<Oferta> _ofertas {get;}
 
         public Subasta (
             string _nombre
@@ -15,15 +15,34 @@ namespace Dominio.Entidades
             base.Validar();
         }
 
-        public void ValidarSubasta()
+        public override void AgregarOferta(Oferta unaOferta)
         {
-        }
-
-        public override void AgregarListaOfertas(Oferta unaOferta)
-        {
-            base.AgregarListaOfertas(unaOferta);
+            if (unaOferta == null)
+            {
+                throw new Exception("Invalido");
+            }
+            if (_ofertas.Contains(unaOferta))
+            {
+                throw new Exception("Oferta ya existente!");
+            }
             _ofertas.Add(unaOferta);
         }
-        
+
+        public override string ToString()
+        {
+            string res = base.ToString();
+            foreach (Oferta item in _ofertas)
+            {
+                res += $"{item}";
+            }
+            return res;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Subasta subasta = obj as Subasta;
+            return subasta != null && subasta.Id != Id;
+        }
+
     }
 }

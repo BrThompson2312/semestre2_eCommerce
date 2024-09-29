@@ -3,8 +3,8 @@ namespace Dominio.Entidades
     public static class Estado
     {
         public static int abierto = 0;
-        private static int cerrado = 1;
-        private static int terminado = 2;
+        public static int cerrado = 1;
+        public static int terminado = 2;
 
         public static int Abierto {
             get { return abierto; }

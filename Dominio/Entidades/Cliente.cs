@@ -2,7 +2,7 @@ namespace Dominio.Entidades
 {
     public class Cliente : Usuario
     {
-        private int Saldo {get; set;}
+        public int Saldo {get; set;}
 
         public Cliente(
             string _nombre,
@@ -21,16 +21,15 @@ namespace Dominio.Entidades
 
         public override string ToString()
         {
-            return base.ToString();
+            string res = base.ToString();
+            res += $"Saldo: {Saldo}";
+            return res;
         }
+        
         public override bool Equals(object obj)
         {
             Cliente cliente = obj as Cliente;
-            return cliente != null;
-        }
-
-        public void CrearPublicacion()
-        {
+            return cliente != null && cliente.Id == Id;
         }
 
     }

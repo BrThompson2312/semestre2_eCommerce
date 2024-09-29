@@ -15,22 +15,16 @@ namespace Dominio.Entidades
         {
             base.Validar();
         }
+
         public override string ToString()
         {
             return base.ToString();
         }
+
         public override bool Equals(object obj)
         {
             Administrador administrador = obj as Administrador;
-            return administrador != null;
-        }
-
-        public void FinalizarPublicacion()
-        {
-        }
-
-        public void ValidarSubasta()
-        {
+            return administrador != null && administrador.Id == Id;
         }
         
     }

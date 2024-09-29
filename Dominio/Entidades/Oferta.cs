@@ -1,12 +1,12 @@
 namespace Dominio.Entidades
 {
-    public class Oferta
+    public class Oferta : IValidar
     {
-        private int Id {get; set;}
+        public int Id {get; set;}
         private static int ultimoId = 0;
-        private Usuario Usuario {get; set;}
-        private int Monto {get; set;}
-        private DateTime Fecha {get; set;}
+        public Usuario Usuario {get; set;}
+        public int Monto {get; set;}
+        public DateTime Fecha {get; set;}
 
         public Oferta(Usuario _usuario, int _monto, DateTime _fecha)
         {
@@ -15,5 +15,25 @@ namespace Dominio.Entidades
             Monto = _monto;
             Fecha = _fecha;
         }
+
+        public void Validar()
+        {
+        }
+
+        public override string ToString()
+        {
+            string res = $"Id {Id}";
+            res += $"Usuario: {Usuario}";
+            res += $"Monto: {Monto}";
+            res += $"Fecha: {Fecha}";
+            return res;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            Oferta oferta = obj as Oferta;
+            return oferta != null && oferta.Id != Id;
+        }
+
     }
 }
