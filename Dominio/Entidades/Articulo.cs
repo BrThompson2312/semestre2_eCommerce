@@ -18,6 +18,18 @@ namespace Dominio.Entidades
 
         public void Validar()
         {
+            if (string.IsNullOrEmpty(Nombre))
+            {
+                throw new Exception("Nombre vacio!");
+            } 
+            else if (string.IsNullOrEmpty(Categoria))
+            {
+                throw new Exception("Categoria vacio!");
+            }
+            else if (Precio < 0)
+            {
+                throw new Exception("Precio negativo!");
+            }
         }
 
         public override string ToString()

@@ -22,6 +22,22 @@ namespace Dominio.Entidades
 
         public virtual void Validar()
         {
+            if (string.IsNullOrEmpty(Nombre))
+            {
+                throw new Exception("Nombre vacio");
+            } 
+            else if(string.IsNullOrEmpty(Apellido)) 
+            {
+                throw new Exception("Apellido vacio");
+            }
+            else if(string.IsNullOrEmpty(Apellido)) 
+            {
+                throw new Exception("Email vacio");
+            }
+            else if(string.IsNullOrEmpty(Contrasenia)) 
+            {
+                throw new Exception("Contrasenia vacio");
+            }
         }
 
         public override string ToString()

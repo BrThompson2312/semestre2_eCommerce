@@ -1,0 +1,1 @@
+Publicaciones: tienen que tener una fecha de inicio y de fin

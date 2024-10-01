@@ -79,6 +79,11 @@ namespace Main
 
         public static void ListadoArticulos()
         {
+            try {
+
+            } catch (Exception e) {
+                throw new Exception(e.Message);
+            }
         }
   
         public static void CrearArticulo()
@@ -88,28 +93,21 @@ namespace Main
             int precioArticulo;
             Articulo unArticulo;
 
-            int salida = 1;
-            do {
-                Console.WriteLine("Agregue articulos: ");
-                Console.WriteLine("------------------ ");
+            Console.WriteLine("Agregue articulos: ");
+            Console.WriteLine("------------------ ");
 
-                Console.WriteLine("Nombre: ");
-                nombreArticulo = Console.ReadLine();
+            Console.WriteLine("Nombre: ");
+            nombreArticulo = Console.ReadLine();
 
-                Console.WriteLine("Categoria: ");
-                categoriaArticulo = Console.ReadLine();
+            Console.WriteLine("Categoria: ");
+            categoriaArticulo = Console.ReadLine();
 
-                Console.WriteLine("Precio: ");
-                precioArticulo = int.Parse(Console.ReadLine());
+            Console.WriteLine("Precio: ");
+            precioArticulo = int.Parse(Console.ReadLine());
 
-                unArticulo = new Articulo(nombreArticulo, categoriaArticulo, precioArticulo);
-                unArticulo.Validar();
-                _sistema.AgregarArticulo(unArticulo);
-
-                Console.WriteLine("------------------ ");
-                Console.WriteLine(" ¿Desea agregar otro artículo a su publicación? ");
-                salida = int.Parse(Console.ReadLine());
-            } while (salida != 0);
+            unArticulo = new Articulo(nombreArticulo, categoriaArticulo, precioArticulo);
+            unArticulo.Validar();
+            _sistema.AgregarArticulo(unArticulo);
         }
 
         public static void ListadoPublicaciones()

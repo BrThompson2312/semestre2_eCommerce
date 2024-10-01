@@ -17,6 +17,10 @@ namespace Dominio.Entidades
         public override void Validar()
         {
             base.Validar();
+            if (Saldo < 0)
+            {
+                throw new Exception("Saldo negativo!");
+            }
         }
 
         public override string ToString()

@@ -18,6 +18,18 @@ namespace Dominio.Entidades
 
         public void Validar()
         {
+            if (Usuario == null)
+            {
+                throw new Exception("Usuario inexistente");
+            }
+            else if (Monto < 0)
+            {
+                throw new Exception("Monto negativo");
+            }
+            else if (Fecha == null)
+            {
+                throw new Exception("Fecha inexistente");
+            }
         }
 
         public override string ToString()

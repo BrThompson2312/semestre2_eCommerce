@@ -13,6 +13,10 @@ namespace Dominio.Entidades
         public override void Validar()
         {
             base.Validar();
+            if (PrecioFinal < 0)
+            {
+                throw new Exception("Precio final negativo");
+            }
         }
 
         public override void AgregarOferta(Oferta unaOferta)

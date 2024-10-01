@@ -12,15 +12,23 @@ namespace Dominio.Entidades
         public Administrador CompraFinalizadaAdministrador {get; set;}
         public DateTime FechaFinalizacionCompra {get; set;}
 
-        public Publicacion(string _nombre){
+        public Publicacion(string _nombre, DateTime _fechaPublicacion){
             Id = ultimoId++;
             Nombre = _nombre;
             EstadoPublicacion = Estado.Abierto;
-            FechaPublicacion = DateTime.Now;
+            FechaPublicacion = _fechaPublicacion;
         }
 
         public virtual void Validar()
         {
+            if (string.IsNullOrEmpty(Nombre))
+            {
+                throw new Exception("Nombre vacio");
+            }
+            else if (EstadoPublicacion != Estado.Abierto || EstadoPublicacion != Estado.Cerrado || EstadoPublicacion != Estado.Terminado)
+            {
+                throw new Exception("Estado invalido");
+            }
         }
 
         public virtual void AgregarArticulo(Articulo unArticulo)
