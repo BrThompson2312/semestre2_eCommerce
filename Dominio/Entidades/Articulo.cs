@@ -34,17 +34,17 @@ namespace Dominio.Entidades
 
         public override string ToString()
         {
-            string res = $"Id: {Id}";
-            res += $"Nombre: {Nombre}";
-            res += $"Categoria: {Categoria}";
-            res += $"Precio: {Precio}";
+            string res = $" Id: {Id} ";
+            res += $" Nombre: {Nombre} ";
+            res += $" Categoria: {Categoria} ";
+            res += $" Precio: {Precio} ";
             return res;
         }
 
-        public override bool Equals(object? obj)
+        public override bool Equals(object obj)
         {
             Articulo articulo = obj as Articulo;
-            return articulo != null && articulo.Id != Id;
+            return articulo != null && articulo.Id == Id;
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Dominio.Entidades
     {
         private List<Oferta> _ofertas = new List<Oferta>();
 
-        public Subasta (string _nombre) : base(_nombre) {
+        public Subasta (string _nombre, DateTime _fechaPublicacion) : base(_nombre, _fechaPublicacion) {
         }
 
         public override void Validar()

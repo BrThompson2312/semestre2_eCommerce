@@ -21,14 +21,14 @@ namespace Dominio.Entidades
 
         public virtual void Validar()
         {
-            if (string.IsNullOrEmpty(Nombre))
-            {
-                throw new Exception("Nombre vacio");
-            }
-            else if (EstadoPublicacion != Estado.Abierto || EstadoPublicacion != Estado.Cerrado || EstadoPublicacion != Estado.Terminado)
-            {
-                throw new Exception("Estado invalido");
-            }
+            // if (string.IsNullOrEmpty(Nombre))
+            // {
+            //     throw new Exception("Nombre vacio");
+            // }
+            // else if (EstadoPublicacion != Estado.Abierto || EstadoPublicacion != Estado.Cerrado || EstadoPublicacion != Estado.Terminado)
+            // {
+            //     throw new Exception("Estado invalido");
+            // }
         }
 
         public virtual void AgregarArticulo(Articulo unArticulo)

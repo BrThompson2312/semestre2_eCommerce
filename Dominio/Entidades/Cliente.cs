@@ -23,6 +23,11 @@ namespace Dominio.Entidades
             }
         }
 
+        public override int TipoUsuario()
+        {
+            return 0;
+        }
+
         public override string ToString()
         {
             string res = base.ToString();

@@ -5,7 +5,7 @@ namespace Dominio.Entidades
         public bool OfertaRelampago {get; set;}
         public decimal PrecioFinal {get; set;}
 
-        public Venta ( string _nombre, bool _ofertaRelampago, decimal _precioFinal) : base(_nombre) {
+        public Venta ( string _nombre, DateTime _fechaPublicacion, bool _ofertaRelampago, decimal _precioFinal) : base(_nombre, _fechaPublicacion) {
             OfertaRelampago = _ofertaRelampago;
             PrecioFinal = _precioFinal;
         }

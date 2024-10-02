@@ -42,14 +42,14 @@ namespace Dominio.Entidades
 
         public override string ToString()
         {
-            string res = $"Id: {Id}";
-            res += $"Nombre: {Nombre}";
-            res += $"Apellido: {Apellido}";
-            res += $"Email: {Email}";
-            res += $"Contraseña: {Contrasenia}";
+            string res = $" Id: {Id} ";
+            res += $" Nombre: {Nombre} ";
+            res += $" Apellido: {Apellido} ";
+            res += $" Email: {Email} ";
+            res += $" Contraseña: {Contrasenia} ";
             foreach(Publicacion _publicacion in _publicaciones)
             {
-                res += $"{_publicacion}";
+                res += $" {_publicacion} ";
             }
             return res;
         }
@@ -59,6 +59,8 @@ namespace Dominio.Entidades
             Usuario usuario = obj as Usuario;
             return usuario != null && Id == usuario.Id;
         }
+
+        public abstract int TipoUsuario();
 
     }
 }

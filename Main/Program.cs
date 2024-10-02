@@ -10,43 +10,43 @@ namespace Main
         {
             try {
                 int salida;
+                Console.WriteLine("Bienvenido al programa, que desea?");
                 do
                 {
                     Console.BackgroundColor = ConsoleColor.Black;
                     Console.WriteLine(
-                        "Bienvenido al programa, que desea?\n" +
-                        "------------------------------------\n" +
-                        "0- Precargar Datos\n" +
-                        "1- Listado de clientes \n" +
-                        "2- Filtrar articulos por categoría \n" +
-                        "3- Crear artículo \n" +
-                        "4- Listar publicaciones entre dos fechas \n" +
-                        "5- Salir\n" +
+                        "\n------------------------------------\n" +
+                        "0- Salir\n" +
+                        "1- Precargar Datos\n" +
+                        "2- Listado de clientes \n" +
+                        "3- Filtrar articulos por categoría \n" +
+                        "4- Crear artículo \n" +
+                        "5- Listar publicaciones entre dos fechas \n" +
                         "------------------------------------\n"
                     );
 
-                    salida = int.Parse(Console.ReadLine());
+                    int.TryParse(Console.ReadLine(), out salida);
                     switch (salida)
                     {
-                        case 0: 
+                        case 0:
+                            return;
+                        case 1: 
                             PrecargarDatos(); 
                             break;
-                        case 1: 
+                        case 2: 
                             ListadoClientes(); 
                             break;
-                        case 2: 
+                        case 3: 
                             ListadoArticulos(); 
                             break;
-                        case 3: 
+                        case 4: 
                             CrearArticulo(); 
                             break;
-                        case 4: 
+                        case 5: 
                             ListadoPublicaciones(); 
                             break;
-                        case 5: 
-                            return;
                     }                
-                } while (salida != 0);
+                } while (salida != 5);
 
             } catch (Exception e)
             {
@@ -58,6 +58,8 @@ namespace Main
         {
             try {
                 _sistema.PrecargarDatos();
+                Console.WriteLine("Precarga de datos completa!");
+                Console.ReadKey();
             } catch (Exception e) {
                 Console.WriteLine(e.Message);
             }
@@ -65,22 +67,43 @@ namespace Main
 
         public static void ListadoClientes()
         {
-            List<Usuario> clientes = _sistema.Usuarios;
-            if (clientes.Count == 0) {
+            List<Usuario> _clientes = _sistema.Usuarios;
+            if (_clientes.Count == 0) {
                 Console.WriteLine("**** No hay Clientes ****");
                 Console.ReadKey();
             } else {
-                foreach (Administrador item in clientes)
+                Console.WriteLine("------------- Listado de clientes -------------");
+                foreach (Usuario item in _clientes)
                 {
-                    Console.WriteLine(item);
+                    if (item.TipoUsuario() == 0)
+                    {
+                        Console.WriteLine(item);
+                    }
                 }
+                Console.ReadKey();
             }
         }
 
         public static void ListadoArticulos()
         {
             try {
-
+                if (_sistema.Articulos.Count == 0) 
+                {
+                    Console.WriteLine("**** No hay artículos ****");
+                    Console.ReadKey();
+                } else 
+                {
+                    Console.WriteLine("Que categoria desea filtrar?");
+                    string categoria = Console.ReadLine();
+                    if (string.IsNullOrEmpty(categoria))
+                    {
+                        throw new Exception("Entrada inválida");
+                    }
+                    Console.WriteLine("------------- Listado de articulos filtrados -------------");
+                    _sistema.ListadoArticulos(categoria);
+                    Console.ReadKey();
+                }
+                
             } catch (Exception e) {
                 throw new Exception(e.Message);
             }
@@ -88,24 +111,20 @@ namespace Main
   
         public static void CrearArticulo()
         {
-            string nombreArticulo;
-            string categoriaArticulo;
-            int precioArticulo;
-            Articulo unArticulo;
-
             Console.WriteLine("Agregue articulos: ");
             Console.WriteLine("------------------ ");
 
             Console.WriteLine("Nombre: ");
-            nombreArticulo = Console.ReadLine();
+            string nombreArticulo = Console.ReadLine();
 
             Console.WriteLine("Categoria: ");
-            categoriaArticulo = Console.ReadLine();
+            string categoriaArticulo = Console.ReadLine();
 
             Console.WriteLine("Precio: ");
-            precioArticulo = int.Parse(Console.ReadLine());
+            int precioArticulo;
+            int.TryParse(Console.ReadLine(), out precioArticulo);
 
-            unArticulo = new Articulo(nombreArticulo, categoriaArticulo, precioArticulo);
+            Articulo unArticulo = new Articulo(nombreArticulo, categoriaArticulo, precioArticulo);
             unArticulo.Validar();
             _sistema.AgregarArticulo(unArticulo);
         }
