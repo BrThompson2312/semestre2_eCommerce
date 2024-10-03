@@ -37,8 +37,7 @@ namespace Dominio.Entidades
 
         public override bool Equals(object obj)
         {
-            Subasta subasta = obj as Subasta;
-            return subasta != null && subasta.Id == Id;
+            return base.Equals(obj);
         }
 
     }

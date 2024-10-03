@@ -34,8 +34,7 @@ namespace Dominio.Entidades
 
         public override bool Equals(object obj)
         {
-            Venta venta = obj as Venta;
-            return venta != null && venta.Id == Id;
+            return base.Equals(obj);
         }
 
     }

@@ -22,21 +22,22 @@ namespace Dominio.Entidades
 
         public virtual void Validar()
         {
+            string res = $"Usuario id_{Id}({Nombre})";
             if (string.IsNullOrEmpty(Nombre))
             {
-                throw new Exception("Usuario: Nombre invalido");
+                throw new Exception($"{res}: Nombre invalido");
             } 
             else if(string.IsNullOrEmpty(Apellido)) 
             {
-                throw new Exception("Usuario: Apellido invalido");
+                throw new Exception($"{res}: Apellido invalido");
             }
             else if(string.IsNullOrEmpty(Email)) 
             {
-                throw new Exception("Usuario: Email invalido");
+                throw new Exception($"{res}: Email invalido");
             }
             else if(string.IsNullOrEmpty(Contrasenia)) 
             {
-                throw new Exception("Usuario: Contraseña invalido");
+                throw new Exception($"{res}: Contraseña invalido");
             }
         }
 
@@ -63,7 +64,7 @@ namespace Dominio.Entidades
         public override bool Equals(object obj)
         {
             Usuario usuario = obj as Usuario;
-            return usuario != null && Id == usuario.Id;
+            return usuario != null && Id == usuario.Id || usuario.Email == Email;
         }
 
         public abstract int TipoUsuario();

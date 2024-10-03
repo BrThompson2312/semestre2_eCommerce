@@ -41,20 +41,16 @@ namespace Dominio
             Usuario admin2 = new Administrador("Lucia", "Fernandez", "lucia.fernandez@gmail.com", "luciaFernandez123");
             AgregarUsuario(admin2);
 
-            // Administrador con error en el email (sin dominio)
-            // Usuario admin3 = new Administrador("Pedro", "Diaz", "pedro.diaz@gmail", "pedroDiaz456");
+            // Usuario admin3 = new Administrador("Pedro", "Diaz", "pedro.diaz@gmail", null); // Contrasenia no puede ser null o vacia
             // AgregarUsuario(admin3);
 
-            // // Administrador con error en la contraseña (muy corta)
-            // Usuario admin4 = new Administrador("Ana", "Martinez", "ana.martinez@hotmail.com", "ana12");
+            // Usuario admin4 = new Administrador("Ana", "Martinez", null, "ana12"); // Email no puede ser null o vacia
             // AgregarUsuario(admin4);
 
-            // // Administrador con error en el nombre (nulo)
-            // Usuario admin5 = new Administrador(null, "Sanchez", "sanchez.admin@outlook.com", "sanchezAdmin789");
+            // Usuario admin5 = new Administrador(null, "Sanchez", "sanchez.admin@outlook.com", "sanchezAdmin789"); // Nombre no puede ser null o vacia
             // AgregarUsuario(admin5);
 
-            // // Administrador con error en el apellido (nulo)
-            // Usuario admin6 = new Administrador("Laura", null, "laura.admin@gmail.com", "lauraAdmin101");
+            // Usuario admin6 = new Administrador("Laura", null, "laura.admin@gmail.com", "lauraAdmin101"); // Apellido no puede ser null o vacia
             // AgregarUsuario(admin6);
         }
 
@@ -90,24 +86,13 @@ namespace Dominio
             Usuario cliente10 = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010", 1600);
             AgregarUsuario(cliente10);
 
-            // Cliente con error en el email (falta el dominio)
-            // Usuario cliente11 = new Cliente("Paula", "Cruz", "paula.cruz@gmail", "paulaCruz123", 1500);
-            // AgregarCliente(cliente11);
-
-            // // Cliente con error en el nombre (nulo)
-            // Usuario cliente12 = new Cliente(null, "Vega", "vega@hotmail.com", "vegaPassword123", 1000);
+            // Usuario cliente12 = new Cliente(null, "Vega", "vega@hotmail.com", "vegaPassword123", 1000); // Nombre null
             // AgregarCliente(cliente12);
 
-            // // Cliente con error en el saldo (negativo)
-            // Usuario cliente13 = new Cliente("Ramiro", "Santos", "ramiro.santos@gmail.com", "ramiroSantos123", -500);
+            // Usuario cliente13 = new Cliente("Ramiro", "Santos", "ramiro.santos@gmail.com", "ramiroSantos123", -500); // Saldo negativo
             // AgregarCliente(cliente13);
 
-            // // Cliente con error en la contraseña (demasiado corta)
-            // Usuario cliente14 = new Cliente("Clara", "Ortiz", "clara.ortiz@gmail.com", "cla12", 1100);
-            // AgregarCliente(cliente14);
-
-            // // Cliente con error en el apellido (nulo)
-            // Usuario cliente15 = new Cliente("Gabriel", null, "gabriel@outlook.com", "gabrielOut123", 1700);
+            // Usuario cliente15 = new Cliente("Gabriel", null, "gabriel@outlook.com", "gabrielOut123", 1700); // Apellido null
             // AgregarCliente(cliente15);
         }
 
@@ -115,9 +100,6 @@ namespace Dominio
         {
             Articulo articulo1 = new Articulo("Sombrero", "Playa", 1000);
             AgregarArticulo(articulo1);
-
-            // Articulo articulo1a = new Articulo("Sombrero", "Playa", 1000);
-            // AgregarArticulo(articulo1a);
 
             Articulo articulo2 = new Articulo("Gafas de sol", "Accesorios", 500);
             AgregarArticulo(articulo2);
@@ -266,73 +248,26 @@ namespace Dominio
             Articulo articulo50 = new Articulo("Gorro de lana", "Accesorios", 550);
             AgregarArticulo(articulo50);
 
-            // Artículo con error en el nombre (nulo)
-            Articulo articulo51 = new Articulo(null, "Ropa", 1000);
-            AgregarArticulo(articulo51);
+            // Articulo articulo51 = new Articulo(null, "Ropa", 1000); //Nombre nulo, no valido
+            // AgregarArticulo(articulo51);
 
-            // Artículo con error en la categoría (nulo)
-            Articulo articulo52 = new Articulo("Camisa", null, 1800);
-            AgregarArticulo(articulo52);
+            // Articulo articulo52 = new Articulo("Camisa", null, 1800); // Categoria nula, no valido
+            // AgregarArticulo(articulo52);
 
-            // Artículo con error en el precio (negativo)
-            Articulo articulo53 = new Articulo("Zapatos de vestir", "Calzado", -1500);
-            AgregarArticulo(articulo53);
+            // Articulo articulo53 = new Articulo("Zapatos de vestir", "Calzado", -1500); // Precio negativo
+            // AgregarArticulo(articulo53);
 
-            // Artículo con error en el precio (valor cero)
-            Articulo articulo54 = new Articulo("Cinturón de cuero", "Accesorios", 0);
-            AgregarArticulo(articulo54);
+            // Articulo articulo54 = new Articulo("Cinturón de cuero", "Accesorios", 0); // Precio invalido, no puede ser 0
+            // AgregarArticulo(articulo54);
 
-            // Artículo con nombre vacío
-            Articulo articulo55 = new Articulo("", "Playa", 700);
-            AgregarArticulo(articulo55);
+            // Articulo articulo55 = new Articulo("", "Playa", 700); //Nombre vacio
+            // AgregarArticulo(articulo55);
         }
 
         private void PrecargarVentas()
         {
-            // Publicacion venta1 = new Venta("Sombrero", false, 1000);
-            // AgregarPublicacion(venta1);
-
-            // Publicacion venta2 = new Venta("Gafas de sol", true, 450);
-            // AgregarPublicacion(venta2);
-
-            // Publicacion venta3 = new Venta("Camiseta", false, 1200);
-            // AgregarPublicacion(venta3);
-
-            // Publicacion venta4 = new Venta("Pantalón", true, 1800);
-            // AgregarPublicacion(venta4);
-
-            // Publicacion venta5 = new Venta("Bolso", false, 1500);
-            // AgregarPublicacion(venta5);
-
-            // Publicacion venta6 = new Venta("Zapatos", true, 2200);
-            // AgregarPublicacion(venta6);
-
-            // Publicacion venta7 = new Venta("Reloj", false, 4000);
-            // AgregarPublicacion(venta7);
-
-            // Publicacion venta8 = new Venta("Gorra", true, 800);
-            // AgregarPublicacion(venta8);
-
-            // Publicacion venta9 = new Venta("Abrigo", false, 3500);
-            // AgregarPublicacion(venta9);
-
-            // Publicacion venta10 = new Venta("Bufanda", true, 600);
-            // AgregarPublicacion(venta10);
-
-            // Publicacion venta11 = new Venta("Cinturón", false, -700);
-            // AgregarPublicacion(venta11);
-
-            // Publicacion venta12 = new Venta(null, true, 1800);
-            // AgregarPublicacion(venta12);
-
-            // Publicacion venta13 = new Venta("Zapatos deportivos", false, 0);
-            // AgregarPublicacion(venta13);
-
-            // Publicacion venta14 = new Venta("", true, 900);
-            // AgregarPublicacion(venta14);
-
-            // Publicacion venta15 = new Venta("Chaqueta", null, 2500);  // Si `null` es válido para `oferta_relampago`.
-            // AgregarPublicacion(venta15);
+            Publicacion venta1 = new Venta("Sombrero", new DateTime(), false, 1000);
+            AgregarPublicacion(venta1);
 
         }
 
@@ -421,26 +356,6 @@ namespace Dominio
                 throw new Exception("Publicacion null");
             }
             unaPublicacion.Validar();
-            _publicaciones.Add(unaPublicacion);
-        }
-
-        public void CrearVenta(Publicacion unaPublicacion)
-        {
-            Venta esVenta = unaPublicacion as Venta;
-            if (unaPublicacion == null)
-            {
-                throw new Exception("Invalido");
-            }
-            _publicaciones.Add(unaPublicacion);
-        }
-
-        public void CrearSubasta(Publicacion unaPublicacion)
-        {
-            Subasta esSubasta = unaPublicacion as Subasta;
-            if (esSubasta == null)
-            {
-                throw new Exception("Invalido");
-            }
             _publicaciones.Add(unaPublicacion);
         }
 

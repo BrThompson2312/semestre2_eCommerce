@@ -41,10 +41,10 @@ namespace Dominio.Entidades
             return res;
         }
 
-        public override bool Equals(object? obj)
+        public override bool Equals(object obj)
         {
             Oferta oferta = obj as Oferta;
-            return oferta != null && oferta.Id == Id;
+            return oferta != null && oferta.Id == Id || oferta.Usuario == Usuario && oferta.Monto == Monto;
         }
 
     }

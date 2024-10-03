@@ -18,18 +18,18 @@ namespace Dominio.Entidades
 
         public void Validar()
         {
-            string idArticulo = $"Articulo id_{Id}:";
+            string res = $"Articulo id_{Id}({Nombre}):";
             if (string.IsNullOrEmpty(Nombre))
             {
-                throw new Exception($"{idArticulo} Nombre invalido");
+                throw new Exception($"{res} Nombre invalido");
             } 
             else if (string.IsNullOrEmpty(Categoria))
             {
-                throw new Exception($"{idArticulo} Categoria invalido");
+                throw new Exception($"{res} Categoria invalido");
             }
-            else if (Precio < 0)
+            else if (Precio < 0 || Precio == 0)
             {
-                throw new Exception($"{idArticulo} Precio invalido: {Precio}");
+                throw new Exception($"{res} Precio invalido: {Precio}");
             }
         }
 

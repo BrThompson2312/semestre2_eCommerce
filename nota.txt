@@ -1,6 +1,2 @@
-Ignorar los archivos:
-· exex.sh
-· compilar.sh
-· ejecutar.sh
-
+Ignorar los archivos con extension .sh
 Los mismos solo se usan para la ejecución del programa en bash linux

@@ -37,8 +37,7 @@ namespace Dominio.Entidades
         
         public override bool Equals(object obj)
         {
-            Cliente cliente = obj as Cliente;
-            return cliente != null && cliente.Id == Id;
+            return base.Equals(obj);
         }
 
     }

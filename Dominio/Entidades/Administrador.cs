@@ -28,8 +28,7 @@ namespace Dominio.Entidades
 
         public override bool Equals(object obj)
         {
-            Administrador administrador = obj as Administrador;
-            return administrador != null && administrador.Id == Id;
+            return base.Equals(obj);
         }
         
     }
