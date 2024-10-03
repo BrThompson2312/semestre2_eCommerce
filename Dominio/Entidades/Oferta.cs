@@ -20,15 +20,15 @@ namespace Dominio.Entidades
         {
             if (Usuario == null)
             {
-                throw new Exception("Usuario inexistente");
+                throw new Exception($"Oferta: Usuario invalido");
             }
             else if (Monto < 0)
             {
-                throw new Exception("Monto negativo");
+                throw new Exception($"Oferta: Monto invalido: {Monto}");
             }
             else if (Fecha == null)
             {
-                throw new Exception("Fecha inexistente");
+                throw new Exception("Oferta: Fecha invalido");
             }
         }
 
@@ -44,7 +44,7 @@ namespace Dominio.Entidades
         public override bool Equals(object? obj)
         {
             Oferta oferta = obj as Oferta;
-            return oferta != null && oferta.Id != Id;
+            return oferta != null && oferta.Id == Id;
         }
 
     }

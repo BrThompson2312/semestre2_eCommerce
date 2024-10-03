@@ -18,17 +18,18 @@ namespace Dominio.Entidades
 
         public void Validar()
         {
+            string idArticulo = $"Articulo id_{Id}:";
             if (string.IsNullOrEmpty(Nombre))
             {
-                throw new Exception("Nombre vacio!");
+                throw new Exception($"{idArticulo} Nombre invalido");
             } 
             else if (string.IsNullOrEmpty(Categoria))
             {
-                throw new Exception("Categoria vacio!");
+                throw new Exception($"{idArticulo} Categoria invalido");
             }
             else if (Precio < 0)
             {
-                throw new Exception("Precio negativo!");
+                throw new Exception($"{idArticulo} Precio invalido: {Precio}");
             }
         }
 
@@ -44,7 +45,7 @@ namespace Dominio.Entidades
         public override bool Equals(object obj)
         {
             Articulo articulo = obj as Articulo;
-            return articulo != null && articulo.Id == Id;
+            return articulo != null && articulo.Id == Id || articulo.Nombre == Nombre && articulo.Categoria == Categoria;
         }
     }
 }

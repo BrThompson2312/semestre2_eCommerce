@@ -116,6 +116,9 @@ namespace Dominio
             Articulo articulo1 = new Articulo("Sombrero", "Playa", 1000);
             AgregarArticulo(articulo1);
 
+            // Articulo articulo1a = new Articulo("Sombrero", "Playa", 1000);
+            // AgregarArticulo(articulo1a);
+
             Articulo articulo2 = new Articulo("Gafas de sol", "Accesorios", 500);
             AgregarArticulo(articulo2);
 
@@ -143,145 +146,145 @@ namespace Dominio
             Articulo articulo10 = new Articulo("Bufanda", "Accesorios", 600);
             AgregarArticulo(articulo10);
 
-            // Articulo articulo11 = new Articulo("Cinturón", "Accesorios", 700);
-            // AgregarArticulo(articulo11);
+            Articulo articulo11 = new Articulo("Cinturón", "Accesorios", 700);
+            AgregarArticulo(articulo11);
 
-            // Articulo articulo12 = new Articulo("Chaqueta", "Ropa", 3000);
-            // AgregarArticulo(articulo12);
+            Articulo articulo12 = new Articulo("Chaqueta", "Ropa", 3000);
+            AgregarArticulo(articulo12);
 
-            // Articulo articulo13 = new Articulo("Vestido", "Ropa", 2800);
-            // AgregarArticulo(articulo13);
+            Articulo articulo13 = new Articulo("Vestido", "Ropa", 2800);
+            AgregarArticulo(articulo13);
 
-            // Articulo articulo14 = new Articulo("Traje de baño", "Playa", 1100);
-            // AgregarArticulo(articulo14);
+            Articulo articulo14 = new Articulo("Traje de baño", "Playa", 1100);
+            AgregarArticulo(articulo14);
 
-            // Articulo articulo15 = new Articulo("Chanclas", "Playa", 900);
-            // AgregarArticulo(articulo15);
+            Articulo articulo15 = new Articulo("Chanclas", "Playa", 900);
+            AgregarArticulo(articulo15);
 
-            // Articulo articulo16 = new Articulo("Sombrilla", "Playa", 2000);
-            // AgregarArticulo(articulo16);
+            Articulo articulo16 = new Articulo("Sombrilla", "Playa", 2000);
+            AgregarArticulo(articulo16);
 
-            // Articulo articulo17 = new Articulo("Mochila", "Accesorios", 1700);
-            // AgregarArticulo(articulo17);
+            Articulo articulo17 = new Articulo("Mochila", "Accesorios", 1700);
+            AgregarArticulo(articulo17);
 
-            // Articulo articulo18 = new Articulo("Bañador", "Playa", 1300);
-            // AgregarArticulo(articulo18);
+            Articulo articulo18 = new Articulo("Bañador", "Playa", 1300);
+            AgregarArticulo(articulo18);
 
-            // Articulo articulo19 = new Articulo("Pulsera", "Accesorios", 400);
-            // AgregarArticulo(articulo19);
+            Articulo articulo19 = new Articulo("Pulsera", "Accesorios", 400);
+            AgregarArticulo(articulo19);
 
-            // Articulo articulo20 = new Articulo("Anillo", "Accesorios", 1200);
-            // AgregarArticulo(articulo20);
+            Articulo articulo20 = new Articulo("Anillo", "Accesorios", 1200);
+            AgregarArticulo(articulo20);
 
-            // Articulo articulo21 = new Articulo("Lentes de natación", "Playa", 500);
-            // AgregarArticulo(articulo21);
+            Articulo articulo21 = new Articulo("Lentes de natación", "Playa", 500);
+            AgregarArticulo(articulo21);
 
-            // Articulo articulo22 = new Articulo("Chaleco", "Ropa", 2500);
-            // AgregarArticulo(articulo22);
+            Articulo articulo22 = new Articulo("Chaleco", "Ropa", 2500);
+            AgregarArticulo(articulo22);
 
-            // Articulo articulo23 = new Articulo("Guantes", "Accesorios", 600);
-            // AgregarArticulo(articulo23);
+            Articulo articulo23 = new Articulo("Guantes", "Accesorios", 600);
+            AgregarArticulo(articulo23);
 
-            // Articulo articulo24 = new Articulo("Cartera", "Accesorios", 1600);
-            // AgregarArticulo(articulo24);
+            Articulo articulo24 = new Articulo("Cartera", "Accesorios", 1600);
+            AgregarArticulo(articulo24);
 
-            // Articulo articulo25 = new Articulo("Falda", "Ropa", 1400);
-            // AgregarArticulo(articulo25);
+            Articulo articulo25 = new Articulo("Falda", "Ropa", 1400);
+            AgregarArticulo(articulo25);
 
-            // Articulo articulo26 = new Articulo("Pareo", "Playa", 850);
-            // AgregarArticulo(articulo26);
+            Articulo articulo26 = new Articulo("Pareo", "Playa", 850);
+            AgregarArticulo(articulo26);
 
-            // Articulo articulo27 = new Articulo("Sandalias", "Calzado", 1800);
-            // AgregarArticulo(articulo27);
+            Articulo articulo27 = new Articulo("Sandalias", "Calzado", 1800);
+            AgregarArticulo(articulo27);
 
-            // Articulo articulo28 = new Articulo("Botas", "Calzado", 3200);
-            // AgregarArticulo(articulo28);
+            Articulo articulo28 = new Articulo("Botas", "Calzado", 3200);
+            AgregarArticulo(articulo28);
 
-            // Articulo articulo29 = new Articulo("Chalina", "Accesorios", 450);
-            // AgregarArticulo(articulo29);
+            Articulo articulo29 = new Articulo("Chalina", "Accesorios", 450);
+            AgregarArticulo(articulo29);
 
-            // Articulo articulo30 = new Articulo("Corbata", "Accesorios", 750);
-            // AgregarArticulo(articulo30);
+            Articulo articulo30 = new Articulo("Corbata", "Accesorios", 750);
+            AgregarArticulo(articulo30);
 
-            // Articulo articulo31 = new Articulo("Camisa", "Ropa", 1900);
-            // AgregarArticulo(articulo31);
+            Articulo articulo31 = new Articulo("Camisa", "Ropa", 1900);
+            AgregarArticulo(articulo31);
 
-            // Articulo articulo32 = new Articulo("Short", "Ropa", 1350);
-            // AgregarArticulo(articulo32);
+            Articulo articulo32 = new Articulo("Short", "Ropa", 1350);
+            AgregarArticulo(articulo32);
 
-            // Articulo articulo33 = new Articulo("Capa", "Ropa", 2600);
-            // AgregarArticulo(articulo33);
+            Articulo articulo33 = new Articulo("Capa", "Ropa", 2600);
+            AgregarArticulo(articulo33);
 
-            // Articulo articulo34 = new Articulo("Pantaloneta", "Playa", 1150);
-            // AgregarArticulo(articulo34);
+            Articulo articulo34 = new Articulo("Pantaloneta", "Playa", 1150);
+            AgregarArticulo(articulo34);
 
-            // Articulo articulo35 = new Articulo("Sombrero de paja", "Playa", 1250);
-            // AgregarArticulo(articulo35);
+            Articulo articulo35 = new Articulo("Sombrero de paja", "Playa", 1250);
+            AgregarArticulo(articulo35);
 
-            // Articulo articulo36 = new Articulo("Tirantes", "Accesorios", 700);
-            // AgregarArticulo(articulo36);
+            Articulo articulo36 = new Articulo("Tirantes", "Accesorios", 700);
+            AgregarArticulo(articulo36);
 
-            // Articulo articulo37 = new Articulo("Medias", "Accesorios", 400);
-            // AgregarArticulo(articulo37);
+            Articulo articulo37 = new Articulo("Medias", "Accesorios", 400);
+            AgregarArticulo(articulo37);
 
-            // Articulo articulo38 = new Articulo("Pantuflas", "Calzado", 2200);
-            // AgregarArticulo(articulo38);
+            Articulo articulo38 = new Articulo("Pantuflas", "Calzado", 2200);
+            AgregarArticulo(articulo38);
 
-            // Articulo articulo39 = new Articulo("Calzoncillos", "Ropa", 950);
-            // AgregarArticulo(articulo39);
+            Articulo articulo39 = new Articulo("Calzoncillos", "Ropa", 950);
+            AgregarArticulo(articulo39);
 
-            // Articulo articulo40 = new Articulo("Gorro", "Accesorios", 650);
-            // AgregarArticulo(articulo40);
+            Articulo articulo40 = new Articulo("Gorro", "Accesorios", 650);
+            AgregarArticulo(articulo40);
 
-            // Articulo articulo41 = new Articulo("Bikini", "Playa", 1600);
-            // AgregarArticulo(articulo41);
+            Articulo articulo41 = new Articulo("Bikini", "Playa", 1600);
+            AgregarArticulo(articulo41);
 
-            // Articulo articulo42 = new Articulo("Top", "Ropa", 1100);
-            // AgregarArticulo(articulo42);
+            Articulo articulo42 = new Articulo("Top", "Ropa", 1100);
+            AgregarArticulo(articulo42);
 
-            // Articulo articulo43 = new Articulo("Traje formal", "Ropa", 5000);
-            // AgregarArticulo(articulo43);
+            Articulo articulo43 = new Articulo("Traje formal", "Ropa", 5000);
+            AgregarArticulo(articulo43);
 
-            // Articulo articulo44 = new Articulo("Botines", "Calzado", 2700);
-            // AgregarArticulo(articulo44);
+            Articulo articulo44 = new Articulo("Botines", "Calzado", 2700);
+            AgregarArticulo(articulo44);
 
-            // Articulo articulo45 = new Articulo("Camiseta sin mangas", "Ropa", 1000);
-            // AgregarArticulo(articulo45);
+            Articulo articulo45 = new Articulo("Camiseta sin mangas", "Ropa", 1000);
+            AgregarArticulo(articulo45);
 
-            // Articulo articulo46 = new Articulo("Zapatillas deportivas", "Calzado", 3500);
-            // AgregarArticulo(articulo46);
+            Articulo articulo46 = new Articulo("Zapatillas deportivas", "Calzado", 3500);
+            AgregarArticulo(articulo46);
 
-            // Articulo articulo47 = new Articulo("Riñonera", "Accesorios", 900);
-            // AgregarArticulo(articulo47);
+            Articulo articulo47 = new Articulo("Riñonera", "Accesorios", 900);
+            AgregarArticulo(articulo47);
 
-            // Articulo articulo48 = new Articulo("Bandolera", "Accesorios", 1300);
-            // AgregarArticulo(articulo48);
+            Articulo articulo48 = new Articulo("Bandolera", "Accesorios", 1300);
+            AgregarArticulo(articulo48);
 
-            // Articulo articulo49 = new Articulo("Jersey", "Ropa", 2800);
-            // AgregarArticulo(articulo49);
+            Articulo articulo49 = new Articulo("Jersey", "Ropa", 2800);
+            AgregarArticulo(articulo49);
 
-            // Articulo articulo50 = new Articulo("Gorro de lana", "Accesorios", 550);
-            // AgregarArticulo(articulo50);
+            Articulo articulo50 = new Articulo("Gorro de lana", "Accesorios", 550);
+            AgregarArticulo(articulo50);
 
             // Artículo con error en el nombre (nulo)
-            // Articulo articulo51 = new Articulo(null, "Ropa", 1000);
-            // AgregarArticulo(articulo51);
+            Articulo articulo51 = new Articulo(null, "Ropa", 1000);
+            AgregarArticulo(articulo51);
 
-            // // Artículo con error en la categoría (nulo)
-            // Articulo articulo52 = new Articulo("Camisa", null, 1800);
-            // AgregarArticulo(articulo52);
+            // Artículo con error en la categoría (nulo)
+            Articulo articulo52 = new Articulo("Camisa", null, 1800);
+            AgregarArticulo(articulo52);
 
-            // // Artículo con error en el precio (negativo)
-            // Articulo articulo53 = new Articulo("Zapatos de vestir", "Calzado", -1500);
-            // AgregarArticulo(articulo53);
+            // Artículo con error en el precio (negativo)
+            Articulo articulo53 = new Articulo("Zapatos de vestir", "Calzado", -1500);
+            AgregarArticulo(articulo53);
 
-            // // Artículo con error en el precio (valor cero)
-            // Articulo articulo54 = new Articulo("Cinturón de cuero", "Accesorios", 0);
-            // AgregarArticulo(articulo54);
+            // Artículo con error en el precio (valor cero)
+            Articulo articulo54 = new Articulo("Cinturón de cuero", "Accesorios", 0);
+            AgregarArticulo(articulo54);
 
-            // // Artículo con nombre vacío
-            // Articulo articulo55 = new Articulo("", "Playa", 700);
-            // AgregarArticulo(articulo55);
+            // Artículo con nombre vacío
+            Articulo articulo55 = new Articulo("", "Playa", 700);
+            AgregarArticulo(articulo55);
         }
 
         private void PrecargarVentas()
@@ -385,11 +388,11 @@ namespace Dominio
         {
             if (unUsuario == null)
             {
-                throw new Exception("Invalido");
+                throw new Exception("Usuario null");
             }
             if (_usuarios.Contains(unUsuario))
             {
-                throw new Exception("Usuario ya existente");
+                throw new Exception($"Usuario ya existente: {unUsuario}");
             }
             unUsuario.Validar();
             _usuarios.Add(unUsuario);
@@ -400,8 +403,8 @@ namespace Dominio
         {
             if (unArticulo == null)
             {
-                throw new Exception("Articulo invalido");
-            }
+                throw new Exception("Articulo null");
+            } 
             if (_articulos.Contains(unArticulo))
             {
                 throw new Exception($"Articulo ya existente: {unArticulo}");
@@ -413,9 +416,9 @@ namespace Dominio
         // Agregar publicacion a la lista
         public void AgregarPublicacion(Publicacion unaPublicacion)
         {
-             if (unaPublicacion == null)
+            if (unaPublicacion == null)
             {
-                throw new Exception("Publicacion invalida");
+                throw new Exception("Publicacion null");
             }
             unaPublicacion.Validar();
             _publicaciones.Add(unaPublicacion);
@@ -445,15 +448,18 @@ namespace Dominio
         {
             if (unaOferta == null)
             {
-                throw new Exception("Invalido");
+                throw new Exception("Oferta null");
             }
         }
 
-        public void ListadoPublicaciones(int pFechaInicio, int pFechaFin)
+        public void ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
         {
             foreach (Publicacion item in _publicaciones)
             {
-                Console.WriteLine(item);
+                if (item.FechaPublicacion >= pFechaInicio && item.FechaFinalizacionCompra <= pFechaFin)
+                {
+                    Console.WriteLine(item);
+                }
             }
         }
 
@@ -467,5 +473,6 @@ namespace Dominio
                 }
             }
         }
+
     }
 }

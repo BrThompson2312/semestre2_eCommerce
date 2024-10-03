@@ -8,50 +8,53 @@ namespace Main
         static Sistema _sistema = new Sistema();
         public static void Main(string[] args)
         {
-            try {
-                int salida;
-                Console.WriteLine("Bienvenido al programa, que desea?");
-                do
-                {
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.WriteLine(
-                        "\n------------------------------------\n" +
-                        "0- Salir\n" +
-                        "1- Precargar Datos\n" +
-                        "2- Listado de clientes \n" +
-                        "3- Filtrar articulos por categoría \n" +
-                        "4- Crear artículo \n" +
-                        "5- Listar publicaciones entre dos fechas \n" +
-                        "------------------------------------\n"
-                    );
-
-                    int.TryParse(Console.ReadLine(), out salida);
-                    switch (salida)
-                    {
-                        case 0:
-                            return;
-                        case 1: 
-                            PrecargarDatos(); 
-                            break;
-                        case 2: 
-                            ListadoClientes(); 
-                            break;
-                        case 3: 
-                            ListadoArticulos(); 
-                            break;
-                        case 4: 
-                            CrearArticulo(); 
-                            break;
-                        case 5: 
-                            ListadoPublicaciones(); 
-                            break;
-                    }                
-                } while (salida != 5);
-
-            } catch (Exception e)
+            int salida;
+            Console.WriteLine("Bienvenido al programa, que desea?");
+            do
             {
-                throw new Exception(e.Message);
-            }
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.WriteLine(
+                    "\n------------------------------------\n" +
+                    "0- Salir\n" +
+                    "1- Precargar Datos\n" +
+                    "2- Listado de clientes \n" +
+                    "3- Filtrar articulos por categoría \n" +
+                    "4- Crear artículo \n" +
+                    "5- Listar publicaciones entre dos fechas \n" +
+                    "------------------------------------\n"
+                );
+
+                int.TryParse(Console.ReadLine(), out salida);
+                switch (salida)
+                {
+                    case 0:
+                        return;
+                    case 1: 
+                        PrecargarDatos(); 
+                        break;
+                    case 2: 
+                        ListadoUsuarios(0); 
+                        break;
+                    case 3: 
+                        ListadoArticulos(); 
+                        break;
+                    case 4: 
+                        CrearArticulo(); 
+                        break;
+                    case 5: 
+                        ListadoPublicaciones(); 
+                        break;
+                    case 6:
+                        ListadoArticulosSinFiltro();
+                        break;
+                    case 7:
+                        ListadoUsuarios(1);
+                        break;
+                    case 8:
+                        ListadoPublicacionesSinFiltro();
+                        break;
+                }                
+            } while (salida != 5);
         }
 
         public static void PrecargarDatos()
@@ -61,21 +64,27 @@ namespace Main
                 Console.WriteLine("Precarga de datos completa!");
                 Console.ReadKey();
             } catch (Exception e) {
+                Console.BackgroundColor = ConsoleColor.Red;
                 Console.WriteLine(e.Message);
+                Console.ReadKey();
+                Console.BackgroundColor = ConsoleColor.Black;
             }
         }
 
-        public static void ListadoClientes()
+        public static void ListadoUsuarios(int tipoUsuario)
         {
+            string tipo = "clientes";
+            if (tipoUsuario == 1) tipo = "administradores";
+
             List<Usuario> _clientes = _sistema.Usuarios;
             if (_clientes.Count == 0) {
                 Console.WriteLine("**** No hay Clientes ****");
                 Console.ReadKey();
             } else {
-                Console.WriteLine("------------- Listado de clientes -------------");
+                Console.WriteLine($"------------- Listado de {tipo} -------------");
                 foreach (Usuario item in _clientes)
                 {
-                    if (item.TipoUsuario() == 0)
+                    if (item.TipoUsuario() == tipoUsuario)
                     {
                         Console.WriteLine(item);
                     }
@@ -86,13 +95,14 @@ namespace Main
 
         public static void ListadoArticulos()
         {
-            try {
-                if (_sistema.Articulos.Count == 0) 
-                {
-                    Console.WriteLine("**** No hay artículos ****");
-                    Console.ReadKey();
-                } else 
-                {
+            List<Articulo> _sisArticulos = _sistema.Articulos; 
+            if (_sisArticulos.Count == 0) 
+            {
+                Console.WriteLine("**** No hay artículos ****");
+                Console.ReadKey();
+            } else 
+            {
+                try {
                     Console.WriteLine("Que categoria desea filtrar?");
                     string categoria = Console.ReadLine();
                     if (string.IsNullOrEmpty(categoria))
@@ -102,47 +112,132 @@ namespace Main
                     Console.WriteLine("------------- Listado de articulos filtrados -------------");
                     _sistema.ListadoArticulos(categoria);
                     Console.ReadKey();
+                } catch (Exception e) {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine(e.Message);
+                    Console.ReadKey();
+                    Console.BackgroundColor = ConsoleColor.Black;
                 }
-                
-            } catch (Exception e) {
-                throw new Exception(e.Message);
             }
+        }
+
+        public static void ListadoArticulosSinFiltro()
+        {
+            List <Articulo> _sisArticulos = _sistema.Articulos;
+            if (_sisArticulos.Count == 0)
+            {
+                Console.WriteLine("**** No hay articulos ****");
+            }
+            else 
+            {
+                foreach (Articulo articulo in _sisArticulos)
+                {
+                    Console.WriteLine(articulo);
+                }
+                Console.ReadKey();
+            }
+                
         }
   
         public static void CrearArticulo()
         {
-            Console.WriteLine("Agregue articulos: ");
-            Console.WriteLine("------------------ ");
+            try {
+                Console.WriteLine("Agregue articulos: ");
+                Console.WriteLine("------------------ ");
 
-            Console.WriteLine("Nombre: ");
-            string nombreArticulo = Console.ReadLine();
+                Console.WriteLine("Nombre: ");
+                string nombreArticulo = Console.ReadLine();
 
-            Console.WriteLine("Categoria: ");
-            string categoriaArticulo = Console.ReadLine();
+                Console.WriteLine("Categoria: ");
+                string categoriaArticulo = Console.ReadLine();
 
-            Console.WriteLine("Precio: ");
-            int precioArticulo;
-            int.TryParse(Console.ReadLine(), out precioArticulo);
+                Console.WriteLine("Precio: ");
+                int precioArticulo;
+                int.TryParse(Console.ReadLine(), out precioArticulo);
 
-            Articulo unArticulo = new Articulo(nombreArticulo, categoriaArticulo, precioArticulo);
-            unArticulo.Validar();
-            _sistema.AgregarArticulo(unArticulo);
+                Articulo unArticulo = new Articulo(nombreArticulo, categoriaArticulo, precioArticulo);
+                _sistema.AgregarArticulo(unArticulo);
+            } catch (Exception e)
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.WriteLine(e.Message);
+                Console.ReadKey();
+                Console.BackgroundColor = ConsoleColor.Black;
+            }
         }
 
         public static void ListadoPublicaciones()
         {
-            try {
+            List<Publicacion> _sisPublicaciones = _sistema.Publicaciones;
+            if (_sisPublicaciones.Count == 0)
+            {
+                Console.WriteLine("**** No hay publicaciones ****");
+                Console.ReadKey();
+            }
+            else 
+            {
+                try {
+                    int inicioAnio;
+                    int inicioMes;
+                    int inicioDia;
+                    int finAnio;
+                    int finMes;
+                    int finDia;
 
-                Console.WriteLine("Eliga fecha de inicio");
-                int fechaInicio = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Eliga fecha de inicio\n");
+                    Console.WriteLine("---------------------\n");
 
-                Console.WriteLine("Eliga fecha de fin");
-                int fechaFin = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Anio: ");
+                    int.TryParse(Console.ReadLine(), out inicioAnio);
+                    
+                    Console.WriteLine("Mes: ");
+                    int.TryParse(Console.ReadLine(), out inicioMes);
 
-                _sistema.ListadoPublicaciones(fechaInicio, fechaFin);
-                
-            } catch (Exception e) {
-                Console.WriteLine(e.Message);
+                    Console.WriteLine("Dia: ");
+                    int.TryParse(Console.ReadLine(), out inicioDia);
+
+                    Console.WriteLine("Eliga fecha de fin\n");
+                    Console.WriteLine("---------------------\n");
+
+                    Console.WriteLine("Anio: ");
+                    int.TryParse(Console.ReadLine(), out finAnio);
+                    
+                    Console.WriteLine("Mes: ");
+                    int.TryParse(Console.ReadLine(), out finMes);
+
+                    Console.WriteLine("Dia: ");
+                    int.TryParse(Console.ReadLine(), out finDia);
+
+                    DateTime fechaInicio = new DateTime(inicioAnio, inicioMes, inicioDia);
+                    DateTime fechaFin = new DateTime(finAnio, finMes, finDia);
+
+                    _sistema.ListadoPublicaciones( fechaInicio, fechaFin );
+
+                } catch (Exception e) {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine(e.Message);
+                    Console.ReadKey();
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
+            }
+            
+        }
+
+        public static void ListadoPublicacionesSinFiltro()
+        {
+            List <Publicacion> _sisPublicaciones = _sistema.Publicaciones;
+            if (_sisPublicaciones.Count == 0)
+            {
+                Console.WriteLine("**** No hay publicaciones ****");
+                Console.ReadKey();
+            }
+            else 
+            {
+                foreach (Publicacion item in _sisPublicaciones)
+                {
+                    Console.WriteLine(item);
+                }
+                Console.ReadKey();
             }
         }
 

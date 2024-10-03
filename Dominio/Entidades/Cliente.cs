@@ -19,7 +19,7 @@ namespace Dominio.Entidades
             base.Validar();
             if (Saldo < 0)
             {
-                throw new Exception("Saldo negativo!");
+                throw new Exception($"Cliente: Saldo invalido: {Saldo}");
             }
         }
 

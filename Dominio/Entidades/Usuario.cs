@@ -24,20 +24,26 @@ namespace Dominio.Entidades
         {
             if (string.IsNullOrEmpty(Nombre))
             {
-                throw new Exception("Nombre vacio");
+                throw new Exception("Usuario: Nombre invalido");
             } 
             else if(string.IsNullOrEmpty(Apellido)) 
             {
-                throw new Exception("Apellido vacio");
+                throw new Exception("Usuario: Apellido invalido");
             }
-            else if(string.IsNullOrEmpty(Apellido)) 
+            else if(string.IsNullOrEmpty(Email)) 
             {
-                throw new Exception("Email vacio");
+                throw new Exception("Usuario: Email invalido");
             }
             else if(string.IsNullOrEmpty(Contrasenia)) 
             {
-                throw new Exception("Contrasenia vacio");
+                throw new Exception("Usuario: Contraseña invalido");
             }
+        }
+
+        public virtual void AgregarPublicacion(Publicacion unaPublicacion)
+        {
+            unaPublicacion.Validar();
+            _publicaciones.Add(unaPublicacion);
         }
 
         public override string ToString()

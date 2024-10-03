@@ -21,14 +21,14 @@ namespace Dominio.Entidades
 
         public virtual void Validar()
         {
-            // if (string.IsNullOrEmpty(Nombre))
-            // {
-            //     throw new Exception("Nombre vacio");
-            // }
-            // else if (EstadoPublicacion != Estado.Abierto || EstadoPublicacion != Estado.Cerrado || EstadoPublicacion != Estado.Terminado)
-            // {
-            //     throw new Exception("Estado invalido");
-            // }
+            if (string.IsNullOrEmpty(Nombre))
+            {
+                throw new Exception("Publicacion: Nombre invalido");
+            }
+            if (EstadoPublicacion != Estado.Abierto || EstadoPublicacion != Estado.Cerrado || EstadoPublicacion != Estado.Terminado)
+            {
+                throw new Exception($"Publicacion: Estado invalido: {EstadoPublicacion}");
+            }
         }
 
         public virtual void AgregarArticulo(Articulo unArticulo)
@@ -62,7 +62,7 @@ namespace Dominio.Entidades
         public override bool Equals(object obj)
         {
             Publicacion publicacion = obj as Publicacion;
-            return publicacion != null && publicacion.Id != Id;
+            return publicacion != null && publicacion.Id == Id;
         }
 
     }

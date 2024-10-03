@@ -16,11 +16,11 @@ namespace Dominio.Entidades
         {
             if (unaOferta == null)
             {
-                throw new Exception("Invalido");
+                throw new Exception("Subasta: Oferta invalido");
             }
             if (_ofertas.Contains(unaOferta))
             {
-                throw new Exception("Oferta ya existente!");
+                throw new Exception($"Subasta: Oferta existente: {unaOferta}");
             }
             _ofertas.Add(unaOferta);
         }
@@ -38,7 +38,7 @@ namespace Dominio.Entidades
         public override bool Equals(object obj)
         {
             Subasta subasta = obj as Subasta;
-            return subasta != null && subasta.Id != Id;
+            return subasta != null && subasta.Id == Id;
         }
 
     }
