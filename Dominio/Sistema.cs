@@ -443,7 +443,7 @@ namespace Dominio
         }
         /*-------------- Precarga de datos --------------*/
 
-        // Metodo para usuarios de tipo Cliente y Administrador
+        // Metodo para usuarios Cliente y Administrador
         public void AgregarUsuario(Usuario unUsuario) 
         {
             if (unUsuario == null)
