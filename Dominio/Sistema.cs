@@ -20,12 +20,9 @@ namespace Dominio
 
         public void PrecargarDatos()
         {
-            PrecargarAdministradores();
+            PrecargarAdministradores( );
             PrecargarClientes();
-            PrecargarArticulos();
-            // PrecargarVentas();
-            // PrecargarSubastas();
-            // PrecargarOfertas();
+            PrecargarPublicaciones();
         }
 
         public void Validar()
@@ -96,7 +93,7 @@ namespace Dominio
             // AgregarCliente(cliente15);
         }
 
-        private void PrecargarArticulos()
+        private void PrecargarPublicaciones()
         {
             Articulo articulo1 = new Articulo("Sombrero", "Playa", 1000);
             AgregarArticulo(articulo1);
@@ -262,59 +259,187 @@ namespace Dominio
 
             // Articulo articulo55 = new Articulo("", "Playa", 700); //Nombre vacio
             // AgregarArticulo(articulo55);
-        }
 
-        private void PrecargarVentas()
-        {
-            Publicacion venta1 = new Venta("Sombrero", new DateTime(), false, 1000);
+            /* ---------------- Precarga de ventas ---------------- */
+            Publicacion venta1 = new Venta("Descuento Playero! xd", new DateTime(2024, 5, 12), false, 1000);
             AgregarPublicacion(venta1);
+            venta1.AgregarArticulo(articulo1);
+            venta1.AgregarArticulo(articulo2);
+            venta1.AgregarArticulo(articulo3);
 
-        }
+            Publicacion venta2 = new Venta("Oferta de Verano", new DateTime(2024, 6, 20), true, 850);
+            AgregarPublicacion(venta2);
+            venta2.AgregarArticulo(articulo1);
+            venta2.AgregarArticulo(articulo2);
+            venta2.AgregarArticulo(articulo3);
 
-        private void PrecargarSubastas()
-        {
-            // Publicacion subasta1 = new Subasta("Subasta1");
-            // AgregarPublicacion(subasta1);
+            Publicacion venta3 = new Venta("Liquidación de Invierno", new DateTime(2024, 12, 1), false, 1200);
+            AgregarPublicacion(venta3);
+            venta3.AgregarArticulo(articulo1);
+            venta3.AgregarArticulo(articulo2);
+            venta3.AgregarArticulo(articulo3);
 
-            // Publicacion subasta2 = new Subasta("Subasta2");
-            // AgregarPublicacion(subasta2);
+            Publicacion venta4 = new Venta("Descuento Primavera", new DateTime(2024, 4, 15), true, 900);
+            AgregarPublicacion(venta4);
+            venta4.AgregarArticulo(articulo1);
+            venta4.AgregarArticulo(articulo2);
+            venta4.AgregarArticulo(articulo3);
 
-            // Publicacion subasta3 = new Subasta("Subasta3");
-            // AgregarPublicacion(subasta3);
+            Publicacion venta5 = new Venta("Promoción Otoñal", new DateTime(2024, 10, 10), false, 1500);
+            AgregarPublicacion(venta5);
+            venta5.AgregarArticulo(articulo4);
+            venta5.AgregarArticulo(articulo5);
+            venta5.AgregarArticulo(articulo6);
 
-            // Publicacion subasta4 = new Subasta("Subasta4");
-            // AgregarPublicacion(subasta4);
+            Publicacion venta6 = new Venta("Oferta Relámpago Accesorios", new DateTime(2024, 3, 5), true, 600);
+            AgregarPublicacion(venta6);
+            venta6.AgregarArticulo(articulo7);
+            venta6.AgregarArticulo(articulo8);
+            venta6.AgregarArticulo(articulo9);
 
-            // Publicacion subasta5 = new Subasta("Subasta5");
-            // AgregarPublicacion(subasta5);
+            Publicacion venta7 = new Venta("Descuento en Electrónica", new DateTime(2024, 7, 25), false, 2200);
+            AgregarPublicacion(venta7);
+            venta7.AgregarArticulo(articulo10);
+            venta7.AgregarArticulo(articulo11);
+            venta7.AgregarArticulo(articulo12);
 
-            // Publicacion subasta6 = new Subasta("Subasta6");
-            // AgregarPublicacion(subasta6);
+            Publicacion venta8 = new Venta("Black Friday 2024", new DateTime(2024, 11, 29), true, 3500);
+            AgregarPublicacion(venta8);
+            venta8.AgregarArticulo(articulo13);
+            venta8.AgregarArticulo(articulo14);
+            venta8.AgregarArticulo(articulo15);
 
-            // Publicacion subasta7 = new Subasta("Subasta7");
-            // AgregarPublicacion(subasta7);
+            Publicacion venta9 = new Venta("Oferta en Moda", new DateTime(2024, 8, 18), false, 1800);
+            AgregarPublicacion(venta9);
+            venta9.AgregarArticulo(articulo16);
+            venta9.AgregarArticulo(articulo17);
+            venta9.AgregarArticulo(articulo18);
 
-            // Publicacion subasta8 = new Subasta("Subasta8");
-            // AgregarPublicacion(subasta8);
+            Publicacion venta10 = new Venta("Promoción Especial Festiva", new DateTime(2024, 12, 20), true, 2000);
+            AgregarPublicacion(venta10);
+            venta10.AgregarArticulo(articulo19);
+            venta10.AgregarArticulo(articulo20);
+            venta10.AgregarArticulo(articulo21);
 
-            // Publicacion subasta9 = new Subasta("Subasta9");
-            // AgregarPublicacion(subasta9);
+            /* Precarga de ofertas */
+            Usuario cliente1 = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "123", 1000);
+            Usuario cliente2 = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "123", 2000);
+            Usuario cliente3 = new Cliente("Juan", "Benitez", "juan@gmail.com", "123", 2000);
+            Usuario cliente4 = new Cliente("Jorge", "Casuriaga", "jorg@gmail.com", "123", 2000);
 
-            // Publicacion subasta10 = new Subasta("Subasta10");
-            // AgregarPublicacion(subasta10);
-        }
+            Oferta oferta1 = new Oferta(cliente1, 1000, new DateTime(2024, 10, 3));
+            oferta1.Validar();
+            
+            Oferta oferta2 = new Oferta(cliente1, 1000, new DateTime(2024, 12, 3)); // Error, no puede haber otra oferta con el mismo monto del mismo cliente.
+            oferta2.Validar();
 
-        private void PrecargarOfertas()
-        {
-            // Usuario cliente1 = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "123", 0);
-            // Oferta oferta1 = new Oferta(cliente1, 1000, DateTime.Now);
+            Oferta oferta3 = new Oferta(cliente1, 2000, new DateTime(2024, 11, 25));
+            oferta3.Validar();
 
-            // Usuario cliente2 = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "1234", 1000);
-            // Oferta oferta2 = new Oferta(cliente2, 1000, DateTime.Now);
+            // Oferta oferta4 = new Oferta(cliente1, 0, new DateTime(2024, 10, 3)); // Monto menor o igual a 0
+            // oferta4.Validar();
 
-            // Publicacion subasta1 = new Subasta("Subasta11");
-            // subasta1.AgregarOferta(oferta1);
-            // subasta1.AgregarOferta(oferta2);
+            // Oferta oferta5 = new Oferta(null, 2000, new DateTime(2024, 10, 3)); // Usuario null
+            // oferta5.Validar();
+
+            Oferta oferta6 = new Oferta(cliente2, 1800, new DateTime(2024, 10, 3));
+            oferta6.Validar();
+
+            Oferta oferta7 = new Oferta(cliente2, 2200, new DateTime(2024, 7, 11));
+            oferta7.Validar();
+
+            Oferta oferta8 = new Oferta(cliente2, 3000, new DateTime(2024, 9, 7));
+            oferta8.Validar();
+
+            Oferta oferta9 = new Oferta(cliente3, 2750, new DateTime(2024, 11, 29));
+            oferta9.Validar();
+
+            Oferta oferta10 = new Oferta(cliente3, 3200, new DateTime(2024, 8, 19));
+            oferta10.Validar();
+
+            Oferta oferta11 = new Oferta(cliente3, 2100, new DateTime(2024, 8, 5));
+            oferta11.Validar();
+
+            Oferta oferta12 = new Oferta(cliente4, 2900, new DateTime(2024, 12, 1));
+            oferta12.Validar();
+
+            Oferta oferta13 = new Oferta(cliente4, 2400, new DateTime(2024, 3, 25));
+            oferta13.Validar();
+
+            /* ---------------- Precarga de subastas ---------------- */
+            Publicacion subasta1 = new Subasta("Subasta de accesorios", new DateTime(2024, 10, 3));
+            AgregarPublicacion(subasta1);
+            subasta1.AgregarArticulo(articulo22);
+            subasta1.AgregarArticulo(articulo23);
+            subasta1.AgregarArticulo(articulo24);
+            subasta1.AgregarOferta(oferta1);
+            // subasta1.AgregarOferta(oferta2); // Oferta debe tener diferente monto si que el usuario ya ha publicado previamente
+            // subasta1.AgregarOferta(oferta3); // Oferta con fecha de publicacion invalida
+
+            Publicacion subasta2 = new Subasta("Subasta de relojes", new DateTime(2024, 11, 5));
+            AgregarPublicacion(subasta2);
+            subasta2.AgregarArticulo(articulo25);
+            subasta2.AgregarArticulo(articulo26);
+            subasta2.AgregarArticulo(articulo27);
+            // subasta2.AgregarOferta(oferta1); // Error, fecha es menor a la de publicacion
+            subasta2.AgregarOferta(oferta2);
+            subasta2.AgregarOferta(oferta3);
+            // subasta2.AgregarOferta(oferta13); // Mismo error de fecha
+            
+            Publicacion subasta3 = new Subasta("Subasta de ropa de verano", new DateTime(2024, 6, 15));
+            AgregarPublicacion(subasta3);
+            subasta3.AgregarArticulo(articulo28);
+            subasta3.AgregarArticulo(articulo29);
+            subasta3.AgregarArticulo(articulo30);
+            subasta3.AgregarOferta(oferta6);
+            // subasta3.AgregarOferta(oferta6); // Misma oferta
+            subasta3.AgregarOferta(oferta7);
+            subasta3.AgregarOferta(oferta8);
+            subasta3.AgregarOferta(oferta12);
+
+            Publicacion subasta4 = new Subasta("Subasta de tecnología", new DateTime(2024, 7, 20));
+            AgregarPublicacion(subasta4);
+            subasta4.AgregarArticulo(articulo31);
+            subasta4.AgregarArticulo(articulo32);
+            subasta4.AgregarArticulo(articulo33);
+            subasta4.AgregarOferta(oferta9);
+            subasta4.AgregarOferta(oferta10);
+            subasta4.AgregarOferta(oferta11);
+
+            Publicacion subasta5 = new Subasta("Subasta de calzado deportivo", new DateTime(2024, 9, 12));
+            AgregarPublicacion(subasta5);
+            subasta5.AgregarArticulo(articulo34);
+            subasta5.AgregarArticulo(articulo35);
+            subasta5.AgregarArticulo(articulo36);
+
+            Publicacion subasta6 = new Subasta("Subasta de productos de invierno", new DateTime(2024, 12, 1));
+            AgregarPublicacion(subasta6);
+            subasta6.AgregarArticulo(articulo37);
+            subasta6.AgregarArticulo(articulo38);
+            subasta6.AgregarArticulo(articulo39);
+
+            Publicacion subasta7 = new Subasta("Subasta de bolsos y carteras", new DateTime(2024, 5, 10));
+            AgregarPublicacion(subasta7);
+            subasta7.AgregarArticulo(articulo40);
+            subasta7.AgregarArticulo(articulo41);
+            subasta7.AgregarArticulo(articulo42);
+
+            Publicacion subasta8 = new Subasta("Subasta de artículos de cocina", new DateTime(2024, 8, 22));
+            AgregarPublicacion(subasta8);
+            subasta8.AgregarArticulo(articulo43);
+            subasta8.AgregarArticulo(articulo44);
+            subasta8.AgregarArticulo(articulo45);
+
+            Publicacion subasta9 = new Subasta("Subasta de libros y revistas", new DateTime(2024, 3, 17));
+            AgregarPublicacion(subasta9);
+            subasta9.AgregarArticulo(articulo46);
+            subasta9.AgregarArticulo(articulo47);
+            subasta9.AgregarArticulo(articulo48);
+
+            Publicacion subasta10 = new Subasta("Subasta de muebles", new DateTime(2024, 4, 25));
+            AgregarPublicacion(subasta10);
+            subasta10.AgregarArticulo(articulo49);
+            subasta10.AgregarArticulo(articulo50);
         }
         /*-------------- Precarga de datos --------------*/
 
@@ -357,14 +482,6 @@ namespace Dominio
             }
             unaPublicacion.Validar();
             _publicaciones.Add(unaPublicacion);
-        }
-
-        public void AgregarOferta(Oferta unaOferta)
-        {
-            if (unaOferta == null)
-            {
-                throw new Exception("Oferta null");
-            }
         }
 
         public void ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)

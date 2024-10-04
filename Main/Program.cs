@@ -183,10 +183,10 @@ namespace Main
                     int finMes;
                     int finDia;
 
-                    Console.WriteLine("Eliga fecha de inicio\n");
-                    Console.WriteLine("---------------------\n");
+                    Console.WriteLine("Eliga fecha de inicio");
+                    Console.WriteLine("---------------------");
 
-                    Console.WriteLine("Anio: ");
+                    Console.WriteLine("Año: ");
                     int.TryParse(Console.ReadLine(), out inicioAnio);
                     
                     Console.WriteLine("Mes: ");
@@ -195,10 +195,10 @@ namespace Main
                     Console.WriteLine("Dia: ");
                     int.TryParse(Console.ReadLine(), out inicioDia);
 
-                    Console.WriteLine("Eliga fecha de fin\n");
-                    Console.WriteLine("---------------------\n");
+                    Console.WriteLine("Eliga fecha de fin");
+                    Console.WriteLine("---------------------");
 
-                    Console.WriteLine("Anio: ");
+                    Console.WriteLine("Año: ");
                     int.TryParse(Console.ReadLine(), out finAnio);
                     
                     Console.WriteLine("Mes: ");

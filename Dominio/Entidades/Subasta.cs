@@ -4,8 +4,7 @@ namespace Dominio.Entidades
     {
         private List<Oferta> _ofertas = new List<Oferta>();
 
-        public Subasta (string _nombre, DateTime _fechaPublicacion) : base(_nombre, _fechaPublicacion) {
-        }
+        public Subasta (string _nombre, DateTime _fechaPublicacion) : base(_nombre, _fechaPublicacion) {}
 
         public override void Validar()
         {
@@ -14,24 +13,32 @@ namespace Dominio.Entidades
 
         public override void AgregarOferta(Oferta unaOferta)
         {
+            string res = $"Subasta id_{Id}({Nombre})";
             if (unaOferta == null)
             {
-                throw new Exception("Subasta: Oferta invalido");
+                throw new Exception($"{res}: Oferta invalido");
             }
             if (_ofertas.Contains(unaOferta))
             {
-                throw new Exception($"Subasta: Oferta existente: {unaOferta}");
+                throw new Exception($"{res}: Oferta existente: {unaOferta}");
             }
+            if (unaOferta.Fecha < FechaPublicacion)
+            {
+                throw new Exception($"{res}: oferta con fecha menor a la de la publicacion: \n Fecha de publicacion: {FechaPublicacion} \n Fecha de oferta(id_{unaOferta.Id}): {unaOferta.Fecha}");
+            }
+            unaOferta.Validar();
             _ofertas.Add(unaOferta);
         }
 
         public override string ToString()
         {
             string res = base.ToString();
+            res += "Ofertas: \n";
             foreach (Oferta item in _ofertas)
             {
-                res += $"{item}";
+                res += $"/// {item}\n";
             }
+            res += "-------------------------\n";
             return res;
         }
 

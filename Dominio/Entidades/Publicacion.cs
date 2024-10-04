@@ -25,7 +25,7 @@ namespace Dominio.Entidades
             {
                 throw new Exception("Publicacion: Nombre invalido");
             }
-            if (EstadoPublicacion != Estado.Abierto || EstadoPublicacion != Estado.Cerrado || EstadoPublicacion != Estado.Terminado)
+            if (EstadoPublicacion != Estado.Abierto && EstadoPublicacion != Estado.Cerrado && EstadoPublicacion != Estado.Terminado)
             {
                 throw new Exception($"Publicacion: Estado invalido: {EstadoPublicacion}");
             }
@@ -33,7 +33,6 @@ namespace Dominio.Entidades
 
         public virtual void AgregarArticulo(Articulo unArticulo)
         {
-            unArticulo.Validar();
             _articulos.Add(unArticulo);
         }
 
@@ -42,20 +41,20 @@ namespace Dominio.Entidades
         public override string ToString()
         {
             string res = "";
-            res += $"Id: {Id}";
-            res += $"Nombre: {Nombre}";
-            res += $"EstadoPublicacion: {EstadoPublicacion}";
-            res += $"Fecha_publicacion: {FechaPublicacion}";
+            res += $"Id: {Id} -------------------------\n";
+            res += $"Nombre: {Nombre}\n";
+            res += $"EstadoPublicacion: {EstadoPublicacion}\n";
+            res += $"Fecha_publicacion: {FechaPublicacion}\n";
 
-            res += $"Articulos: ";
+            res += $"Articulos:\n";
             foreach (Articulo unArticulo in _articulos)
             {
-                res += $"///: {unArticulo}";
+                res += $"///: {unArticulo}\n";
             }
 
-            res += $"Cliente que realizó la compra: {CompraRealizadaCliente}";
-            res += $"Administrador que FINALIZÓ la compra: {CompraFinalizadaAdministrador}";
-            res += $"Fecha de compra finalizada: {FechaFinalizacionCompra}";
+            res += $"Cliente que realizó la compra: {CompraRealizadaCliente}\n";
+            res += $"Administrador que FINALIZÓ la compra: {CompraFinalizadaAdministrador}\n";
+            res += $"Fecha de compra finalizada: {FechaFinalizacionCompra}\n";
             return res;
         }
 

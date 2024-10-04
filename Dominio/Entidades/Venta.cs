@@ -5,7 +5,12 @@ namespace Dominio.Entidades
         public bool OfertaRelampago {get; set;}
         public decimal PrecioFinal {get; set;}
 
-        public Venta ( string _nombre, DateTime _fechaPublicacion, bool _ofertaRelampago, decimal _precioFinal) : base(_nombre, _fechaPublicacion) {
+        public Venta ( 
+            string _nombre, 
+            DateTime _fechaPublicacion, 
+            bool _ofertaRelampago, 
+            decimal _precioFinal
+        ) : base( _nombre, _fechaPublicacion ) {
             OfertaRelampago = _ofertaRelampago;
             PrecioFinal = _precioFinal;
         }
@@ -27,8 +32,9 @@ namespace Dominio.Entidades
         public override string ToString()
         {
             string res = base.ToString();
-            res += $"Oferta relampago: {OfertaRelampago}";
-            res += $"Precio final: {PrecioFinal}";
+            res += $"Oferta relampago: {OfertaRelampago}\n";
+            res += $"Precio final: {PrecioFinal}\n";
+            res += "-------------------------\n";
             return res;
         }
 

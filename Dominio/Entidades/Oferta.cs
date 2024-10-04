@@ -20,24 +20,24 @@ namespace Dominio.Entidades
         {
             if (Usuario == null)
             {
-                throw new Exception($"Oferta: Usuario invalido");
+                throw new Exception($"Oferta: Usuario null");
             }
-            else if (Monto < 0)
+            if (Monto <= 0)
             {
                 throw new Exception($"Oferta: Monto invalido: {Monto}");
             }
-            else if (Fecha == null)
+            if (Fecha == null)
             {
-                throw new Exception("Oferta: Fecha invalido");
+                throw new Exception($"Oferta: Fecha invalido: {Fecha}");
             }
         }
 
         public override string ToString()
         {
-            string res = $"Id {Id}";
-            res += $"Usuario: {Usuario}";
-            res += $"Monto: {Monto}";
-            res += $"Fecha: {Fecha}";
+            string res = $" Id {Id} ";
+            res += $" Usuario: {Usuario} ";
+            res += $" Monto: {Monto} ";
+            res += $" Fecha: {Fecha} ";
             return res;
         }
 
