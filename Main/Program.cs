@@ -44,15 +44,17 @@ namespace Main
                     case 5: 
                         ListadoPublicaciones(); 
                         break;
-                    case 6:
-                        ListadoArticulosSinFiltro();
-                        break;
-                    case 7:
-                        ListadoUsuarios(1);
-                        break;
-                    case 8:
-                        ListadoPublicacionesSinFiltro();
-                        break;
+
+                    // // Menu oculto:
+                    // case 6:
+                    //     ListadoArticulosSinFiltro();
+                    //     break;
+                    // case 7:
+                    //     ListadoUsuarios(1);
+                    //     break;
+                    // case 8:
+                    //     ListadoPublicacionesSinFiltro();
+                    //     break;
                 }                
             } while (salida != 0);
         }
@@ -123,22 +125,22 @@ namespace Main
             }
         }
 
-        private static void ListadoArticulosSinFiltro()
-        {
-            List <Articulo> _sisArticulos = _sistema.Articulos;
-            if (_sisArticulos.Count == 0)
-            {
-                Console.WriteLine("**** No hay articulos ****");
-            }
-            else 
-            {
-                foreach (Articulo articulo in _sisArticulos)
-                {
-                    Console.WriteLine(articulo);
-                }
-                Console.ReadKey();
-            }
-        }
+        // private static void ListadoArticulosSinFiltro()
+        // {
+        //     List <Articulo> _sisArticulos = _sistema.Articulos;
+        //     if (_sisArticulos.Count == 0)
+        //     {
+        //         Console.WriteLine("**** No hay articulos ****");
+        //     }
+        //     else 
+        //     {
+        //         foreach (Articulo articulo in _sisArticulos)
+        //         {
+        //             Console.WriteLine(articulo);
+        //         }
+        //         Console.ReadKey();
+        //     }
+        // }
   
         private static void CrearArticulo()
         {
@@ -215,23 +217,23 @@ namespace Main
             }        
         }
 
-        private static void ListadoPublicacionesSinFiltro()
-        {
-            List <Publicacion> _sisPublicaciones = _sistema.Publicaciones;
-            if (_sisPublicaciones.Count == 0)
-            {
-                Console.WriteLine("**** No hay publicaciones ****");
-                Console.ReadKey();
-            }
-            else 
-            {
-                foreach (Publicacion item in _sisPublicaciones)
-                {
-                    Console.WriteLine(item);
-                }
-                Console.ReadKey();
-            }
-        }
+        // private static void ListadoPublicacionesSinFiltro()
+        // {
+        //     List <Publicacion> _sisPublicaciones = _sistema.Publicaciones;
+        //     if (_sisPublicaciones.Count == 0)
+        //     {
+        //         Console.WriteLine("**** No hay publicaciones ****");
+        //         Console.ReadKey();
+        //     }
+        //     else 
+        //     {
+        //         foreach (Publicacion item in _sisPublicaciones)
+        //         {
+        //             Console.WriteLine(item);
+        //         }
+        //         Console.ReadKey();
+        //     }
+        // }
 
     }
 }
