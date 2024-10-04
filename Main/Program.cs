@@ -117,7 +117,6 @@ namespace Main
                     Console.WriteLine("------------- Listado de articulos filtrados -------------");
                     _sistema.ListadoArticulos(categoria);
                     Console.ReadKey();
-                    
                 }
             } catch (Exception e) {
                 Error(e);
@@ -139,7 +138,6 @@ namespace Main
                 }
                 Console.ReadKey();
             }
-                
         }
   
         private static void CrearArticulo()

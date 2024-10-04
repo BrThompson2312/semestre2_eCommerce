@@ -20,7 +20,7 @@ namespace Dominio
 
         public void PrecargarDatos()
         {
-            PrecargarAdministradores( );
+            PrecargarAdministradores();
             PrecargarClientes();
             PrecargarPublicaciones();
         }
@@ -484,6 +484,7 @@ namespace Dominio
             _publicaciones.Add(unaPublicacion);
         }
 
+        // Filtrar publicaciones por fecha de inicio y fecha de fin
         public void ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
         {
             foreach (Publicacion item in _publicaciones)
@@ -495,6 +496,7 @@ namespace Dominio
             }
         }
 
+        // Listado de todos los articulos
         public void ListadoArticulos(string unaCategoria)
         {
             foreach (Articulo item in _articulos)

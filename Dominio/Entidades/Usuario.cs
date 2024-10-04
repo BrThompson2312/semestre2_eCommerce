@@ -8,7 +8,6 @@ namespace Dominio.Entidades
         public string Apellido {get; set;}
         public string Email {get; set;}
         public string Contrasenia {get; set;}
-        private List<Publicacion> _publicaciones = new List<Publicacion>();
 
         // Constructor
         public Usuario(string _nombre, string _apellido, string _email, string _contrasenia)
@@ -41,12 +40,6 @@ namespace Dominio.Entidades
             }
         }
 
-        public virtual void AgregarPublicacion(Publicacion unaPublicacion)
-        {
-            unaPublicacion.Validar();
-            _publicaciones.Add(unaPublicacion);
-        }
-
         public override string ToString()
         {
             string res = $" Id: {Id} ";
@@ -54,10 +47,6 @@ namespace Dominio.Entidades
             res += $" Apellido: {Apellido} ";
             res += $" Email: {Email} ";
             res += $" Contraseña: {Contrasenia} ";
-            foreach(Publicacion _publicacion in _publicaciones)
-            {
-                res += $" {_publicacion} ";
-            }
             return res;
         }
 
