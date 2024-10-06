@@ -104,7 +104,7 @@ namespace Main
         {
             try {
                 List<Articulo> _sisArticulos = _sistema.Articulos; 
-                if (_sisArticulos.Count == 0) 
+                if (_sisArticulos.Count == 0)
                 {
                     Console.WriteLine("**** No hay artículos ****");
                     Console.ReadKey();
@@ -117,7 +117,11 @@ namespace Main
                         throw new Exception("Entrada inválida");
                     }
                     Console.WriteLine("------------- Listado de articulos filtrados -------------");
-                    _sistema.ListadoArticulos(categoria);
+                    List<Articulo> _articulosFiltrados =_sistema.ListadoArticulos(categoria);
+                    foreach (Articulo item in _articulosFiltrados)
+                    {
+                        Console.WriteLine(item);
+                    }
                     Console.ReadKey();
                 }
             } catch (Exception e) {
@@ -176,12 +180,7 @@ namespace Main
                 }
                 else 
                 {
-                    int inicioAnio;
-                    int inicioMes;
-                    int inicioDia;
-                    int finAnio;
-                    int finMes;
-                    int finDia;
+                    int inicioAnio, inicioMes, inicioDia, finAnio, finMes, finDia;
 
                     Console.WriteLine("Eliga fecha de inicio");
                     Console.WriteLine("---------------------");
@@ -210,7 +209,11 @@ namespace Main
                     DateTime fechaInicio = new DateTime(inicioAnio, inicioMes, inicioDia);
                     DateTime fechaFin = new DateTime(finAnio, finMes, finDia);
 
-                    _sistema.ListadoPublicaciones( fechaInicio, fechaFin );
+                    List<Publicacion> _listadoPublicaciones = _sistema.ListadoPublicaciones( fechaInicio, fechaFin );
+                    foreach (Publicacion item in _listadoPublicaciones)
+                    {
+                        Console.WriteLine(item);
+                    }
                 }
             } catch (Exception e) {
                 Error(e);

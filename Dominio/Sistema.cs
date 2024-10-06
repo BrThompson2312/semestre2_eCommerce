@@ -444,68 +444,72 @@ namespace Dominio
         /*-------------- Precarga de datos --------------*/
 
         // Metodo para usuarios Cliente y Administrador
-        public void AgregarUsuario(Usuario unUsuario) 
+        public void AgregarUsuario(Usuario pUsuario) 
         {
-            if (unUsuario == null)
+            if (pUsuario == null)
             {
                 throw new Exception("Usuario null");
             }
-            if (_usuarios.Contains(unUsuario))
+            if (_usuarios.Contains(pUsuario))
             {
-                throw new Exception($"Usuario ya existente: {unUsuario}");
+                throw new Exception($"Usuario ya existente: {pUsuario}");
             }
-            unUsuario.Validar();
-            _usuarios.Add(unUsuario);
+            pUsuario.Validar();
+            _usuarios.Add(pUsuario);
         }
 
         // Agregar articulo a la lista
-        public void AgregarArticulo(Articulo unArticulo) 
+        public void AgregarArticulo(Articulo pArticulo) 
         {
-            if (unArticulo == null)
+            if (pArticulo == null)
             {
                 throw new Exception("Articulo null");
             } 
-            if (_articulos.Contains(unArticulo))
+            if (_articulos.Contains(pArticulo))
             {
-                throw new Exception($"Articulo ya existente: {unArticulo}");
+                throw new Exception($"Articulo ya existente: {pArticulo}");
             }
-            unArticulo.Validar();
-            _articulos.Add(unArticulo);
+            pArticulo.Validar();
+            _articulos.Add(pArticulo);
         }
 
         // Agregar publicacion a la lista
-        public void AgregarPublicacion(Publicacion unaPublicacion)
+        public void AgregarPublicacion(Publicacion pPublicacion)
         {
-            if (unaPublicacion == null)
+            if (pPublicacion == null)
             {
                 throw new Exception("Publicacion null");
             }
-            unaPublicacion.Validar();
-            _publicaciones.Add(unaPublicacion);
+            pPublicacion.Validar();
+            _publicaciones.Add(pPublicacion);
         }
 
         // Filtrar publicaciones por fecha de inicio y fecha de fin
-        public void ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
+        public List<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
         {
+            List <Publicacion> _auxPublicaciones = new List<Publicacion>();
             foreach (Publicacion item in _publicaciones)
             {
                 if (item.FechaPublicacion >= pFechaInicio && item.FechaFinalizacionCompra <= pFechaFin)
                 {
-                    Console.WriteLine(item);
+                    _auxPublicaciones.Add(item);
                 }
             }
+            return _auxPublicaciones;
         }
 
         // Listado de todos los articulos
-        public void ListadoArticulos(string unaCategoria)
+        public List<Articulo> ListadoArticulos(string pCategoria)
         {
+            List<Articulo> _auxArticulos = new List<Articulo>();
             foreach (Articulo item in _articulos)
             {
-                if (item.Categoria == unaCategoria)
+                if (item.Categoria == pCategoria)
                 {
-                    Console.WriteLine(item);
+                    _auxArticulos.Add(item);
                 }
             }
+            return _auxArticulos;
         }
 
     }
