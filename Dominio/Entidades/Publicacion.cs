@@ -23,7 +23,7 @@ namespace Dominio.Entidades
         {
             if (string.IsNullOrEmpty(Nombre))
             {
-                throw new Exception("Publicacion: Nombre invalido");
+                throw new Exception($"Publicacion id_{Id}({Nombre}): Nombre invalido");
             }
             if (EstadoPublicacion != Estado.Abierto && EstadoPublicacion != Estado.Cerrado && EstadoPublicacion != Estado.Terminado)
             {
@@ -31,9 +31,10 @@ namespace Dominio.Entidades
             }
         }
 
-        public virtual void AgregarArticulo(Articulo unArticulo)
+        public virtual void AgregarArticulo(Articulo pArticulo)
         {
-            _articulos.Add(unArticulo);
+            pArticulo.Validar();
+            _articulos.Add(pArticulo);
         }
 
         public abstract void AgregarOferta(Oferta unaOferta);

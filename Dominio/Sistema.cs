@@ -245,16 +245,16 @@ namespace Dominio
             Articulo articulo50 = new Articulo("Gorro de lana", "Accesorios", 550);
             AgregarArticulo(articulo50);
 
-            // Articulo articulo51 = new Articulo(null, "Ropa", 1000); //Nombre nulo, no valido
+            // Articulo articulo51 = new Articulo(null, "Ropa", 1000); //Nombre null
             // AgregarArticulo(articulo51);
 
-            // Articulo articulo52 = new Articulo("Camisa", null, 1800); // Categoria nula, no valido
+            // Articulo articulo52 = new Articulo("Camisa", null, 1800); // Categoria null
             // AgregarArticulo(articulo52);
 
             // Articulo articulo53 = new Articulo("Zapatos de vestir", "Calzado", -1500); // Precio negativo
             // AgregarArticulo(articulo53);
 
-            // Articulo articulo54 = new Articulo("Cinturón de cuero", "Accesorios", 0); // Precio invalido, no puede ser 0
+            // Articulo articulo54 = new Articulo("Cinturón de cuero", "Accesorios", 0); // Precio no puede ser 0
             // AgregarArticulo(articulo54);
 
             // Articulo articulo55 = new Articulo("", "Playa", 700); //Nombre vacio
@@ -321,50 +321,37 @@ namespace Dominio
             venta10.AgregarArticulo(articulo20);
             venta10.AgregarArticulo(articulo21);
 
-            /* Precarga de ofertas */
+            // Publicacion venta11 = new Venta("Promocion Especial Verano", new DateTime(2024, 11, 20), false, 0); // Precio final no puede ser 0
+            // AgregarPublicacion(venta11);
+
+            // Publicacion venta12 = new Venta("", new DateTime(2024, 4, 10), true, 5000); // Nombre vacio
+            // AgregarPublicacion(venta12);
+
+            // Publicacion venta13 = new Venta(null, new DateTime(2024, 4, 10), true, 5000); // Nombre null
+            // AgregarPublicacion(venta13);
+
+            // Publicacion venta14 = new Venta("Ultrapromocion", new DateTime(2024, 6, 11), true, -3000); // Precio negativo
+            // AgregarPublicacion(venta14);
+
+            /* ---------------- Precarga de ofertas ---------------- */
             Usuario cliente1 = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "123", 1000);
             Usuario cliente2 = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "123", 2000);
             Usuario cliente3 = new Cliente("Juan", "Benitez", "juan@gmail.com", "123", 2000);
             Usuario cliente4 = new Cliente("Jorge", "Casuriaga", "jorg@gmail.com", "123", 2000);
 
             Oferta oferta1 = new Oferta(cliente1, 1000, new DateTime(2024, 10, 3));
-            oferta1.Validar();
-            
             Oferta oferta2 = new Oferta(cliente1, 1000, new DateTime(2024, 12, 3)); // Error, no puede haber otra oferta con el mismo monto del mismo cliente.
-            oferta2.Validar();
-
             Oferta oferta3 = new Oferta(cliente1, 2000, new DateTime(2024, 11, 25));
-            oferta3.Validar();
-
             // Oferta oferta4 = new Oferta(cliente1, 0, new DateTime(2024, 10, 3)); // Monto menor o igual a 0
-            // oferta4.Validar();
-
             // Oferta oferta5 = new Oferta(null, 2000, new DateTime(2024, 10, 3)); // Usuario null
-            // oferta5.Validar();
-
             Oferta oferta6 = new Oferta(cliente2, 1800, new DateTime(2024, 10, 3));
-            oferta6.Validar();
-
             Oferta oferta7 = new Oferta(cliente2, 2200, new DateTime(2024, 7, 11));
-            oferta7.Validar();
-
             Oferta oferta8 = new Oferta(cliente2, 3000, new DateTime(2024, 9, 7));
-            oferta8.Validar();
-
             Oferta oferta9 = new Oferta(cliente3, 2750, new DateTime(2024, 11, 29));
-            oferta9.Validar();
-
             Oferta oferta10 = new Oferta(cliente3, 3200, new DateTime(2024, 8, 19));
-            oferta10.Validar();
-
             Oferta oferta11 = new Oferta(cliente3, 2100, new DateTime(2024, 8, 5));
-            oferta11.Validar();
-
             Oferta oferta12 = new Oferta(cliente4, 2900, new DateTime(2024, 12, 1));
-            oferta12.Validar();
-
             Oferta oferta13 = new Oferta(cliente4, 2400, new DateTime(2024, 3, 25));
-            oferta13.Validar();
 
             /* ---------------- Precarga de subastas ---------------- */
             Publicacion subasta1 = new Subasta("Subasta de accesorios", new DateTime(2024, 10, 3));
@@ -373,7 +360,7 @@ namespace Dominio
             subasta1.AgregarArticulo(articulo23);
             subasta1.AgregarArticulo(articulo24);
             subasta1.AgregarOferta(oferta1);
-            // subasta1.AgregarOferta(oferta2); // Oferta debe tener diferente monto si que el usuario ya ha publicado previamente
+            // subasta1.AgregarOferta(oferta2); // Oferta debe tener diferente monto si es que el usuario ya ha publicado previamente
             // subasta1.AgregarOferta(oferta3); // Oferta con fecha de publicacion invalida
 
             Publicacion subasta2 = new Subasta("Subasta de relojes", new DateTime(2024, 11, 5));
@@ -440,10 +427,15 @@ namespace Dominio
             AgregarPublicacion(subasta10);
             subasta10.AgregarArticulo(articulo49);
             subasta10.AgregarArticulo(articulo50);
+
+            // Publicacion subasta11 = new Subasta(null, new DateTime(2024, 1, 4)); // Nombre no puede ser null
+            // subasta11.Validar();
+
+            // Publicacion subasta12 = new Subasta("", new DateTime(2024, 7, 2)); // Nombre no puede ser vacio
+            // subasta12.Validar();
         }
         /*-------------- Precarga de datos --------------*/
 
-        // Metodo para usuarios Cliente y Administrador
         public void AgregarUsuario(Usuario pUsuario) 
         {
             if (pUsuario == null)
@@ -458,7 +450,6 @@ namespace Dominio
             _usuarios.Add(pUsuario);
         }
 
-        // Agregar articulo a la lista
         public void AgregarArticulo(Articulo pArticulo) 
         {
             if (pArticulo == null)
@@ -473,7 +464,6 @@ namespace Dominio
             _articulos.Add(pArticulo);
         }
 
-        // Agregar publicacion a la lista
         public void AgregarPublicacion(Publicacion pPublicacion)
         {
             if (pPublicacion == null)
@@ -484,7 +474,6 @@ namespace Dominio
             _publicaciones.Add(pPublicacion);
         }
 
-        // Filtrar publicaciones por fecha de inicio y fecha de fin
         public List<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
         {
             List <Publicacion> _auxPublicaciones = new List<Publicacion>();
@@ -498,7 +487,6 @@ namespace Dominio
             return _auxPublicaciones;
         }
 
-        // Listado de todos los articulos
         public List<Articulo> ListadoArticulos(string pCategoria)
         {
             List<Articulo> _auxArticulos = new List<Articulo>();

@@ -17,10 +17,11 @@ namespace Dominio.Entidades
 
         public override void Validar()
         {
+            string res = $"Venta id_{Id}({Nombre})";
             base.Validar();
-            if (PrecioFinal < 0)
+            if (PrecioFinal <= 0)
             {
-                throw new Exception($"Venta: PrecioFinal invalido: {PrecioFinal}");
+                throw new Exception($"{res}: PrecioFinal invalido: {PrecioFinal}");
             }
         }
 
