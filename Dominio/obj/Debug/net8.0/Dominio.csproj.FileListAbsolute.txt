@@ -21,3 +21,15 @@
 /var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/refint/Dominio.dll
 /var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/Dominio.pdb
 /var/www/html/lenguajes/cSharp/eCommerce/Dominio/obj/Debug/net8.0/ref/Dominio.dll
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/bin/Debug/net8.0/Dominio.deps.json
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/bin/Debug/net8.0/Dominio.dll
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/bin/Debug/net8.0/Dominio.pdb
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/Debug/net8.0/Dominio.GeneratedMSBuildEditorConfig.editorconfig
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfoInputs.cache
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/Debug/net8.0/Dominio.AssemblyInfo.cs
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/Debug/net8.0/Dominio.csproj.CoreCompileInputs.cache
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/Debug/net8.0/Dominio.sourcelink.json
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/Debug/net8.0/Dominio.dll
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/Debug/net8.0/refint/Dominio.dll
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/Debug/net8.0/Dominio.pdb
+/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/Debug/net8.0/ref/Dominio.dll

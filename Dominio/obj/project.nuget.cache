@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/lZbFM3Dx3ryHxBVPkcGAp8d7hsDfHFTN5/NW8T0yiNvhiJklezAVtXnwOQkSzHWCiS2t/lryPLg/TwzNsS+Hw==",
+  "dgSpecHash": "ZtUIB8gmExlV393zanPV37z7/ydEPvCVjYQLzZxokoqQPPwyxZlyD60Nwidiy76PGqYX3aFLGIv7NKg1TRGwGQ==",
   "success": true,
-  "projectFilePath": "/var/www/html/lenguajes/cSharp/eCommerce/Dominio/Dominio.csproj",
+  "projectFilePath": "/home/bruno/Documentos/semestre2_eCommerce/Dominio/Dominio.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

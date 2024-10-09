@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SQ7qz3HfBwlCILAH/HatrxL/xtO/JAyIsgNsRHNgvfhnKoP/9ZEr7MUov4lcq9Ddjv5j6R3SDBrkHuxmb9dcCg==",
+  "dgSpecHash": "YltNlDs0V/cggC5NwJfKn+iHiMR4eARjR0otvaprILS3WjTup8co5DJSX4/o0GOWZDj1Szc9LREWBmBuB/jcxg==",
   "success": true,
-  "projectFilePath": "/var/www/html/lenguajes/cSharp/eCommerce/Main/Main.csproj",
+  "projectFilePath": "/home/bruno/Documentos/semestre2_eCommerce/Main/Main.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
