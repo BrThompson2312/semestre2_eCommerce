@@ -18,7 +18,7 @@ namespace Dominio
             get { return _articulos; }
         }
 
-        public void PrecargarDatos()
+        private void PrecargarDatos()
         {
             PrecargarAdministradores();
             PrecargarClientes();
@@ -27,6 +27,11 @@ namespace Dominio
 
         public void Validar()
         {
+        }
+
+        public Sistema()
+        {
+            PrecargarDatos();
         }
 
         /*-------------- Precarga de datos --------------*/

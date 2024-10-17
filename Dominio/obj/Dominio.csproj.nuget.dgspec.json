@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/bruno/Documentos/semestre2_eCommerce/Dominio/Dominio.csproj": {}
+    "/home/bruno/Descargas/semestre2_eCommerce/Dominio/Dominio.csproj": {}
   },
   "projects": {
-    "/home/bruno/Documentos/semestre2_eCommerce/Dominio/Dominio.csproj": {
+    "/home/bruno/Descargas/semestre2_eCommerce/Dominio/Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/bruno/Documentos/semestre2_eCommerce/Dominio/Dominio.csproj",
+        "projectUniqueName": "/home/bruno/Descargas/semestre2_eCommerce/Dominio/Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "/home/bruno/Documentos/semestre2_eCommerce/Dominio/Dominio.csproj",
+        "projectPath": "/home/bruno/Descargas/semestre2_eCommerce/Dominio/Dominio.csproj",
         "packagesPath": "/home/bruno/.nuget/packages/",
-        "outputPath": "/home/bruno/Documentos/semestre2_eCommerce/Dominio/obj/",
+        "outputPath": "/home/bruno/Descargas/semestre2_eCommerce/Dominio/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/bruno/.nuget/NuGet/NuGet.Config"

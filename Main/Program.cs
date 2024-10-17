@@ -70,7 +70,7 @@ namespace Main
         private static void PrecargarDatos()
         {
             try {
-                _sistema.PrecargarDatos();
+               // _sistema.PrecargarDatos();
                 Console.WriteLine("Precarga de datos completa!");
                 Console.ReadKey();
             } catch (Exception e) {
