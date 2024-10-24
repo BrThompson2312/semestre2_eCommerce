@@ -18,6 +18,16 @@ namespace Dominio
             get { return _articulos; }
         }
 
+        private static Sistema _instancia;
+
+        public static Sistema Instancia 
+        {
+            get { 
+                if (_instancia == null) _instancia = new Sistema();
+                return _instancia;
+            }
+        }
+
         private void PrecargarDatos()
         {
             PrecargarAdministradores();
@@ -266,7 +276,7 @@ namespace Dominio
             // AgregarArticulo(articulo55);
 
             /* ---------------- Precarga de ventas ---------------- */
-            Publicacion venta1 = new Venta("Descuento Playero! xd", new DateTime(2024, 5, 12), false, 1000);
+            Publicacion venta1 = new Venta("Descuento Playero!", new DateTime(2024, 5, 12), false, 1000);
             AgregarPublicacion(venta1);
             venta1.AgregarArticulo(articulo1);
             venta1.AgregarArticulo(articulo2);
@@ -492,6 +502,34 @@ namespace Dominio
             return _auxPublicaciones;
         }
 
+        public List<Publicacion> ListadoVentas()
+        {
+            List<Publicacion> _auxVentas = new List<Publicacion>();
+            foreach (Publicacion item in _publicaciones)
+            {
+                if (item is Venta)
+                {
+                    Venta venta = (Venta)item;  
+                    _auxVentas.Add(venta);
+                }
+            }
+            return _auxVentas;
+        }
+
+        public List<Publicacion> ListadoSubastas()
+        {
+            List<Publicacion> _auxSubastas = new List<Publicacion>();
+            foreach (Publicacion item in _publicaciones)
+            {
+                if (item is Subasta)
+                {
+                    Subasta subasta = (Subasta)item;
+                    _auxSubastas.Add(subasta);
+                }
+            }
+            return _auxSubastas;
+        }
+
         public List<Articulo> ListadoArticulos(string pCategoria)
         {
             List<Articulo> _auxArticulos = new List<Articulo>();
@@ -507,3 +545,4 @@ namespace Dominio
 
     }
 }
+

@@ -1,0 +1,17 @@
+﻿@using Dominio.Entidades;
+
+<h1>@ViewBag.Titulo</h1>
+
+<a href="/Publicacion/venta" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver ventas</a>
+<a href="/Publicacion/subasta" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver subastas</a>
+
+@foreach (var item in ViewBag.Publicaciones)
+{
+    <p>@item.Nombre</p>
+    <ul>
+    @foreach (var item2 in item.Articulos)
+    {
+        <li>@item2.Nombre</li>
+    }
+    </ul>
+}

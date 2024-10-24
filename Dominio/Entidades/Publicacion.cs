@@ -12,6 +12,10 @@ namespace Dominio.Entidades
         public Administrador CompraFinalizadaAdministrador {get; set;}
         public DateTime FechaFinalizacionCompra {get; set;}
 
+        public List<Articulo> Articulos {
+            get { return _articulos; }
+        }
+
         public Publicacion(string _nombre, DateTime _fechaPublicacion){
             Id = ultimoId++;
             Nombre = _nombre;

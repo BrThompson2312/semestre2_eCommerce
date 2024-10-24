@@ -27,32 +27,39 @@
     ]
   },
   "packageFolders": {
-    "/home/bruno/.nuget/packages/": {}
+    "C:\\Users\\alumnoFI\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/bruno/Descargas/semestre2_eCommerce/WebApp/WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\alumnoFI\\Source\\Repos\\semestre2_eCommerce\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "/home/bruno/Descargas/semestre2_eCommerce/WebApp/WebApp.csproj",
-      "packagesPath": "/home/bruno/.nuget/packages/",
-      "outputPath": "/home/bruno/Descargas/semestre2_eCommerce/WebApp/obj/",
+      "projectPath": "C:\\Users\\alumnoFI\\Source\\Repos\\semestre2_eCommerce\\WebApp\\WebApp.csproj",
+      "packagesPath": "C:\\Users\\alumnoFI\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alumnoFI\\Source\\Repos\\semestre2_eCommerce\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/bruno/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\alumnoFI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/bruno/Descargas/semestre2_eCommerce/Dominio/Dominio.csproj": {
-              "projectPath": "/home/bruno/Descargas/semestre2_eCommerce/Dominio/Dominio.csproj"
+            "C:\\Users\\alumnoFI\\Source\\Repos\\semestre2_eCommerce\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\alumnoFI\\Source\\Repos\\semestre2_eCommerce\\Dominio\\Dominio.csproj"
             }
           }
         }
@@ -61,6 +68,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -85,7 +97,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Dominio
-build_property.ProjectDir = /home/bruno/Descargas/semestre2_eCommerce/Dominio/
+build_property.ProjectDir = C:\Users\alumnoFI\Source\Repos\semestre2_eCommerce\Dominio\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
