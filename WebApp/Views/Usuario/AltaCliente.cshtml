@@ -1,6 +1,6 @@
 ﻿@using Dominio.Entidades;
 
-<h1>ALTA ADMINISTRADORES</h1>
+<h1>ALTA CLIENTES</h1>
 
 
 @if (ViewBag.mensaje != null)
@@ -11,10 +11,9 @@
 }
 
 <form action="/Usuario/" method="POST">
-    <input type="text" name="Nombre" placeholder="Nombre"/>
+    <input type="text" name="Nombre" placeholder="Nombre" />
     <input type="text" name="Apellido" placeholder="Apellido" />
-    <input type="text" name="Email" placeholder="Email" />
-    <input type="text" name="Contrasenia" placeholder="Contraseña" />
+   
     <input type="submit" name="" value="Agregar" />
 
     <p></p>
