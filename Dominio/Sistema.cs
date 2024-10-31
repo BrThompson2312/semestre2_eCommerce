@@ -18,6 +18,8 @@ namespace Dominio
             get { return _articulos; }
         }
 
+        // Singleton patron: Asigna una unica instancia si no tiene una.
+
         private static Sistema _instancia;
 
         public static Sistema Instancia 
@@ -68,7 +70,7 @@ namespace Dominio
 
         private void PrecargarClientes()
         {
-            Usuario cliente1 = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1", 1000);
+            Usuario cliente1 = new Cliente("Lucas", "Garcia", "carlos.garcia@gmail.com", "passCarlos1", 1000);
             AgregarUsuario(cliente1);
 
             Usuario cliente2 = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22", 2000);
@@ -89,7 +91,7 @@ namespace Dominio
             Usuario cliente7 = new Cliente("Pedro", "Diaz", "pedro.diaz@gmail.com", "pedroDiaz77", 1300);
             AgregarUsuario(cliente7);
 
-            Usuario cliente8 = new Cliente("Lucia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88", 2200);
+            Usuario cliente8 = new Cliente("Sofia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88", 2200);
             AgregarUsuario(cliente8);
 
             Usuario cliente9 = new Cliente("Sofia", "Rodriguez", "sofia.rodriguez@gmail.com", "sofiaRodriguez99", 1400);
@@ -489,6 +491,47 @@ namespace Dominio
             _publicaciones.Add(pPublicacion);
         }
 
+        public List<Usuario> ListadoAdministradores()
+        {
+            List<Usuario> _auxAdministrador = new List<Usuario>();
+            foreach (Usuario item in _usuarios)
+            {
+                if (item is Administrador)
+                {
+                    Administrador admininistrador = (Administrador)item;
+                    _auxAdministrador.Add(admininistrador);
+                }
+            }
+            return _auxAdministrador;
+        }
+
+        public List<Usuario> ListadoClientes()
+        {
+            List<Usuario> _auxCliente = new List<Usuario>();
+            foreach (Usuario item in _usuarios)
+            {
+                if (item is Cliente)
+                {
+                    Cliente cliente = (Cliente)item;
+                    _auxCliente.Add(cliente);
+                }
+            }
+            return _auxCliente;
+        }
+
+        public List<Usuario> ListadoUsuariosXNombre(string nombre)
+        {
+            List<Usuario> _auxUsuarios = new List<Usuario>();
+            foreach (Usuario item in _usuarios)
+            {
+                if (item.Nombre == nombre)
+                {
+                    _auxUsuarios.Add(item);
+                }
+            }
+            return _auxUsuarios;
+        }
+
         public List<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
         {
             List <Publicacion> _auxPublicaciones = new List<Publicacion>();
@@ -502,6 +545,18 @@ namespace Dominio
             return _auxPublicaciones;
         }
 
+        public List<Publicacion> ListadoPublicacionesXNombre(string nombre)
+        {
+            List<Publicacion> _auxPublicaciones = new List<Publicacion>();
+            foreach (Publicacion item in _publicaciones)
+            {
+                if (nombre == null || item.Nombre == nombre)
+                {
+                    _auxPublicaciones.Add(item);
+                }
+            }
+            return _auxPublicaciones;
+        }
         public List<Publicacion> ListadoVentas()
         {
             List<Publicacion> _auxVentas = new List<Publicacion>();

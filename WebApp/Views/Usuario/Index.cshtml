@@ -1,10 +1,25 @@
-﻿
+﻿@using Dominio.Entidades;
 
+<h1>Usuarios</h1>
 
-@using Dominio.Entidades;
+<form action="/Usuario/ListadoUsuariosXNombre">
+    <input type="text" name="nombre" placeholder="Nombre" />
+    <input type="submit" value="Buscar"/>
+</form>
 
-<h1>Usuariossss</h1>
+<a href="/Usuario">Ver Todo</a>
+<a href="/Usuario/AltaAdministrador">Alta Administrador</a>
+<a href="/Usuario/AltaCliente">Alta Clientes</a>
+<a href="/Usuario/Administradores">Ver Administradores</a>
+<a href="/Usuario/Clientes">Ver Clientes</a>
+
 @foreach (var item in ViewBag.Usuarios)
 {
-    <p>@item.Nombre</p>
+    if (item is Administrador)
+    {
+        <p>@item.Nombre <span class="text-danger">Admin</span></p>
+    } else
+    {
+        <p>@item.Nombre</p>
+    }
 }

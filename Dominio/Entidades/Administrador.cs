@@ -16,10 +16,10 @@ namespace Dominio.Entidades
             base.Validar();
         }
 
-        public override int TipoUsuario()
-        {
-            return 1;            
-        }
+        //public override int TipoUsuario()
+        //{
+        //    return 1;            
+        //}
 
         public override string ToString()
         {

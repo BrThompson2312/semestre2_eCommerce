@@ -45,3 +45,15 @@ C:\Users\alumnoFI\Source\Repos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\Domi
 C:\Users\alumnoFI\Source\Repos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\refint\Dominio.dll
 C:\Users\alumnoFI\Source\Repos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\Dominio.pdb
 C:\Users\alumnoFI\Source\Repos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\ref\Dominio.dll
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\bin\Debug\net8.0\Dominio.deps.json
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\bin\Debug\net8.0\Dominio.dll
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\bin\Debug\net8.0\Dominio.pdb
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\Dominio.sourcelink.json
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\Dominio.dll
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\refint\Dominio.dll
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\Dominio.pdb
+C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\Dominio\obj\Debug\net8.0\ref\Dominio.dll

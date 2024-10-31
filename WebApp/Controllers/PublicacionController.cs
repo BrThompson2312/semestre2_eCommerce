@@ -14,19 +14,25 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult Venta(string nombre)
+        public IActionResult Venta()
         {
             ViewBag.Publicaciones = _sistema.ListadoVentas();
             ViewBag.Titulo = "Ventas";
             return View("index");
         }
 
-        public IActionResult Subasta(int idCargo)
+        public IActionResult Subasta()
         {
             ViewBag.Publicaciones = _sistema.ListadoSubastas();
             ViewBag.Titulo = "Subastas";
             return View("index");
         }
-        
+
+        public IActionResult ListadoPublicacionXNombre(string nombre)
+        {
+            ViewBag.Publicaciones = _sistema.ListadoPublicacionesXNombre(nombre);
+            ViewBag.Titulo = "Subastas";
+            return View("index");
+        }
     }
 }

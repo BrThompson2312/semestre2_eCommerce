@@ -5,7 +5,7 @@ namespace Main
 {
     internal class Program
     {
-        static Sistema _sistema = new Sistema();
+        static Sistema _sistema = Sistema.Instancia;
         static void Main(string[] args)
         {
             int salida;
@@ -45,16 +45,16 @@ namespace Main
                         ListadoPublicaciones(); 
                         break;
 
-                    // // Menu oculto:
-                    // case 6:
-                    //     ListadoArticulosSinFiltro();
-                    //     break;
-                    // case 7:
-                    //     ListadoUsuarios(1);
-                    //     break;
-                    // case 8:
-                    //     ListadoPublicacionesSinFiltro();
-                    //     break;
+                    // Menu oculto:
+                    case 6:
+                        ListadoArticulosSinFiltro();
+                        break;
+                    case 7:
+                        ListadoUsuarios(1);
+                        break;
+                    case 8:
+                        ListadoPublicacionesSinFiltro();
+                        break;
                 }                
             } while (salida != 0);
         }
@@ -89,14 +89,17 @@ namespace Main
                 Console.ReadKey();
             } else {
                 Console.WriteLine($"------------- Listado de {tipo} -------------");
-                foreach (Usuario item in _clientes)
-                {
-                    if (item.TipoUsuario() == tipoUsuario)
-                    {
-                        Console.WriteLine(item);
-                    }
+
+                List<Usuario> _auxUsuarios;
+                if (tipoUsuario == 0) _auxUsuarios = _sistema.ListadoClientes();
+                else { 
+                    _auxUsuarios = _sistema.ListadoAdministradores();
                 }
-                Console.ReadKey();
+
+                foreach (Usuario item in _auxUsuarios)
+                {
+                    Console.WriteLine(item);
+                }
             }
         }
 
@@ -129,23 +132,23 @@ namespace Main
             }
         }
 
-        // private static void ListadoArticulosSinFiltro()
-        // {
-        //     List <Articulo> _sisArticulos = _sistema.Articulos;
-        //     if (_sisArticulos.Count == 0)
-        //     {
-        //         Console.WriteLine("**** No hay articulos ****");
-        //     }
-        //     else 
-        //     {
-        //         foreach (Articulo articulo in _sisArticulos)
-        //         {
-        //             Console.WriteLine(articulo);
-        //         }
-        //         Console.ReadKey();
-        //     }
-        // }
-  
+        private static void ListadoArticulosSinFiltro()
+        {
+            List<Articulo> _sisArticulos = _sistema.Articulos;
+            if (_sisArticulos.Count == 0)
+            {
+                Console.WriteLine("**** No hay articulos ****");
+            }
+            else
+            {
+                foreach (Articulo articulo in _sisArticulos)
+                {
+                    Console.WriteLine(articulo);
+                }
+                Console.ReadKey();
+            }
+        }
+
         private static void CrearArticulo()
         {
             try {
@@ -220,23 +223,23 @@ namespace Main
             }        
         }
 
-        // private static void ListadoPublicacionesSinFiltro()
-        // {
-        //     List <Publicacion> _sisPublicaciones = _sistema.Publicaciones;
-        //     if (_sisPublicaciones.Count == 0)
-        //     {
-        //         Console.WriteLine("**** No hay publicaciones ****");
-        //         Console.ReadKey();
-        //     }
-        //     else 
-        //     {
-        //         foreach (Publicacion item in _sisPublicaciones)
-        //         {
-        //             Console.WriteLine(item);
-        //         }
-        //         Console.ReadKey();
-        //     }
-        // }
+        private static void ListadoPublicacionesSinFiltro()
+        {
+            List<Publicacion> _sisPublicaciones = _sistema.Publicaciones;
+            if (_sisPublicaciones.Count == 0)
+            {
+                Console.WriteLine("**** No hay publicaciones ****");
+                Console.ReadKey();
+            }
+            else
+            {
+                foreach (Publicacion item in _sisPublicaciones)
+                {
+                    Console.WriteLine(item);
+                }
+                Console.ReadKey();
+            }
+        }
 
     }
 }

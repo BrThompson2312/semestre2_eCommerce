@@ -5,7 +5,7 @@ namespace Dominio.Entidades
         public int Id {get; set;}
         private static int ultimoId = 0;
         public string Nombre {get; set;}
-        public int EstadoPublicacion {get; set;}
+        public Estado EstadoPublicacion {get; set;}
         public DateTime FechaPublicacion {get; set;}
         private List<Articulo> _articulos = new List<Articulo>();
         public Cliente CompraRealizadaCliente {get; set;}
@@ -14,6 +14,13 @@ namespace Dominio.Entidades
 
         public List<Articulo> Articulos {
             get { return _articulos; }
+        }
+
+        public enum Estado
+        {
+            Abierto,
+            Cerrado,
+            Terminado,
         }
 
         public Publicacion(string _nombre, DateTime _fechaPublicacion){

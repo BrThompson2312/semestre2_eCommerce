@@ -56,7 +56,7 @@ namespace Dominio.Entidades
             return usuario != null && Id == usuario.Id || usuario.Email == Email;
         }
 
-        public abstract int TipoUsuario();
+        //////public abstract int TipoUsuario();
 
     }
 }
