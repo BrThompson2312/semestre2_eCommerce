@@ -4,6 +4,10 @@ namespace Dominio.Entidades
     {
         public int Saldo {get; set;}
 
+        public Cliente()
+        {
+        }
+
         public Cliente(
             string _nombre,
             string _apellido, 

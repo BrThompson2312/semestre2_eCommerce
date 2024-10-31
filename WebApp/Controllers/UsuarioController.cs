@@ -10,81 +10,81 @@ namespace WebApp.Controllers
 
         static Sistema _sistema = Sistema.Instancia;
 
-        public IActionResult Index()
+        [HttpGet]
+        public IActionResult Index(string mensaje)
         {
+            ViewBag.mensaje = mensaje;
             ViewBag.Usuarios = _sistema.Usuarios;
             return View();
         }
 
-        public IActionResult Administradores()
+        [HttpGet]
+        public IActionResult ListadoAdministradores()
         {
             ViewBag.Usuarios = _sistema.ListadoAdministradores();
-            return View("index");
+            return View("Index");
         }
 
-        public IActionResult Clientes()
+        [HttpGet]
+        public IActionResult ListadoClientes()
         {
             ViewBag.Usuarios = _sistema.ListadoClientes();
-            return View("index");
+            return View("Index");
         }
 
+        [HttpGet]
         public IActionResult ListadoUsuariosXNombre(string nombre)
         {
             ViewBag.Usuarios = _sistema.ListadoUsuariosXNombre(nombre);
-            return View("index");
+            return View("Index");
+        }
+
+        [HttpGet]
+        public IActionResult AltaCliente()
+        {
+            //ViewBag.Usuarios = _sistema.Usuarios;
+            return View(new Cliente());
+        }
+
+        [HttpPost]
+        public IActionResult AltaCliente(Cliente usuario)
+        {
+            try
+            {
+                _sistema.AgregarUsuario(usuario);
+                return RedirectToAction("Index", new { mensaje = "Se dio de alta el cliente en forma exitosa." });
+            }
+            catch (Exception e)
+            {
+                ViewBag.mensaje = e.Message;
+                //ViewBag.Usuarios = _sistema.ListadoClientes();
+            }
+            return View(usuario);
         }
 
         [HttpGet]
         public IActionResult AltaAdministrador()
         {
             ViewBag.Usuarios = _sistema.Usuarios;
-            return View();
+            return View(new Administrador());
         }
 
         [HttpPost]
-        public IActionResult AltaAdministrador(Usuario usuario)
+        public IActionResult AltaAdministrador(Administrador administrador)
         {
             try
             {
-                _sistema.AgregarUsuario(usuario);
+                _sistema.AgregarUsuario(administrador);
                 return RedirectToAction("index", new { mensaje = "Se dio de alta el administrador en forma exitosa." });
-
-                
             }
             catch (Exception e)
             {
                 ViewBag.mensaje = e.Message;
-                ViewBag.Usuarios = _sistema.ListadoAdministradores();
+                //ViewBag.Usuarios = _sistema.ListadoAdministradores();
             }
-            return View(usuario);
+            return View(administrador);
         }
 
-
-        [HttpGet]
-        public IActionResult AltaCliente()
-        {
-            ViewBag.Usuarios = _sistema.Usuarios;
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult AltaCliente(Usuario usuario)
-        {
-            try
-            {
-                _sistema.AgregarUsuario(usuario);
-                return RedirectToAction("index", new { mensaje = "Se dio de alta el cliente en forma exitosa." });
-
-
-            }
-            catch (Exception e)
-            {
-                ViewBag.mensaje = e.Message;
-                ViewBag.Usuarios = _sistema.ListadoClientes();
-            }
-            return View(usuario);
-        }
-        
     }
 }
 

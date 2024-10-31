@@ -18,8 +18,12 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Bruno\Documents\Proyectos\semestre2_eCommerce\WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Bruno/Documents/Proyectos/semestre2_eCommerce/WebApp/Views/Login/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+[C:/Users/Bruno/Documents/Proyectos/semestre2_eCommerce/WebApp/Views/Login/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bruno/Documents/Proyectos/semestre2_eCommerce/WebApp/Views/Login/Signin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cU2lnbmluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bruno/Documents/Proyectos/semestre2_eCommerce/WebApp/Views/Publicacion/Index.cshtml]

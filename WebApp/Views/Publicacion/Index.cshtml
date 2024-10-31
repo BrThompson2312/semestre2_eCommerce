@@ -2,14 +2,14 @@
 
 <h1>@ViewBag.Titulo</h1>
 
-<form action="/Publicacion/ListadoPublicacionXNombre">
+<form action="/Publicacion/ListadoPublicacionXNombre" method="post">
     <input type="text" name="nombre" placeholder="Nombre" />
     <input type="submit" value="Filtrar"/>
 </form>
 
-<a href="/Publicacion" class="">Ver Todo</a>
-<a href="/Publicacion/venta" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver ventas</a>
-<a href="/Publicacion/subasta" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver subastas</a>
+<a href="/Publicacion/Index" class="">Ver Todo</a>
+<a href="/Publicacion/ListadoVentas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver ventas</a>
+<a href="/Publicacion/ListadoSubastas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver subastas</a>
 
 @foreach (var item in ViewBag.Publicaciones)
 {

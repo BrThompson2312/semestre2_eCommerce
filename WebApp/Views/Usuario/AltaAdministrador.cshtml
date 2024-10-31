@@ -1,7 +1,16 @@
 ﻿@using Dominio.Entidades;
+@model Administrador;
 
-<h1>ALTA ADMINISTRADORES</h1>
-
+<div class="d-flex align-items-center justify-content-center flex-column">
+    <h1>Alta administradores </h1>
+    <form method="post" class="d-flex align-items-center flex-column gap-2">
+        <input type="text" name="Nombre" placeholder="Nombre" value="@Model.Nombre" />
+        <input type="text" name="Apellido" placeholder="Apellido" value="@Model.Apellido" />
+        <input type="text" name="Email" placeholder="Email" value="@Model.Email" />
+        <input type="text" name="Contrasenia" placeholder="Contraseña" value="@Model.Contrasenia" />
+        <input type="submit" name="" value="Agregar" />
+    </form>
+</div>
 
 @if (ViewBag.mensaje != null)
 {
@@ -9,13 +18,3 @@
         @ViewBag.mensaje
     </div>
 }
-
-<form action="/Usuario/" method="POST">
-    <input type="text" name="Nombre" placeholder="Nombre"/>
-    <input type="text" name="Apellido" placeholder="Apellido" />
-    <input type="text" name="Email" placeholder="Email" />
-    <input type="text" name="Contrasenia" placeholder="Contraseña" />
-    <input type="submit" name="" value="Agregar" />
-
-    <p></p>
-</form>

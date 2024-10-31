@@ -7,6 +7,7 @@ namespace WebApp.Controllers
     {
         static Sistema _sistema = Sistema.Instancia;
 
+        [HttpGet]
         public IActionResult Index()
         {
             ViewBag.Publicaciones = _sistema.Publicaciones;
@@ -14,25 +15,28 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult Venta()
+        [HttpGet]
+        public IActionResult ListadoVentas()
         {
             ViewBag.Publicaciones = _sistema.ListadoVentas();
             ViewBag.Titulo = "Ventas";
-            return View("index");
+            return View("Index");
         }
 
-        public IActionResult Subasta()
+        [HttpGet]
+        public IActionResult ListadoSubastas()
         {
             ViewBag.Publicaciones = _sistema.ListadoSubastas();
             ViewBag.Titulo = "Subastas";
-            return View("index");
+            return View("Index");
         }
 
+        [HttpPost]
         public IActionResult ListadoPublicacionXNombre(string nombre)
         {
             ViewBag.Publicaciones = _sistema.ListadoPublicacionesXNombre(nombre);
             ViewBag.Titulo = "Subastas";
-            return View("index");
+            return View("Index");
         }
     }
 }

@@ -9,7 +9,11 @@ namespace Dominio.Entidades
         public string Email {get; set;}
         public string Contrasenia {get; set;}
 
-        // Constructor
+        public Usuario()
+        {
+            Id = ultimoId++;
+        }
+
         public Usuario(string _nombre, string _apellido, string _email, string _contrasenia)
         {
             Id = ultimoId++;
@@ -55,8 +59,6 @@ namespace Dominio.Entidades
             Usuario usuario = obj as Usuario;
             return usuario != null && Id == usuario.Id || usuario.Email == Email;
         }
-
-        //////public abstract int TipoUsuario();
 
     }
 }

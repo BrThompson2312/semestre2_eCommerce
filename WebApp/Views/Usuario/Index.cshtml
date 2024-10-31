@@ -1,25 +1,35 @@
 ﻿@using Dominio.Entidades;
 
-<h1>Usuarios</h1>
-
-<form action="/Usuario/ListadoUsuariosXNombre">
-    <input type="text" name="nombre" placeholder="Nombre" />
-    <input type="submit" value="Buscar"/>
-</form>
-
-<a href="/Usuario">Ver Todo</a>
-<a href="/Usuario/AltaAdministrador">Alta Administrador</a>
-<a href="/Usuario/AltaCliente">Alta Clientes</a>
-<a href="/Usuario/Administradores">Ver Administradores</a>
-<a href="/Usuario/Clientes">Ver Clientes</a>
-
-@foreach (Usuario item in ViewBag.Usuarios)
+@if (ViewBag.mensaje != null)
 {
-    if (item is Administrador)
-    {
-        <p>@item.Nombre <span class="text-danger">Admin</span></p>
-    } else
-    {
-        <p>@item.Nombre</p>
-    }
+    <div class="alert alert-success m-2" role="alert">
+        @ViewBag.mensaje
+    </div>
 }
+
+<div>
+    <h1>Usuarios</h1>
+    <div class="m-2">
+        <form action="/Usuario/ListadoUsuariosXNombre">
+            <input type="text" name="nombre" placeholder="Nombre" />
+            <input type="submit" value="Buscar"/>
+        </form>
+
+        <a href="/Usuario/Index">Ver Todo</a>
+        <a href="/Usuario/AltaAdministrador">Alta Administrador</a>
+        <a href="/Usuario/AltaCliente">Alta Clientes</a>
+        <a href="/Usuario/ListadoAdministradores">Ver Administradores</a>
+        <a href="/Usuario/ListadoClientes">Ver Clientes</a>
+    </div>
+
+    @foreach (Usuario item in ViewBag.Usuarios)
+    {
+        if (item is Administrador)
+        {
+            <p>@item.Nombre <span class="text-danger">Admin</span></p>
+        } else
+        {
+            <p>@item.Nombre</p>
+        }
+    }
+</div>

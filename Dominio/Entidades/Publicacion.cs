@@ -23,6 +23,10 @@ namespace Dominio.Entidades
             Terminado,
         }
 
+        public Publicacion() 
+        {
+        }
+
         public Publicacion(string _nombre, DateTime _fechaPublicacion){
             Id = ultimoId++;
             Nombre = _nombre;

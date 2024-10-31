@@ -3,6 +3,10 @@ namespace Dominio.Entidades
     public class Administrador : Usuario
     {
 
+        public Administrador() 
+        { 
+        }
+
         public Administrador(
             string _nombre, 
             string _apellido, 
@@ -15,11 +19,6 @@ namespace Dominio.Entidades
         {
             base.Validar();
         }
-
-        //public override int TipoUsuario()
-        //{
-        //    return 1;            
-        //}
 
         public override string ToString()
         {

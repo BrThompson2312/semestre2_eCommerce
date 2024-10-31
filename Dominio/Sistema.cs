@@ -524,7 +524,7 @@ namespace Dominio
             List<Usuario> _auxUsuarios = new List<Usuario>();
             foreach (Usuario item in _usuarios)
             {
-                if (item.Nombre == nombre)
+                if (nombre == null || item.Nombre.ToLower().Contains(nombre.ToLower()))
                 {
                     _auxUsuarios.Add(item);
                 }
