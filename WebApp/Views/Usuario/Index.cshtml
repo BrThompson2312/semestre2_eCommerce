@@ -2,7 +2,7 @@
 
 @if (ViewBag.mensaje != null)
 {
-    <div class="alert alert-success m-2" role="alert">
+    <div class="alert alert-success mb-2 mt-2" role="alert">
         @ViewBag.mensaje
     </div>
 }
@@ -10,9 +10,14 @@
 <div>
     <h1>Usuarios</h1>
     <div class="m-2">
-        <form action="/Usuario/ListadoUsuariosXNombre">
-            <input type="text" name="nombre" placeholder="Nombre" />
+        <form action="/Usuario/ListadoUsuariosXNombre" class="mb-2">
+            <input type="text" name="Nombre" placeholder="Nombre" />
             <input type="submit" value="Buscar"/>
+        </form>
+
+        <form action="/Usuario/ListadoUsuariosXEmail" class="mb-2">
+            <input type="text" name="Email" placeholder="Email" />
+            <input type="submit" value="Buscar" />
         </form>
 
         <a href="/Usuario/Index">Ver Todo</a>
@@ -20,16 +25,61 @@
         <a href="/Usuario/AltaCliente">Alta Clientes</a>
         <a href="/Usuario/ListadoAdministradores">Ver Administradores</a>
         <a href="/Usuario/ListadoClientes">Ver Clientes</a>
+       
     </div>
 
-    @foreach (Usuario item in ViewBag.Usuarios)
-    {
-        if (item is Administrador)
-        {
-            <p>@item.Nombre <span class="text-danger">Admin</span></p>
-        } else
-        {
-            <p>@item.Nombre</p>
-        }
-    }
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Email</th>
+                <th>Contraseña</th>
+                <th>Tipo</th>
+                <th>@* ver *@</th>
+                <th>@* modificar *@</th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (Usuario item in ViewBag.Usuarios)
+                {
+                    @* if (item is Administrador)
+                    {
+                        <td>@item.Nombre</td>
+                    } else
+                    {
+                        <p>@item.Nombre</p>
+                        @if (item.Email == Context.Session.GetString("email")) {
+       
+                        }
+                    } *@
+
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Apellido</td>
+                        <td>@item.Email</td>
+                        <td>@item.Contrasenia</td>
+                        @if (item is Administrador)
+                        {
+                            <td><span class="text-danger" style="font-weight: bold">Admin</span></td>
+                        } else
+                        {
+                            <td><span class="text-success" style="font-weight: bold">Cliente</span></td>
+                        }
+
+                        @if (item.Email == Context.Session.GetString("email"))
+                        {
+                            <td>
+                                <a href="/Usuario/Ver/@item.Id">Ver</a> 
+                            </td>
+                            <td>
+                                <a href="/Usuario/Modificar?@item.Id">Modificar</a>
+                            </td>
+                        }
+                    </tr>
+                }
+        </tbody>
+    </table>
 </div>

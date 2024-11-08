@@ -1,4 +1,5 @@
 ﻿using Dominio.Entidades;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dominio
 {
@@ -70,7 +71,7 @@ namespace Dominio
 
         private void PrecargarClientes()
         {
-            Usuario cliente1 = new Cliente("Lucas", "Garcia", "carlos.garcia@gmail.com", "passCarlos1", 1000);
+            Usuario cliente1 = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1", 1000);
             AgregarUsuario(cliente1);
 
             Usuario cliente2 = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22", 2000);
@@ -530,6 +531,56 @@ namespace Dominio
                 }
             }
             return _auxUsuarios;
+        }
+
+        public List<Usuario> ListadoUsuariosXEmail (string email)
+        {
+            List<Usuario> _auxUsuarios = new List<Usuario>();
+            foreach (Usuario item in _usuarios)
+            {
+                if (email == null || item.Email.ToLower().Contains(email.ToLower()))
+                {
+                    _auxUsuarios.Add(item);
+                }
+            }
+            return _auxUsuarios;
+        }
+
+        public Usuario FiltrarUsuarioXId(int id)
+        {
+            foreach (Usuario item in _usuarios)
+            {
+                if (/*id == null ||*/ item.Id == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
+        //public List<Usuario> FiltrarUsuarioXId(int id)
+        //{
+        //    List<Usuario> _auxUsuarios = new List<Usuario>();
+        //    foreach (Usuario item in _usuarios)
+        //    {
+        //        if (/*id == null ||*/ item.Id == id)
+        //        {
+        //            _auxUsuarios.Add(item);
+        //        }
+        //    }
+        //    return _auxUsuarios;
+        //}
+
+        public Publicacion FiltrarPublicacionXId(int id)
+        {
+            foreach (Publicacion item in _publicaciones)
+            {
+                if (id == null || id == item.Id)
+                {
+                    return item;
+                }
+            }
+            return null;
         }
 
         public List<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)

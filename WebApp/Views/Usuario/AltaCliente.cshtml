@@ -1,7 +1,7 @@
 ﻿@using Dominio.Entidades;
 @model Cliente;
 
-<div class="d-flex align-items-center justify-content-center flex-column">
+@* <div class="d-flex align-items-center justify-content-center flex-column">
     <h1>Alta Cliente</h1>
     <form method="post" class="d-flex align-items-center flex-column gap-2">
         <input type="text" name="Nombre" placeholder="Nombre" value="@Model.Nombre" />
@@ -11,11 +11,28 @@
         <input type="text" name="Saldo" placeholder="Saldo" value="@Model.Saldo" />
         <input type="submit" name="" value="Agregar" />
     </form>
+</div> *@
+
+<div class="">
+    <h1>Alta Cliente</h1>
+    <form method="post" class="form-mod d-flex flex-column align-items-start gap-2">
+        <label>Nombre</label>
+        <input type="text" name="Nombre" value="@Model.Nombre" />
+        <label>Apellido</label>
+        <input type="text" name="Apellido" value="@Model.Apellido" />
+        <label>Email</label>
+        <input type="text" name="Email" value="@Model.Email" />
+        <label>Contraseña</label>
+        <input type="text" name="Contrasenia" value="@Model.Contrasenia" />
+        <label>Saldo</label>
+        <input type="text" name="Contrasenia" value="@Model.Saldo" />
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
 </div>
 
 @if (ViewBag.mensaje != null)
 {
-    <p class="alert alert-danger m-2">
+    <p class="alert alert-danger mt-2">
         @ViewBag.mensaje
     </p>
 }

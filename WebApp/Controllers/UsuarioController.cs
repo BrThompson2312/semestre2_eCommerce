@@ -8,7 +8,7 @@ namespace WebApp.Controllers
     public class UsuarioController : Controller
     {
 
-        static Sistema _sistema = Sistema.Instancia;
+        Sistema _sistema = Sistema.Instancia;
 
         [HttpGet]
         public IActionResult Index(string mensaje)
@@ -36,6 +36,13 @@ namespace WebApp.Controllers
         public IActionResult ListadoUsuariosXNombre(string nombre)
         {
             ViewBag.Usuarios = _sistema.ListadoUsuariosXNombre(nombre);
+            return View("Index");
+        }
+
+        [HttpGet]
+        public IActionResult ListadoUsuariosXEmail(string email)
+        {
+            ViewBag.Usuarios = _sistema.ListadoUsuariosXEmail(email);
             return View("Index");
         }
 
@@ -84,6 +91,36 @@ namespace WebApp.Controllers
             }
             return View(administrador);
         }
+
+        [HttpGet]
+        public IActionResult Ver(int id)
+        {
+            string emailSession = HttpContext.Session.GetString("email");
+
+            ViewBag.Email = emailSession;
+            ViewBag.Usuario = _sistema.FiltrarUsuarioXId(id);
+            if (ViewBag.Usuario == null)
+            {
+                return RedirectToAction("index", new { mensaje = "Error, no se ha encontrado el usuario" });
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Modificar(int id)
+        {
+            string emailSession = HttpContext.Session.GetString("email");
+
+            ViewBag.Email = emailSession;
+            ViewBag.Usuario = _sistema.FiltrarUsuarioXId(id);
+            if (ViewBag.Usuario == null)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+
 
     }
 }

@@ -5,7 +5,7 @@ namespace WebApp.Controllers
 {
     public class PublicacionController : Controller
     {
-        static Sistema _sistema = Sistema.Instancia;
+        Sistema _sistema = Sistema.Instancia;
 
         [HttpGet]
         public IActionResult Index()
@@ -38,5 +38,17 @@ namespace WebApp.Controllers
             ViewBag.Titulo = "Subastas";
             return View("Index");
         }
+
+        public IActionResult Ver(int id)
+        {
+
+            ViewBag.Publicacion = _sistema.FiltrarPublicacionXId(id);
+            if (ViewBag.Publicacion == null)
+            {
+                return RedirectToAction("index");
+            }
+            return View();
+        }
+
     }
 }

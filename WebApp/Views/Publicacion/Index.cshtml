@@ -1,23 +1,71 @@
 ﻿@using Dominio.Entidades;
 
-<h1>@ViewBag.Titulo</h1>
+<div>
+    <h1>@ViewBag.Titulo</h1>
 
-<form action="/Publicacion/ListadoPublicacionXNombre" method="post">
-    <input type="text" name="nombre" placeholder="Nombre" />
-    <input type="submit" value="Filtrar"/>
-</form>
+    <div class="mb-3 mt-3">
+        <form action="/Publicacion/ListadoPublicacionXNombre" method="post">
+            <input type="text" name="nombre" placeholder="Nombre" />
+            <input type="submit" value="Filtrar"/>
+        </form>
+        <a href="/Publicacion/Index" class="">Ver Todo</a>
+        <a href="/Publicacion/ListadoVentas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver ventas</a>
+        <a href="/Publicacion/ListadoSubastas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver subastas</a>
+    </div>
 
-<a href="/Publicacion/Index" class="">Ver Todo</a>
-<a href="/Publicacion/ListadoVentas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver ventas</a>
-<a href="/Publicacion/ListadoSubastas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver subastas</a>
-
-@foreach (var item in ViewBag.Publicaciones)
-{
-    <p>@item.Nombre</p>
-    <ul>
-    @foreach (var item2 in item.Articulos)
-    {
-        <li>@item2.Nombre</li>
-    }
-    </ul>
-}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Fecha de publicacion</th>
+                <th>Articulos</th>
+                <th>Comprada por</th>
+                <th>Finalizada por</th>
+                <th>Fecha de finalización</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in ViewBag.Publicaciones){
+            <tr>
+                <td>@item.Id</td>
+                @* <p>@item.Nombre <a href="/Usuario/Ver?@item.Id">Ver</a>  <a href="/Usuario/Modificar?@item.Id">Modificar</a></p> *@
+                <td>@item.Nombre</td>
+                <td>
+                    @if (item.EstadoPublicacion == 0)
+                    {
+                        <span class="text-success">@item.EstadoPublicacion</span>
+                    } else if (item.EstadoPublicacion == 1)
+                    {
+                        <span class="text-danger">@item.EstadoPublicacion</span>
+                    }
+                </td>
+                <td>@item.FechaPublicacion</td>
+                <td>
+                    <a href="/Publicacion/Ver/@item.Id">Ver</a>
+                </td>
+                <td>
+                    @if (item.CompraRealizadaCliente == null)
+                    {
+                        <span>---</span>
+                    } else
+                    {
+                        @item.CompraRealizadaCliente
+                    }
+                </td>
+                <td>
+                    @if (item.CompraFinalizadaAdministrador == null)
+                    {
+                        <span>---</span>
+                    }
+                    else
+                    {
+                        @item.CompraRealizadaCliente
+                    }
+                </td>
+                <td>@item.FechaPublicacion</td>
+            </tr>
+        }
+    </table>
+</div>

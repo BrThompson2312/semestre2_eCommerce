@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj": {}
+    "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj",
-        "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\Dominio\\obj\\",
+        "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj",
+        "packagesPath": "C:\\Users\\pokea\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pokea\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

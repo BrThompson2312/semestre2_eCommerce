@@ -21,9 +21,15 @@ namespace WebApp.Controllers
         public IActionResult Index(string Email, string Contrasenia)
         { 
             HttpContext.Session.SetString("email", Email);
-            HttpContext.Session.SetString("contrasenia", Contrasenia);
+            //HttpContext.Session.SetString("contrasenia", Contrasenia);
             return Redirect("/Usuario/Index");
         }
-        
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
+        }
+
     }
 }

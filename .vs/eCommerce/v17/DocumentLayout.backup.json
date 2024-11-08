@@ -1,17 +1,53 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\",
+  "WorkspaceRootPath": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\bruno\\documents\\proyectos\\semestre2_ecommerce\\webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\bruno\\documents\\proyectos\\semestre2_ecommerce\\webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\webapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\bruno\\documents\\proyectos\\semestre2_ecommerce\\webapp\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\webapp\\views\\usuario\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\usuario\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\webapp\\views\\usuario\\ver.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\usuario\\ver.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\webapp\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\webapp\\views\\publicacion\\ver.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\publicacion\\ver.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\webapp\\views\\publicacion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\publicacion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\dominio\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\webapp\\views\\usuario\\altacliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\usuario\\altacliente.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\webapp\\views\\usuario\\altaadministrador.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\usuario\\altaadministrador.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\dominio\\entidades\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidades\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\semestre2_ecommerce\\webapp\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\login\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
@@ -22,46 +58,152 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\WebApp\\Program.cs",
-              "RelativeDocumentMoniker": "WebApp\\Program.cs",
-              "ToolTip": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\WebApp\\Program.cs",
-              "RelativeToolTip": "WebApp\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Ver.cshtml",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Publicacion\\Ver.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Publicacion\\Ver.cshtml",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Publicacion\\Ver.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Publicacion\\Ver.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T16:56:55.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PublicacionController.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Controllers\\PublicacionController.cs",
+              "RelativeDocumentMoniker": "WebApp\\Controllers\\PublicacionController.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Controllers\\PublicacionController.cs",
+              "RelativeToolTip": "WebApp\\Controllers\\PublicacionController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAiwB8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T22:53:46.551Z",
+              "WhenOpened": "2024-11-08T16:56:47.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sistema.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Sistema.cs",
+              "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Sistema.cs",
+              "RelativeToolTip": "Dominio\\Sistema.cs",
+              "ViewState": "AgIAABcCAAAAAAAAAAAQwB0CAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:24:16.116Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\WebApp\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\WebApp\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBgAAAAuAAAAAAAAAA==",
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "WebApp\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "WebApp\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAkwCwAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T22:45:34.183Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T16:12:20.293Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\WebApp\\Views\\Login\\Login.cshtml",
-              "RelativeDocumentMoniker": "WebApp\\Views\\Login\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\WebApp\\Views\\Login\\Login.cshtml",
-              "RelativeToolTip": "WebApp\\Views\\Login\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAGAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Usuario\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Usuario\\Index.cshtml",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Usuario\\Index.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Usuario\\Index.cshtml",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABEAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-31T22:31:35.974Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T16:10:05.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Publicacion\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Publicacion\\Index.cshtml",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Publicacion\\Index.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Publicacion\\Index.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAC4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T15:23:18.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Ver.cshtml",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Usuario\\Ver.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Usuario\\Ver.cshtml",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Usuario\\Ver.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Usuario\\Ver.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T16:53:25.682Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Entidades\\Usuario.cs",
+              "RelativeDocumentMoniker": "Dominio\\Entidades\\Usuario.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Entidades\\Usuario.cs",
+              "RelativeToolTip": "Dominio\\Entidades\\Usuario.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T16:37:35.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AltaAdministrador.cshtml",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Usuario\\AltaAdministrador.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Usuario\\AltaAdministrador.cshtml",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Usuario\\AltaAdministrador.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Usuario\\AltaAdministrador.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T16:08:49.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AltaCliente.cshtml",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Usuario\\AltaCliente.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Usuario\\AltaCliente.cshtml",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Usuario\\AltaCliente.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Usuario\\AltaCliente.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T16:08:54.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Publicacion.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Entidades\\Publicacion.cs",
+              "RelativeDocumentMoniker": "Dominio\\Entidades\\Publicacion.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Entidades\\Publicacion.cs",
+              "RelativeToolTip": "Dominio\\Entidades\\Publicacion.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwAwAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T15:31:34.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Login\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Login\\Login.cshtml",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\Views\\Login\\Login.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Login\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-08T15:27:24.698Z"
             }
           ]
         }

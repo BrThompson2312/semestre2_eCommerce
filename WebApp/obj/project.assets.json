@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bruno\\.nuget\\packages\\": {}
+    "C:\\Users\\pokea\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\WebApp\\WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\WebApp\\WebApp.csproj",
-      "packagesPath": "C:\\Users\\Bruno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\WebApp\\obj\\",
+      "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\WebApp.csproj",
+      "packagesPath": "C:\\Users\\pokea\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Bruno\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pokea\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -54,8 +54,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\Bruno\\Documents\\Proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj"
+            "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj"
             }
           }
         }
