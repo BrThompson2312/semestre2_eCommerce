@@ -7,25 +7,22 @@ namespace Dominio
     {
         private List<Usuario> _usuarios = new List<Usuario>();
         private List<Publicacion> _publicaciones = new List<Publicacion>();
-        public List<Articulo> _articulos = new List<Articulo>();
+        private List<Articulo> _articulos = new List<Articulo>();
 
-        public List<Usuario> Usuarios
+        public IEnumerable<Usuario> Usuarios
         {
             get { return _usuarios; }
         }
-        public List<Publicacion> Publicaciones
+        public IEnumerable<Publicacion> Publicaciones
         {
             get { return _publicaciones; }
         }
-        public List<Articulo> Articulos
+        public IEnumerable<Articulo> Articulos
         {
             get { return _articulos; }
         }
 
-        // Singleton patron: Asigna una unica instancia si no tiene una.
-
         private static Sistema _instancia;
-
         public static Sistema Instancia
         {
             get
@@ -54,10 +51,12 @@ namespace Dominio
         /*-------------- Precarga de datos --------------*/
         private void PrecargarAdministradores()
         {
-            Usuario admin1 = new Administrador("Carlos", "Gomez", "carlos.gomez@gmail.com", "passCarlos1", "Administrador");
+            string rol = "administrador";
+
+            Usuario admin1 = new Administrador("Carlos", "Gomez", "carlos.gomez@gmail.com", "passCarlos1", rol);
             AgregarUsuario(admin1);
 
-            Usuario admin2 = new Administrador("Lucia", "Fernandez", "lucia.fernandez@gmail.com", "luciaFernandez123", "Administrador");
+            Usuario admin2 = new Administrador("Lucia", "Fernandez", "lucia.fernandez@gmail.com", "luciaFernandez123", rol);
             AgregarUsuario(admin2);
 
             // Usuario admin3 = new Administrador("Pedro", "Diaz", "pedro.diaz@gmail", null); // Contrasenia no puede ser null o vacia
@@ -75,34 +74,36 @@ namespace Dominio
 
         private void PrecargarClientes()
         {
-            Usuario cliente1 = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1", 1000, "cliente");
+            string rol = "cliente";
+
+            Usuario cliente1 = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1", 1000, rol);
             AgregarUsuario(cliente1);
 
-            Usuario cliente2 = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22", 2000, "cliente");
+            Usuario cliente2 = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22", 2000, rol);
             AgregarUsuario(cliente2);
 
-            Usuario cliente3 = new Cliente("Juan", "Martinez", "juan.martinez@hotmail.com", "juanMartinez33", 1500, "cliente");
+            Usuario cliente3 = new Cliente("Juan", "Martinez", "juan.martinez@hotmail.com", "juanMartinez33", 1500, rol);
             AgregarUsuario(cliente3);
 
-            Usuario cliente4 = new Cliente("Ana", "Sanchez", "ana.sanchez@outlook.com", "anaSanchez44", 1800, "cliente");
+            Usuario cliente4 = new Cliente("Ana", "Sanchez", "ana.sanchez@outlook.com", "anaSanchez44", 1800, rol);
             AgregarUsuario(cliente4);
 
-            Usuario cliente5 = new Cliente("Miguel", "Perez", "miguel.perez@gmail.com", "miguelPerez55", 1200, "cliente");
+            Usuario cliente5 = new Cliente("Miguel", "Perez", "miguel.perez@gmail.com", "miguelPerez55", 1200, rol);
             AgregarUsuario(cliente5);
 
-            Usuario cliente6 = new Cliente("Laura", "Fernandez", "laura.fernandez@gmail.com", "lauraFernandez66", 1700, "cliente");
+            Usuario cliente6 = new Cliente("Laura", "Fernandez", "laura.fernandez@gmail.com", "lauraFernandez66", 1700, rol);
             AgregarUsuario(cliente6);
 
-            Usuario cliente7 = new Cliente("Pedro", "Diaz", "pedro.diaz@gmail.com", "pedroDiaz77", 1300, "cliente");
+            Usuario cliente7 = new Cliente("Pedro", "Diaz", "pedro.diaz@gmail.com", "pedroDiaz77", 1300, rol);
             AgregarUsuario(cliente7);
 
-            Usuario cliente8 = new Cliente("Sofia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88", 2200, "cliente");
+            Usuario cliente8 = new Cliente("Sofia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88", 2200, rol);
             AgregarUsuario(cliente8);
 
-            Usuario cliente9 = new Cliente("Sofia", "Rodriguez", "sofia.rodriguez@gmail.com", "sofiaRodriguez99", 1400, "cliente");
+            Usuario cliente9 = new Cliente("Sofia", "Rodriguez", "sofia.rodriguez@gmail.com", "sofiaRodriguez99", 1400, rol);
             AgregarUsuario(cliente9);
 
-            Usuario cliente10 = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010", 1600, "cliente");
+            Usuario cliente10 = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010", 1600, rol);
             AgregarUsuario(cliente10);
 
             // Usuario cliente12 = new Cliente(null, "Vega", "vega@hotmail.com", "vegaPassword123", 1000); // Nombre null
@@ -496,7 +497,7 @@ namespace Dominio
             _publicaciones.Add(pPublicacion);
         }
 
-        public List<Usuario> ListadoAdministradores()
+        public IEnumerable<Usuario> ListadoAdministradores()
         {
             List<Usuario> _auxAdministrador = new List<Usuario>();
             foreach (Usuario item in _usuarios)
@@ -510,7 +511,7 @@ namespace Dominio
             return _auxAdministrador;
         }
 
-        public List<Usuario> ListadoClientes()
+        public IEnumerable<Usuario> ListadoClientes()
         {
             List<Usuario> _auxCliente = new List<Usuario>();
             foreach (Usuario item in _usuarios)
@@ -524,7 +525,7 @@ namespace Dominio
             return _auxCliente;
         }
 
-        public List<Usuario> ListadoUsuariosXNombre(string nombre)
+        public IEnumerable<Usuario> ListadoUsuariosXNombre(string nombre)
         {
             List<Usuario> _auxUsuarios = new List<Usuario>();
             foreach (Usuario item in _usuarios)
@@ -537,7 +538,7 @@ namespace Dominio
             return _auxUsuarios;
         }
 
-        public List<Usuario> ListadoUsuariosXEmail(string email)
+        public IEnumerable<Usuario> ListadoUsuariosXEmail(string email)
         {
             List<Usuario> _auxUsuarios = new List<Usuario>();
             foreach (Usuario item in _usuarios)
@@ -550,20 +551,18 @@ namespace Dominio
             return _auxUsuarios;
         }
     
-
-            public Usuario obtenerUsuarios(string email, string contrasenia)
+        public Usuario ObtenerUsuarios(string email, string contrasenia)
+        {
+            foreach (Usuario item in _usuarios)
             {
-                foreach (Usuario item in _usuarios)
+                if (item.Email == email && item.Contrasenia == contrasenia)
                 {
-                    if (item.Email == email && item.Contrasenia == contrasenia)
-                    {
-                        return item;
-                    }
+                    return item;
                 }
-                return null;
             }
+            return null;
+        }
 
-     
         public Usuario FiltrarUsuarioXId(int id)
         {
             foreach (Usuario item in _usuarios)
@@ -575,19 +574,6 @@ namespace Dominio
             }
             return null;
         }
-
-        //public List<Usuario> FiltrarUsuarioXId(int id)
-        //{
-        //    List<Usuario> _auxUsuarios = new List<Usuario>();
-        //    foreach (Usuario item in _usuarios)
-        //    {
-        //        if (/*id == null ||*/ item.Id == id)
-        //        {
-        //            _auxUsuarios.Add(item);
-        //        }
-        //    }
-        //    return _auxUsuarios;
-        //}
 
         public Publicacion FiltrarPublicacionXId(int id)
         {
@@ -601,7 +587,7 @@ namespace Dominio
             return null;
         }
 
-        public List<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
+        public IEnumerable<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
         {
             List <Publicacion> _auxPublicaciones = new List<Publicacion>();
             foreach (Publicacion item in _publicaciones)
@@ -614,7 +600,7 @@ namespace Dominio
             return _auxPublicaciones;
         }
 
-        public List<Publicacion> ListadoPublicacionesXNombre(string nombre)
+        public IEnumerable<Publicacion> ListadoPublicacionesXNombre(string nombre)
         {
             List<Publicacion> _auxPublicaciones = new List<Publicacion>();
             foreach (Publicacion item in _publicaciones)
@@ -626,7 +612,8 @@ namespace Dominio
             }
             return _auxPublicaciones;
         }
-        public List<Publicacion> ListadoVentas()
+
+        public IEnumerable<Publicacion> ListadoVentas()
         {
             List<Publicacion> _auxVentas = new List<Publicacion>();
             foreach (Publicacion item in _publicaciones)
@@ -640,7 +627,7 @@ namespace Dominio
             return _auxVentas;
         }
 
-        public List<Publicacion> ListadoSubastas()
+        public IEnumerable<Publicacion> ListadoSubastas()
         {
             List<Publicacion> _auxSubastas = new List<Publicacion>();
             foreach (Publicacion item in _publicaciones)
@@ -654,7 +641,7 @@ namespace Dominio
             return _auxSubastas;
         }
 
-        public List<Articulo> ListadoArticulos(string pCategoria)
+        public IEnumerable<Articulo> ListadoArticulos(string pCategoria)
         {
             List<Articulo> _auxArticulos = new List<Articulo>();
             foreach (Articulo item in _articulos)
@@ -669,4 +656,3 @@ namespace Dominio
 
     }
 }
-

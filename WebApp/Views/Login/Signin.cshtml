@@ -1,22 +1,21 @@
-﻿<div class="d-flex align-items-center justify-content-center flex-column">
+﻿@if (ViewBag.mensaje != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.mensaje
+    </div>
+}
+
+<div>
     <h1>Registrarse</h1>
-    <form action="/Usuario/Signin" method="post" class="d-flex align-items-center flex-column gap-2">
-        <div class="d-flex flex-column">
-            <label>Nombre</label>
-            <input type='text'>
-        </div>
-        <div class="d-flex flex-column">
-            <label>Apellido</label>
-            <input type='text'>
-        </div>
-        <div class="d-flex flex-column">
-            <label>Email</label>
-            <input type='text'>
-        </div>
-        <div class="d-flex flex-column">
-            <label>Contrasenia</label>
-            <input type='password'>
-        </div>
-        <input type='submit' value="Registrarse">
+    <form method="post" class="form-mod d-flex align-items-start flex-column gap-2">
+        <label>Nombre</label>
+        <input type='text' name="Nombre">
+        <label>Apellido</label>
+        <input type='text' name="Apellido">
+        <label>Email</label>
+        <input type='text' name="Email">
+        <label>Contraseña</label>
+        <input type='password' name="Contrasenia">
+        <button class="btn btn-primary" type="submit">Ingresar</button>
     </form>
 </div>

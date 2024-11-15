@@ -49,7 +49,6 @@ namespace WebApp.Controllers
         [HttpGet]
         public IActionResult AltaCliente()
         {
-            //ViewBag.Usuarios = _sistema.Usuarios;
             return View(new Cliente());
         }
 
@@ -58,13 +57,16 @@ namespace WebApp.Controllers
         {
             try
             {
+                if (usuario == null)
+                {
+                    throw new Exception("Error");
+                }
                 _sistema.AgregarUsuario(usuario);
                 return RedirectToAction("Index", new { mensaje = "Se dio de alta el cliente en forma exitosa." });
             }
             catch (Exception e)
             {
                 ViewBag.mensaje = e.Message;
-                //ViewBag.Usuarios = _sistema.ListadoClientes();
             }
             return View(usuario);
         }
@@ -81,13 +83,16 @@ namespace WebApp.Controllers
         {
             try
             {
+                if (administrador == null)
+                {
+                    throw new Exception("Error");
+                }
                 _sistema.AgregarUsuario(administrador);
                 return RedirectToAction("index", new { mensaje = "Se dio de alta el administrador en forma exitosa." });
             }
             catch (Exception e)
             {
                 ViewBag.mensaje = e.Message;
-                //ViewBag.Usuarios = _sistema.ListadoAdministradores();
             }
             return View(administrador);
         }

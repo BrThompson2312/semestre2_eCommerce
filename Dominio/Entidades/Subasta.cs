@@ -4,6 +4,11 @@ namespace Dominio.Entidades
     {
         private List<Oferta> _ofertas = new List<Oferta>();
 
+        public IEnumerable<Oferta> Ofertas
+        {
+            get { return _ofertas; }
+        }
+
         public Subasta() 
         {
         }
@@ -32,6 +37,11 @@ namespace Dominio.Entidades
             }
             unaOferta.Validar();
             _ofertas.Add(unaOferta);
+        }
+
+        public override decimal PrecioPublicacion(Publicacion unaPublicacion)
+        {
+            return 0;
         }
 
         public override string ToString()

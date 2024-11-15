@@ -30,6 +30,21 @@ namespace Dominio.Entidades
             throw new Exception("Venta no puede tener ofertas");
         }
 
+        public override decimal PrecioPublicacion(Publicacion unaPublicacion)
+        {
+            decimal precioTotal = 0;
+            foreach (var articulo in Articulos)
+            {
+                precioTotal += articulo.Precio;
+
+            }
+            if (OfertaRelampago)
+            {
+
+            }
+            return precioTotal;
+        }
+
         public override string ToString()
         {
             string res = base.ToString();
@@ -38,23 +53,6 @@ namespace Dominio.Entidades
             res += "-------------------------\n";
             return res;
         }
-
-        //public override decimal PrecioPublicacion(Publicacion unaPublicacion)
-        //{
-        //    decimal precioTotal = 0;
-        //    foreach(var articulo in Articulos)
-        //    {
-        //        precioTotal += articulo.Precio;
-
-        //    }
-        //   if (OfertaRelampago)
-        //    {
-
-        //    }
-        //   return precioTotal;
-        //}
-
-
 
         public override bool Equals(object obj)
         {

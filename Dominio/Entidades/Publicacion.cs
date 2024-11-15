@@ -12,7 +12,7 @@ namespace Dominio.Entidades
         public Administrador CompraFinalizadaAdministrador {get; set;}
         public DateTime FechaFinalizacionCompra {get; set;}
 
-        public List<Articulo> Articulos {
+        public IEnumerable<Articulo> Articulos {
             get { return _articulos; }
         }
 
@@ -54,6 +54,8 @@ namespace Dominio.Entidades
 
         public abstract void AgregarOferta(Oferta unaOferta);
 
+        public abstract decimal PrecioPublicacion(Publicacion unaPublicacion);
+
         public override string ToString()
         {
             string res = "";
@@ -79,8 +81,5 @@ namespace Dominio.Entidades
             Publicacion publicacion = obj as Publicacion;
             return publicacion != null && publicacion.Id == Id;
         }
-
-        //public abstract decimal PrecioPublicacion(Publicacion unaPublicacion);
-
     }
 }

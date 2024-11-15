@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pokea\\Downloads\\eComerce\\Main\\Main.csproj": {}
+    "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Main\\Main.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\Dominio.csproj",
+        "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\pokea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\obj\\",
+        "outputPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pokea\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\pokea\\Downloads\\eComerce\\Main\\Main.csproj": {
+    "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Main\\Main.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pokea\\Downloads\\eComerce\\Main\\Main.csproj",
+        "projectUniqueName": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Main\\Main.csproj",
         "projectName": "Main",
-        "projectPath": "C:\\Users\\pokea\\Downloads\\eComerce\\Main\\Main.csproj",
+        "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Main\\Main.csproj",
         "packagesPath": "C:\\Users\\pokea\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pokea\\Downloads\\eComerce\\Main\\obj\\",
+        "outputPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Main\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pokea\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,8 +90,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\Dominio.csproj"
+              "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Dominio.csproj"
               }
             }
           }

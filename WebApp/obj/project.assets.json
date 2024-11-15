@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pokea\\Downloads\\eComerce\\WebApp\\WebApp.csproj",
+      "projectUniqueName": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "C:\\Users\\pokea\\Downloads\\eComerce\\WebApp\\WebApp.csproj",
+      "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\WebApp.csproj",
       "packagesPath": "C:\\Users\\pokea\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pokea\\Downloads\\eComerce\\WebApp\\obj\\",
+      "outputPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pokea\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,8 +54,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\Dominio.csproj"
+            "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Dominio.csproj"
             }
           }
         }

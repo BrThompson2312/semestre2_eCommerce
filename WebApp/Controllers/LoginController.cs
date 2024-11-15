@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Dominio.Entidades;
 using Dominio;
-using System.Linq.Expressions;
 
 namespace WebApp.Controllers
 {
@@ -10,37 +9,18 @@ namespace WebApp.Controllers
 
         private Sistema _sistema = Sistema.Instancia;
 
-
         [HttpGet]
         public IActionResult Login()
         {
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Signin()
-        {
-            return View();
-        }
-
-       
-
-
-
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Clear();
-            return RedirectToAction("Login");
-        }
-
-      
-
         [HttpPost]
         public IActionResult Login(string email, string contrasenia)
         {
             try
             {
-                Usuario unU = _sistema.obtenerUsuarios(email, contrasenia);
+                Usuario unU = _sistema.ObtenerUsuarios(email, contrasenia);
 
                 if (unU == null)
                 {
@@ -61,20 +41,41 @@ namespace WebApp.Controllers
             }
             catch (Exception e)
             {
-                // En caso de error, enviamos el mensaje a la vista para mostrarlo
                 ViewBag.mensaje = e.Message;
             }
-
-            // En caso de error, se vuelve a cargar la vista Ingresar con el mensaje de error
-            return View(); // Esto asegura que se vuelve a cargar la vista "Ingresar.cshtml"
+            return View();
         }
 
+        [HttpGet]
+        public IActionResult Signin()
+        {
+            return View(new Cliente());
+        }
 
+        [HttpPost]
+        public IActionResult Signin(Cliente usuario)
+        {
+            try
+            {
+                if (usuario == null)
+                {
+                    throw new Exception("Error en el registro");
+                }
+                usuario.Rol = "cliente";
+                _sistema.AgregarUsuario(usuario);
+                return Redirect("Login");
+            } catch (Exception e)
+            {
+                ViewBag.mensaje = e.Message;
+            }
+            return View(usuario);
+        }
 
-
-
-
-
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
+        }
 
     }
 }
