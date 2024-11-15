@@ -1,8 +1,26 @@
-﻿<div>
-    <h1>Publicacion: @* nombre de la publicacion *@ </h1>
-    <p></p> @* Estado de la publicacion *@
-    <ul>
-        <li></li> @* lista de articulos con sus respectivos precios *@
-    </ul>
-    <p></p> @* precio total de la publicacion *@
-</div>
+﻿@{
+    var publicacion = ViewBag.Publicacion;
+   
+}
+
+
+   
+        <h1>Publicación: @publicacion.Nombre</h1>
+        <br></br>
+        <h2>Lista de Articulos:</h2>
+
+        <ul>
+            @foreach (var articulo in publicacion.Articulos)
+            {
+                <li>@articulo.Nombre - Precio: @articulo.Precio</li>
+       
+            }
+        </ul>
+
+
+   
+
+
+
+<p>precio Total: </p>
+

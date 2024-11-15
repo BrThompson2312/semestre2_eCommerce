@@ -39,6 +39,23 @@ namespace Dominio.Entidades
             return res;
         }
 
+        //public override decimal PrecioPublicacion(Publicacion unaPublicacion)
+        //{
+        //    decimal precioTotal = 0;
+        //    foreach(var articulo in Articulos)
+        //    {
+        //        precioTotal += articulo.Precio;
+
+        //    }
+        //   if (OfertaRelampago)
+        //    {
+
+        //    }
+        //   return precioTotal;
+        //}
+
+
+
         public override bool Equals(object obj)
         {
             return base.Equals(obj);

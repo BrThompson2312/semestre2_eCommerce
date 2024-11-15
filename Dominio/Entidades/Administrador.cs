@@ -3,16 +3,17 @@ namespace Dominio.Entidades
     public class Administrador : Usuario
     {
 
-        public Administrador() 
-        { 
+        public Administrador()
+        {
         }
 
         public Administrador(
             string _nombre, 
             string _apellido, 
             string _email, 
-            string _contrasenia
-        ) : base(_nombre, _apellido, _email, _contrasenia) {
+            string _contrasenia,
+            string _rol
+        ) : base(_nombre, _apellido, _email, _contrasenia, _rol) {
         }
 
         public override void Validar()

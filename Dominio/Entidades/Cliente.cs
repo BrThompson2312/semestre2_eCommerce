@@ -13,8 +13,9 @@ namespace Dominio.Entidades
             string _apellido, 
             string _email,
             string _contrasenia,
-            int _saldo
-        ) : base(_nombre, _apellido, _email, _contrasenia) {
+            int _saldo,
+            string _rol
+        ) : base(_nombre, _apellido, _email, _contrasenia, _rol) {
             Saldo = _saldo;
         }
 

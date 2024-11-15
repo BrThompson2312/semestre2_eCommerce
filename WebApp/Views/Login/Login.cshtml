@@ -1,10 +1,17 @@
-﻿<div>
+﻿@if (ViewBag.mensaje != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.mensaje
+    </div>
+}
+
+<div>
     <h1>Iniciar Sesion</h1>
-    <form action="/Login/Index" method="post" class="form-mod d-flex align-items-start flex-column gap-2">
+    <form method="post" class="form-mod d-flex align-items-start flex-column gap-2">
         <label>Ingrese Email</label>
-        <input type='text' name="Email">
+        <input type='text' name="email">
         <label>Ingrese Contrasenia</label>
-        <input type='password' name="Contrasenia">
+        <input type='password' name="contrasenia">
         @* <input type='submit' value="Ingresar"> *@ 
         <button class="btn btn-primary" type="submit">Ingresar</button>
     </form>

@@ -9,13 +9,16 @@ namespace Dominio
         private List<Publicacion> _publicaciones = new List<Publicacion>();
         public List<Articulo> _articulos = new List<Articulo>();
 
-        public List<Usuario> Usuarios {
+        public List<Usuario> Usuarios
+        {
             get { return _usuarios; }
         }
-        public List<Publicacion> Publicaciones {
+        public List<Publicacion> Publicaciones
+        {
             get { return _publicaciones; }
         }
-        public List<Articulo> Articulos {
+        public List<Articulo> Articulos
+        {
             get { return _articulos; }
         }
 
@@ -23,9 +26,10 @@ namespace Dominio
 
         private static Sistema _instancia;
 
-        public static Sistema Instancia 
+        public static Sistema Instancia
         {
-            get { 
+            get
+            {
                 if (_instancia == null) _instancia = new Sistema();
                 return _instancia;
             }
@@ -50,10 +54,10 @@ namespace Dominio
         /*-------------- Precarga de datos --------------*/
         private void PrecargarAdministradores()
         {
-            Usuario admin1 = new Administrador("Carlos", "Gomez", "carlos.gomez@gmail.com", "passCarlos1");
+            Usuario admin1 = new Administrador("Carlos", "Gomez", "carlos.gomez@gmail.com", "passCarlos1", "Administrador");
             AgregarUsuario(admin1);
 
-            Usuario admin2 = new Administrador("Lucia", "Fernandez", "lucia.fernandez@gmail.com", "luciaFernandez123");
+            Usuario admin2 = new Administrador("Lucia", "Fernandez", "lucia.fernandez@gmail.com", "luciaFernandez123", "Administrador");
             AgregarUsuario(admin2);
 
             // Usuario admin3 = new Administrador("Pedro", "Diaz", "pedro.diaz@gmail", null); // Contrasenia no puede ser null o vacia
@@ -71,34 +75,34 @@ namespace Dominio
 
         private void PrecargarClientes()
         {
-            Usuario cliente1 = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1", 1000);
+            Usuario cliente1 = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1", 1000, "cliente");
             AgregarUsuario(cliente1);
 
-            Usuario cliente2 = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22", 2000);
+            Usuario cliente2 = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22", 2000, "cliente");
             AgregarUsuario(cliente2);
 
-            Usuario cliente3 = new Cliente("Juan", "Martinez", "juan.martinez@hotmail.com", "juanMartinez33", 1500);
+            Usuario cliente3 = new Cliente("Juan", "Martinez", "juan.martinez@hotmail.com", "juanMartinez33", 1500, "cliente");
             AgregarUsuario(cliente3);
 
-            Usuario cliente4 = new Cliente("Ana", "Sanchez", "ana.sanchez@outlook.com", "anaSanchez44", 1800);
+            Usuario cliente4 = new Cliente("Ana", "Sanchez", "ana.sanchez@outlook.com", "anaSanchez44", 1800, "cliente");
             AgregarUsuario(cliente4);
 
-            Usuario cliente5 = new Cliente("Miguel", "Perez", "miguel.perez@gmail.com", "miguelPerez55", 1200);
+            Usuario cliente5 = new Cliente("Miguel", "Perez", "miguel.perez@gmail.com", "miguelPerez55", 1200, "cliente");
             AgregarUsuario(cliente5);
 
-            Usuario cliente6 = new Cliente("Laura", "Fernandez", "laura.fernandez@gmail.com", "lauraFernandez66", 1700);
+            Usuario cliente6 = new Cliente("Laura", "Fernandez", "laura.fernandez@gmail.com", "lauraFernandez66", 1700, "cliente");
             AgregarUsuario(cliente6);
 
-            Usuario cliente7 = new Cliente("Pedro", "Diaz", "pedro.diaz@gmail.com", "pedroDiaz77", 1300);
+            Usuario cliente7 = new Cliente("Pedro", "Diaz", "pedro.diaz@gmail.com", "pedroDiaz77", 1300, "cliente");
             AgregarUsuario(cliente7);
 
-            Usuario cliente8 = new Cliente("Sofia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88", 2200);
+            Usuario cliente8 = new Cliente("Sofia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88", 2200, "cliente");
             AgregarUsuario(cliente8);
 
-            Usuario cliente9 = new Cliente("Sofia", "Rodriguez", "sofia.rodriguez@gmail.com", "sofiaRodriguez99", 1400);
+            Usuario cliente9 = new Cliente("Sofia", "Rodriguez", "sofia.rodriguez@gmail.com", "sofiaRodriguez99", 1400, "cliente");
             AgregarUsuario(cliente9);
 
-            Usuario cliente10 = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010", 1600);
+            Usuario cliente10 = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010", 1600, "cliente");
             AgregarUsuario(cliente10);
 
             // Usuario cliente12 = new Cliente(null, "Vega", "vega@hotmail.com", "vegaPassword123", 1000); // Nombre null
@@ -352,10 +356,10 @@ namespace Dominio
             // AgregarPublicacion(venta14);
 
             /* ---------------- Precarga de ofertas ---------------- */
-            Usuario cliente1 = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "123", 1000);
-            Usuario cliente2 = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "123", 2000);
-            Usuario cliente3 = new Cliente("Juan", "Benitez", "juan@gmail.com", "123", 2000);
-            Usuario cliente4 = new Cliente("Jorge", "Casuriaga", "jorg@gmail.com", "123", 2000);
+            Usuario cliente1 = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "123", 1000, "cliente");
+            Usuario cliente2 = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "123", 2000, "cliente");
+            Usuario cliente3 = new Cliente("Juan", "Benitez", "juan@gmail.com", "123", 2000, "cliente");
+            Usuario cliente4 = new Cliente("Jorge", "Casuriaga", "jorg@gmail.com", "123", 2000, "cliente");
 
             Oferta oferta1 = new Oferta(cliente1, 1000, new DateTime(2024, 10, 3));
             Oferta oferta2 = new Oferta(cliente1, 1000, new DateTime(2024, 12, 3)); // Error, no puede haber otra oferta con el mismo monto del mismo cliente.
@@ -390,7 +394,7 @@ namespace Dominio
             subasta2.AgregarOferta(oferta2);
             subasta2.AgregarOferta(oferta3);
             // subasta2.AgregarOferta(oferta13); // Mismo error de fecha
-            
+
             Publicacion subasta3 = new Subasta("Subasta de ropa de verano", new DateTime(2024, 6, 15));
             AgregarPublicacion(subasta3);
             subasta3.AgregarArticulo(articulo28);
@@ -454,7 +458,7 @@ namespace Dominio
         }
         /*-------------- Precarga de datos --------------*/
 
-        public void AgregarUsuario(Usuario pUsuario) 
+        public void AgregarUsuario(Usuario pUsuario)
         {
             if (pUsuario == null)
             {
@@ -468,12 +472,12 @@ namespace Dominio
             _usuarios.Add(pUsuario);
         }
 
-        public void AgregarArticulo(Articulo pArticulo) 
+        public void AgregarArticulo(Articulo pArticulo)
         {
             if (pArticulo == null)
             {
                 throw new Exception("Articulo null");
-            } 
+            }
             if (_articulos.Contains(pArticulo))
             {
                 throw new Exception($"Articulo ya existente: {pArticulo}");
@@ -533,7 +537,7 @@ namespace Dominio
             return _auxUsuarios;
         }
 
-        public List<Usuario> ListadoUsuariosXEmail (string email)
+        public List<Usuario> ListadoUsuariosXEmail(string email)
         {
             List<Usuario> _auxUsuarios = new List<Usuario>();
             foreach (Usuario item in _usuarios)
@@ -545,7 +549,21 @@ namespace Dominio
             }
             return _auxUsuarios;
         }
+    
 
+            public Usuario obtenerUsuarios(string email, string contrasenia)
+            {
+                foreach (Usuario item in _usuarios)
+                {
+                    if (item.Email == email && item.Contrasenia == contrasenia)
+                    {
+                        return item;
+                    }
+                }
+                return null;
+            }
+
+     
         public Usuario FiltrarUsuarioXId(int id)
         {
             foreach (Usuario item in _usuarios)

@@ -8,19 +8,21 @@ namespace Dominio.Entidades
         public string Apellido {get; set;}
         public string Email {get; set;}
         public string Contrasenia {get; set;}
+        public string Rol { get; set; }
 
         public Usuario()
         {
             Id = ultimoId++;
         }
 
-        public Usuario(string _nombre, string _apellido, string _email, string _contrasenia)
+        public Usuario(string _nombre, string _apellido, string _email, string _contrasenia, string _rol)
         {
             Id = ultimoId++;
             Nombre = _nombre;
             Apellido = _apellido;
             Email = _email;
             Contrasenia = _contrasenia;
+            Rol = _rol;
         }
 
         public virtual void Validar()

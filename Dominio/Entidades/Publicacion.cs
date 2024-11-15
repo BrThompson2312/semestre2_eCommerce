@@ -80,5 +80,7 @@ namespace Dominio.Entidades
             return publicacion != null && publicacion.Id == Id;
         }
 
+        //public abstract decimal PrecioPublicacion(Publicacion unaPublicacion);
+
     }
 }

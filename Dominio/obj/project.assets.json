@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj",
+      "projectUniqueName": "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\Dominio.csproj",
       "projectName": "Dominio",
-      "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\Dominio.csproj",
+      "projectPath": "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\Dominio.csproj",
       "packagesPath": "C:\\Users\\pokea\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pokea\\Documents\\proyectos\\semestre2_eCommerce\\Dominio\\obj\\",
+      "outputPath": "C:\\Users\\pokea\\Downloads\\eComerce\\Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pokea\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,4 +1,5 @@
 ﻿using Dominio;
+using Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApp.Controllers
@@ -39,6 +40,7 @@ namespace WebApp.Controllers
             return View("Index");
         }
 
+        [HttpGet]
         public IActionResult Ver(int id)
         {
 
@@ -47,8 +49,10 @@ namespace WebApp.Controllers
             {
                 return RedirectToAction("index");
             }
+            
             return View();
+        
         }
-
+      
     }
 }
