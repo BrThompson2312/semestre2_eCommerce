@@ -8,41 +8,45 @@ namespace Dominio.Entidades
         public Venta ( 
             string _nombre, 
             DateTime _fechaPublicacion, 
-            bool _ofertaRelampago, 
-            decimal _precioFinal
+            bool _ofertaRelampago
         ) : base( _nombre, _fechaPublicacion ) {
             OfertaRelampago = _ofertaRelampago;
-            PrecioFinal = _precioFinal;
+            PrecioFinal = 0;
         }
 
         public override void Validar()
         {
             string res = $"Venta id_{Id}({Nombre})";
             base.Validar();
-            if (PrecioFinal <= 0)
+            if (PrecioFinal < 0)
             {
                 throw new Exception($"{res}: PrecioFinal invalido: {PrecioFinal}");
             }
         }
 
-        public override void AgregarOferta(Oferta unaOferta)
+        public override void AgregarArticulo(Articulo pArticulo)
         {
-            throw new Exception("Venta no puede tener ofertas");
+            base.AgregarArticulo(pArticulo);
+            PrecioFinal += PrecioPublicacion(pArticulo);
         }
 
-        public override decimal PrecioPublicacion(Publicacion unaPublicacion)
+        public override void AgregarOferta(Oferta unaOferta)
         {
-            decimal precioTotal = 0;
-            foreach (var articulo in Articulos)
-            {
-                precioTotal += articulo.Precio;
+            throw new Exception("No implementado");
+        }
 
-            }
-            if (OfertaRelampago)
+        public override decimal PrecioPublicacion(Articulo articulo)
+        {
+            decimal precioFinal = 0;
+            if (OfertaRelampago == true)
             {
-
+                precioFinal = articulo.Precio - ((articulo.Precio * 10) / 100);
             }
-            return precioTotal;
+            else
+            {
+                precioFinal = articulo.Precio;
+            }
+            return precioFinal;
         }
 
         public override string ToString()

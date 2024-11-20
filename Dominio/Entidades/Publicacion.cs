@@ -54,7 +54,7 @@ namespace Dominio.Entidades
 
         public abstract void AgregarOferta(Oferta unaOferta);
 
-        public abstract decimal PrecioPublicacion(Publicacion unaPublicacion);
+        public abstract decimal PrecioPublicacion(Articulo articulo);
 
         public override string ToString()
         {

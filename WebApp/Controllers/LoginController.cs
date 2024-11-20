@@ -6,7 +6,6 @@ namespace WebApp.Controllers
 {
     public class LoginController : Controller
     {
-
         private Sistema _sistema = Sistema.Instancia;
 
         [HttpGet]
@@ -21,7 +20,7 @@ namespace WebApp.Controllers
             try
             {
                 Usuario unU = _sistema.ObtenerUsuarios(email, contrasenia);
-
+                
                 if (unU == null)
                 {
                     throw new Exception("Credenciales inválidas");
@@ -32,11 +31,11 @@ namespace WebApp.Controllers
 
                 if (unU.Rol == "Administrador")
                 {
-                    return RedirectToAction("Index", "Usuario");
+                    return Redirect("/Publicacion/Index");
                 }
                 else
                 {
-                    return RedirectToAction("Index", "Publicacion");
+                    return Redirect("/Publicacion/Index");
                 }
             }
             catch (Exception e)

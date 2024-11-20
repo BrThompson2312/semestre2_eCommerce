@@ -1,13 +1,13 @@
 ﻿using Dominio;
 using Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using WebApp.Filtros;
 
 namespace WebApp.Controllers
 {
+    [Logueado]
     public class UsuarioController : Controller
     {
-
         Sistema _sistema = Sistema.Instancia;
 
         [HttpGet]
@@ -47,12 +47,14 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
+        [Admin]
         public IActionResult AltaCliente()
         {
             return View(new Cliente());
         }
 
         [HttpPost]
+        [Admin]
         public IActionResult AltaCliente(Cliente usuario)
         {
             try
@@ -72,6 +74,7 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
+        [Admin]
         public IActionResult AltaAdministrador()
         {
             ViewBag.Usuarios = _sistema.Usuarios;
@@ -79,6 +82,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
+        [Admin]
         public IActionResult AltaAdministrador(Administrador administrador)
         {
             try
@@ -101,7 +105,6 @@ namespace WebApp.Controllers
         public IActionResult Ver(int id)
         {
             string emailSession = HttpContext.Session.GetString("email");
-
             ViewBag.Email = emailSession;
             ViewBag.Usuario = _sistema.FiltrarUsuarioXId(id);
             if (ViewBag.Usuario == null)
@@ -124,15 +127,5 @@ namespace WebApp.Controllers
             }
             return View();
         }
-
-
-
     }
 }
-
-
-
-
-
-
-   

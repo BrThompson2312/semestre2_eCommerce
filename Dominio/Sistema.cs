@@ -51,69 +51,120 @@ namespace Dominio
         /*-------------- Precarga de datos --------------*/
         private void PrecargarAdministradores()
         {
-            string rol = "administrador";
+            string rol = "Administrador";
 
-            Usuario admin1 = new Administrador("Carlos", "Gomez", "carlos.gomez@gmail.com", "passCarlos1", rol);
-            AgregarUsuario(admin1);
+            Usuario admin;
 
-            Usuario admin2 = new Administrador("Lucia", "Fernandez", "lucia.fernandez@gmail.com", "luciaFernandez123", rol);
-            AgregarUsuario(admin2);
+            admin = new Administrador("Carlos", "Gomez", "carlos.gomez@gmail.com", "passCarlos9@", rol);
+            AgregarUsuario(admin);
 
-            // Usuario admin3 = new Administrador("Pedro", "Diaz", "pedro.diaz@gmail", null); // Contrasenia no puede ser null o vacia
-            // AgregarUsuario(admin3);
+            admin = new Administrador("Lucia", "Fernandez", "lucia.fernandez@gmail.com", "#luciaFernandez123", rol);
+            AgregarUsuario(admin);
 
-            // Usuario admin4 = new Administrador("Ana", "Martinez", null, "ana12"); // Email no puede ser null o vacia
-            // AgregarUsuario(admin4);
+            //admin = new Administrador("Pedro", "Diaz", "pedro.diaz@gmail", null, rol); // Contrasenia vacia/null
+            //AgregarUsuario(admin);
 
-            // Usuario admin5 = new Administrador(null, "Sanchez", "sanchez.admin@outlook.com", "sanchezAdmin789"); // Nombre no puede ser null o vacia
-            // AgregarUsuario(admin5);
+            //admin = new Administrador("Ana", "Martinez", null, "ana12", rol); // Email vacia/null
+            //AgregarUsuario(admin);
 
-            // Usuario admin6 = new Administrador("Laura", null, "laura.admin@gmail.com", "lauraAdmin101"); // Apellido no puede ser null o vacia
-            // AgregarUsuario(admin6);
+            //admin = new Administrador(null, "Sanchez", "sanchez.admin@outlook.com", "sanchezAdmin789", rol); // Nombre vacia/null
+            //AgregarUsuario(admin);
+
+            //admin = new Administrador("Laura", null, "laura.admin@gmail.com", "lauraAdmin101", rol); // Apellido vacio/null
+            //AgregarUsuario(admin);
+
+            /* 
+                (inicio) Datos nuevos! 
+            */
+
+            //Usuario admin7 = new Administrador("Javier", "Martinez", "javier.martinez@gmail.com", "JAVIERadmin@", rol); // No tiene numeros
+            //AgregarUsuario(admin7);
+
+            //Usuario admin8 = new Administrador("Elena", "Ruiz", "elena.ruiz@gmail.com", "ELENARUIZ123@", rol); // No contiene letras minusculas
+            //AgregarUsuario(admin8);
+
+            //Usuario admin9 = new Administrador("Ricardo", "Pérez", "ricardo.perez@gmail.com", "R123@", rol); // No cumple con minimo de caracteres
+            //AgregarUsuario(admin9);
+
+            //Usuario admin10 = new Administrador("Marta", "Lopez", "marta.lopez@gmail.com", "MARTAlopez123", rol); // No contiene simbolos
+            //AgregarUsuario(admin10);
+
+            //Usuario admin11 = new Administrador("Tomás", "Hernandez", "tomas.hernandez@gmail.com", "123456789@", rol); // No contiene letras
+            //AgregarUsuario(admin11);
+
+            /* 
+                (fin) Datos nuevos! 
+            */
         }
 
         private void PrecargarClientes()
         {
-            string rol = "cliente";
+            string rol = "Cliente";
 
-            Usuario cliente1 = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1", 1000, rol);
-            AgregarUsuario(cliente1);
+            Usuario user;
 
-            Usuario cliente2 = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22", 2000, rol);
-            AgregarUsuario(cliente2);
+            user = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1@", 1000, rol);
+            AgregarUsuario(user);
 
-            Usuario cliente3 = new Cliente("Juan", "Martinez", "juan.martinez@hotmail.com", "juanMartinez33", 1500, rol);
-            AgregarUsuario(cliente3);
+            user = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22$", 2000, rol);
+            AgregarUsuario(user);
 
-            Usuario cliente4 = new Cliente("Ana", "Sanchez", "ana.sanchez@outlook.com", "anaSanchez44", 1800, rol);
-            AgregarUsuario(cliente4);
+            user = new Cliente("Juan", "Martinez", "juan.martinez@hotmail.com", "juanMartinez33#", 1500, rol);
+            AgregarUsuario(user);
 
-            Usuario cliente5 = new Cliente("Miguel", "Perez", "miguel.perez@gmail.com", "miguelPerez55", 1200, rol);
-            AgregarUsuario(cliente5);
+            user = new Cliente("Ana", "Sanchez", "ana.sanchez@outlook.com", "anaSanchez44%", 1800, rol);
+            AgregarUsuario(user);
 
-            Usuario cliente6 = new Cliente("Laura", "Fernandez", "laura.fernandez@gmail.com", "lauraFernandez66", 1700, rol);
-            AgregarUsuario(cliente6);
+            user = new Cliente("Miguel", "Perez", "miguel.perez@gmail.com", "miguelPerez55!", 1200, rol);
+            AgregarUsuario(user);
 
-            Usuario cliente7 = new Cliente("Pedro", "Diaz", "pedro.diaz@gmail.com", "pedroDiaz77", 1300, rol);
-            AgregarUsuario(cliente7);
+            user = new Cliente("Laura", "Fernandez", "laura.fernandez@gmail.com", "lauraFernandez66@", 1700, rol);
+            AgregarUsuario(user);
 
-            Usuario cliente8 = new Cliente("Sofia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88", 2200, rol);
-            AgregarUsuario(cliente8);
+            user = new Cliente("Pedro", "Diaz", "pedro.diaz@gmail.com", "pedroDiaz77$", 1300, rol);
+            AgregarUsuario(user);
 
-            Usuario cliente9 = new Cliente("Sofia", "Rodriguez", "sofia.rodriguez@gmail.com", "sofiaRodriguez99", 1400, rol);
-            AgregarUsuario(cliente9);
+            user = new Cliente("Sofia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88#", 2200, rol);
+            AgregarUsuario(user);
 
-            Usuario cliente10 = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010", 1600, rol);
-            AgregarUsuario(cliente10);
+            user = new Cliente("Sofia", "Rodriguez", "sofia.rodriguez@gmail.com", "sofiaRodriguez99%", 1400, rol);
+            AgregarUsuario(user);
 
-            // Usuario cliente12 = new Cliente(null, "Vega", "vega@hotmail.com", "vegaPassword123", 1000); // Nombre null
-            // AgregarCliente(cliente12);
+            user = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010!", 1600, rol);
+            AgregarUsuario(user);
 
-            // Usuario cliente13 = new Cliente("Ramiro", "Santos", "ramiro.santos@gmail.com", "ramiroSantos123", -500); // Saldo negativo
-            // AgregarCliente(cliente13);
 
-            // Usuario cliente15 = new Cliente("Gabriel", null, "gabriel@outlook.com", "gabrielOut123", 1700); // Apellido null
-            // AgregarCliente(cliente15);
+            // Usuario cliente11 = new Cliente(null, "Vega", "vega@hotmail.com", "vegaPassword123", 1000); // Nombre null
+            // AgregarUsuario(cliente11);
+
+            // Usuario cliente12 = new Cliente("Ramiro", "Santos", "ramiro.santos@gmail.com", "ramiroSantos123", -500); // Saldo negativo
+            // AgregarUsuario(cliente12);
+
+            // Usuario cliente13 = new Cliente("Gabriel", null, "gabriel@outlook.com", "gabrielOut123", 1700); // Apellido null
+            // AgregarUsuario(cliente13);
+
+            /* 
+                Datos Nuevos!
+            */
+
+            //user = new Cliente("Laura", "Martinez", "laura.martinez@gmail.com", "LAURAmartinez@", 1500, rol); // No contiene numeros
+            //AgregarUsuario(user);
+
+            //user = new Cliente("Carlos", "Diaz", "carlos.diaz@gmail.com", "CARLOSDIAZ123@", 1800, rol); // No contiene minusculas
+            //AgregarUsuario(user);
+
+            //user = new Cliente("Sofia", "Rodriguez", "bruno.rodriguez@gmail.com", "Sof123@", 1700, rol); // No contiene minimo de caracteres
+            //AgregarUsuario(user);
+
+            //user = new Cliente("Miguel", "Perez", "hernan.perez@gmail.com", "hernanPerez123", 1600, rol); // No contiene simbolos
+            //AgregarUsuario(user);
+
+            //user = new Cliente("Pedro", "Lopez", "pedro.lopez@gmail.com", "123456789@", 1400, rol); // No contiene letras
+            //AgregarUsuario(user);
+
+            /* 
+                Datos Nuevos!
+            */
         }
 
         private void PrecargarPublicaciones()
@@ -284,61 +335,61 @@ namespace Dominio
             // AgregarArticulo(articulo55);
 
             /* ---------------- Precarga de ventas ---------------- */
-            Publicacion venta1 = new Venta("Descuento Playero!", new DateTime(2024, 5, 12), false, 1000);
+            Publicacion venta1 = new Venta("Descuento Playero!", new DateTime(2024, 5, 12), false);
             AgregarPublicacion(venta1);
             venta1.AgregarArticulo(articulo1);
             venta1.AgregarArticulo(articulo2);
             venta1.AgregarArticulo(articulo3);
 
-            Publicacion venta2 = new Venta("Oferta de Verano", new DateTime(2024, 6, 20), true, 850);
+            Publicacion venta2 = new Venta("Oferta de Verano", new DateTime(2024, 6, 20), true);
             AgregarPublicacion(venta2);
             venta2.AgregarArticulo(articulo1);
             venta2.AgregarArticulo(articulo2);
             venta2.AgregarArticulo(articulo3);
 
-            Publicacion venta3 = new Venta("Liquidación de Invierno", new DateTime(2024, 12, 1), false, 1200);
+            Publicacion venta3 = new Venta("Liquidación de Invierno", new DateTime(2024, 12, 1), false);
             AgregarPublicacion(venta3);
             venta3.AgregarArticulo(articulo1);
             venta3.AgregarArticulo(articulo2);
             venta3.AgregarArticulo(articulo3);
 
-            Publicacion venta4 = new Venta("Descuento Primavera", new DateTime(2024, 4, 15), true, 900);
+            Publicacion venta4 = new Venta("Descuento Primavera", new DateTime(2024, 4, 15), true);
             AgregarPublicacion(venta4);
             venta4.AgregarArticulo(articulo1);
             venta4.AgregarArticulo(articulo2);
             venta4.AgregarArticulo(articulo3);
 
-            Publicacion venta5 = new Venta("Promoción Otoñal", new DateTime(2024, 10, 10), false, 1500);
+            Publicacion venta5 = new Venta("Promoción Otoñal", new DateTime(2024, 10, 10), false);
             AgregarPublicacion(venta5);
             venta5.AgregarArticulo(articulo4);
             venta5.AgregarArticulo(articulo5);
             venta5.AgregarArticulo(articulo6);
 
-            Publicacion venta6 = new Venta("Oferta Relámpago Accesorios", new DateTime(2024, 3, 5), true, 600);
+            Publicacion venta6 = new Venta("Oferta Relámpago Accesorios", new DateTime(2024, 3, 5), true);
             AgregarPublicacion(venta6);
             venta6.AgregarArticulo(articulo7);
             venta6.AgregarArticulo(articulo8);
             venta6.AgregarArticulo(articulo9);
 
-            Publicacion venta7 = new Venta("Descuento en Electrónica", new DateTime(2024, 7, 25), false, 2200);
+            Publicacion venta7 = new Venta("Descuento en Electrónica", new DateTime(2024, 7, 25), false);
             AgregarPublicacion(venta7);
             venta7.AgregarArticulo(articulo10);
             venta7.AgregarArticulo(articulo11);
             venta7.AgregarArticulo(articulo12);
 
-            Publicacion venta8 = new Venta("Black Friday 2024", new DateTime(2024, 11, 29), true, 3500);
+            Publicacion venta8 = new Venta("Black Friday 2024", new DateTime(2024, 11, 29), true);
             AgregarPublicacion(venta8);
             venta8.AgregarArticulo(articulo13);
             venta8.AgregarArticulo(articulo14);
             venta8.AgregarArticulo(articulo15);
 
-            Publicacion venta9 = new Venta("Oferta en Moda", new DateTime(2024, 8, 18), false, 1800);
+            Publicacion venta9 = new Venta("Oferta en Moda", new DateTime(2024, 8, 18), false);
             AgregarPublicacion(venta9);
             venta9.AgregarArticulo(articulo16);
             venta9.AgregarArticulo(articulo17);
             venta9.AgregarArticulo(articulo18);
 
-            Publicacion venta10 = new Venta("Promoción Especial Festiva", new DateTime(2024, 12, 20), true, 2000);
+            Publicacion venta10 = new Venta("Promoción Especial Festiva", new DateTime(2024, 12, 20), true);
             AgregarPublicacion(venta10);
             venta10.AgregarArticulo(articulo19);
             venta10.AgregarArticulo(articulo20);

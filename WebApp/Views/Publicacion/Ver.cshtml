@@ -1,26 +1,22 @@
-﻿@{
-    var publicacion = ViewBag.Publicacion;
-   
+﻿@using Dominio.Entidades;
+
+@{
+var publicacion = ViewBag.Publicacion;
 }
 
+<h1>Publicación: @publicacion.Nombre</h1>
+<h2>Articulos:</h2>
+<ul>
 
-   
-        <h1>Publicación: @publicacion.Nombre</h1>
-        <br></br>
-        <h2>Lista de Articulos:</h2>
-
-        <ul>
-            @foreach (var articulo in publicacion.Articulos)
-            {
-                <li>@articulo.Nombre - Precio: @articulo.Precio</li>
-       
-            }
-        </ul>
-
-
-   
-
-
-
-<p>precio Total: </p>
-
+    @foreach (Articulo a in publicacion.Articulos)
+    {
+        <li>@a.Nombre - $@a.Precio</li>
+    }
+    <li>Oferta Relampago: @if (!publicacion.OfertaRelampago) { <span>No</span> } else { <span>Si</span> }</li>
+</ul>
+<p class="p-2 bg-success text-white">Precio Total: $@publicacion.PrecioFinal 
+    @if (publicacion.OfertaRelampago)
+    {
+        <span class="p-1 rounded bg-danger">-10% OFF</span>
+    }
+</p>

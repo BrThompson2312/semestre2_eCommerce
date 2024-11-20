@@ -30,7 +30,6 @@
         @foreach (var item in ViewBag.Publicaciones){
             <tr>
                 <td>@item.Id</td>
-                @* <p>@item.Nombre <a href="/Usuario/Ver?@item.Id">Ver</a>  <a href="/Usuario/Modificar?@item.Id">Modificar</a></p> *@
                 <td>@item.Nombre</td>
                 <td>
                     @if (item.EstadoPublicacion == 0)

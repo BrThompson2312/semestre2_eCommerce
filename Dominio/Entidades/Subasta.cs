@@ -39,7 +39,7 @@ namespace Dominio.Entidades
             _ofertas.Add(unaOferta);
         }
 
-        public override decimal PrecioPublicacion(Publicacion unaPublicacion)
+        public override decimal PrecioPublicacion(Articulo articulo)
         {
             return 0;
         }

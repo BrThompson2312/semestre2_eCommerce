@@ -20,12 +20,16 @@
             <input type="submit" value="Buscar" />
         </form>
 
-        <a href="/Usuario/Index">Ver Todo</a>
-        <a href="/Usuario/AltaAdministrador">Alta Administrador</a>
-        <a href="/Usuario/AltaCliente">Alta Clientes</a>
-        <a href="/Usuario/ListadoAdministradores">Ver Administradores</a>
-        <a href="/Usuario/ListadoClientes">Ver Clientes</a>
-       
+
+        @if (Context.Session.GetString("rol") == "Administrador")
+        {
+            <a href="/Usuario/Index">Ver Todo</a>
+            <a href="/Usuario/AltaAdministrador">Alta Administrador</a>
+            <a href="/Usuario/AltaCliente">Alta Clientes</a>
+            <a href="/Usuario/ListadoAdministradores">Ver Administradores</a>
+            <a href="/Usuario/ListadoClientes">Ver Clientes</a>
+        }
+        
     </div>
 
     <table class="table">
@@ -42,19 +46,20 @@
             </tr>
         </thead>
         <tbody>
-                @foreach (Usuario item in ViewBag.Usuarios)
+            @{
+                bool Isclient(Usuario item)
                 {
-                    @* if (item is Administrador)
+                    if (Context.Session.GetString("rol") == "Administrador")
                     {
-                        <td>@item.Nombre</td>
-                    } else
-                    {
-                        <p>@item.Nombre</p>
-                        @if (item.Email == Context.Session.GetString("email")) {
-       
-                        }
-                    } *@
-
+                        return true;
+                    }
+                    return item is Cliente;
+                }
+            }
+            @foreach (Usuario item in ViewBag.Usuarios)
+            {
+                if (Isclient(item))
+                {
                     <tr>
                         <td>@item.Id</td>
                         <td>@item.Nombre</td>
@@ -68,7 +73,6 @@
                         {
                             <td><span class="text-success" style="font-weight: bold">Cliente</span></td>
                         }
-
                         @if (item.Email == Context.Session.GetString("email"))
                         {
                             <td>
@@ -80,6 +84,7 @@
                         }
                     </tr>
                 }
+            }
         </tbody>
     </table>
 </div>

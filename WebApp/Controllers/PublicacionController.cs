@@ -1,9 +1,11 @@
 ﻿using Dominio;
 using Dominio.Entidades;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Filtros;
 
 namespace WebApp.Controllers
 {
+    [Logueado]
     public class PublicacionController : Controller
     {
         Sistema _sistema = Sistema.Instancia;
@@ -43,16 +45,12 @@ namespace WebApp.Controllers
         [HttpGet]
         public IActionResult Ver(int id)
         {
-
             ViewBag.Publicacion = _sistema.FiltrarPublicacionXId(id);
             if (ViewBag.Publicacion == null)
             {
                 return RedirectToAction("index");
             }
-            
             return View();
-        
         }
-      
     }
 }
