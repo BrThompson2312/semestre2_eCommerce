@@ -1,17 +1,25 @@
-﻿<div>
+﻿@using Dominio.Entidades
+
+@if(ViewBag.mensaje != null)
+{
+    <div> Error al modificar datos </div>
+}
+
+@{
+    var u = ViewBag.Usuario;
+}
+
+<div>
     <h1>Modificar</h1>
-    <form class="form-mod d-flex flex-column align-items-start gap-2">
-
-        
-
+    <form method="post" class="form-mod d-flex flex-column align-items-start gap-2">
         <label>Nombre</label>
-        <input type="text" />
+        <input type="text" value="@u.Nombre"/>
         <label>Apellido</label>
-        <input type="text" />
+        <input type="text" value="@u.Apellido"/>
         <label>Email</label>
-        <input type="text" />
+        <input type="text" value="@u.Email"/>
         <label>Contraseña</label>
-        <input type="text" />
+        <input type="password" value="@u.Contrasenia"/>
         <button class="btn btn-primary" type="submit">Modificar</button>
     </form>
 </div>

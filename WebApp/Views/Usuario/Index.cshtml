@@ -20,7 +20,6 @@
             <input type="submit" value="Buscar" />
         </form>
 
-
         @if (Context.Session.GetString("rol") == "Administrador")
         {
             <a href="/Usuario/Index">Ver Todo</a>
@@ -32,8 +31,8 @@
         
     </div>
 
-    <table class="table">
-        <thead class="thead-dark">
+    <table class="table table-striped">
+        <thead class="table-dark">
             <tr>
                 <th>#</th>
                 <th>Nombre</th>
@@ -45,15 +44,12 @@
                 <th>@* modificar *@</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="table-striped">
             @{
                 bool Isclient(Usuario item)
                 {
-                    if (Context.Session.GetString("rol") == "Administrador")
-                    {
-                        return true;
-                    }
-                    return item is Cliente;
+                    var co = Context.Session.GetString("rol") == "Administrador";
+                    return co ? true : item is Cliente;
                 }
             }
             @foreach (Usuario item in ViewBag.Usuarios)

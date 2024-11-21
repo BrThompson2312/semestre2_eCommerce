@@ -1,18 +1,6 @@
 ﻿@using Dominio.Entidades;
 @model Cliente;
 
-@* <div class="d-flex align-items-center justify-content-center flex-column">
-    <h1>Alta Cliente</h1>
-    <form method="post" class="d-flex align-items-center flex-column gap-2">
-        <input type="text" name="Nombre" placeholder="Nombre" value="@Model.Nombre" />
-        <input type="text" name="Apellido" placeholder="Apellido" value="@Model.Apellido" />
-        <input type="text" name="Email" placeholder="Email" value="@Model.Email" />
-        <input type="text" name="Contrasenia" placeholder="Contraseña" value="@Model.Contrasenia" />
-        <input type="text" name="Saldo" placeholder="Saldo" value="@Model.Saldo" />
-        <input type="submit" name="" value="Agregar" />
-    </form>
-</div> *@
-
 <div class="">
     <h1>Alta Cliente</h1>
     <form method="post" class="form-mod d-flex flex-column align-items-start gap-2">
@@ -23,7 +11,7 @@
         <label>Email</label>
         <input type="text" name="Email" value="@Model.Email" />
         <label>Contraseña</label>
-        <input type="text" name="Contrasenia" value="@Model.Contrasenia" />
+        <input type="password" name="Contrasenia" value="@Model.Contrasenia" />
         <label>Saldo</label>
         <input type="text" name="Contrasenia" value="@Model.Saldo" />
         <button type="submit" class="btn btn-primary">Agregar</button>

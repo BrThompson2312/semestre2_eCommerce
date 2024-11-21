@@ -43,13 +43,27 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
-        public IActionResult Ver(int id)
+        public IActionResult VerVenta(int id)
         {
             ViewBag.Publicacion = _sistema.FiltrarPublicacionXId(id);
             if (ViewBag.Publicacion == null)
             {
-                return RedirectToAction("index");
+                return RedirectToAction("Index");
             }
+            return View();
+        }
+
+        public IActionResult VerSubasta(int id)
+        {
+            Publicacion subasta = _sistema.FiltrarPublicacionXId(id);
+            ViewBag.Publicacion = subasta;
+
+            if (ViewBag.Publicacion == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            ViewBag.Oferta = subasta.OfertaConMasValor();
             return View();
         }
     }

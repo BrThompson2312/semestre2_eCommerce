@@ -5,9 +5,9 @@
 }
 
 <div>
-    <h1>Usuario</h1>
+    <h1 class="mb-3">Ver Usuario</h1>
     <table class="table">
-        <thead>
+        <thead class="table-success">
             <tr>
                 <th>#</th>
                 <th>Nombre</th>
@@ -15,7 +15,6 @@
                 <th>Email</th>
                 <th>Contraseña</th>
                 @if (u is Cliente){ <th>Saldo</th> }
-                <th></th>
                 <th>Tipo</th>
             </tr>
         </thead>
@@ -26,7 +25,10 @@
                 <td>@u.Apellido</td>
                 <td>@u.Email</td>
                 <td>@u.Contrasenia</td>
-                @if (u is Cliente){ <td>@u.Saldo</td> }
+                @if (u is Cliente){ 
+                    <td>@u.Saldo</td>
+                }
+                
                 @if (u is Cliente)
                 {
                     <td>

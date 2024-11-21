@@ -1,0 +1,26 @@
+﻿@using Dominio.Entidades;
+
+@{
+    var p = ViewBag.Publicacion;
+}
+
+<h1>Publicación de Subasta: @p.Nombre</h1>
+<h2>Articulos:</h2>
+<ul>
+    @foreach (Articulo a in p.Articulos)
+    {
+        <li>@a.Nombre - $@a.Precio</li>
+    }
+</ul>
+
+@if (ViewBag.Oferta != null)
+{
+    <p>
+        <span style="font-weight: bold" >Oferta actual con más valor: </span>
+        <span class="bg-success p-2 text-white rounded">@ViewBag.Oferta</span>
+    </p>
+} 
+else
+{
+    <span style="font-weight: bold" class="bg-danger p-2 text-white rounded">No hay ofertas por el momento</span>
+}

@@ -13,8 +13,8 @@
         <a href="/Publicacion/ListadoSubastas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver subastas</a>
     </div>
 
-    <table class="table">
-        <thead>
+    <table class="table table-striped">
+        <thead class="table-dark">
             <tr>
                 <th>#</th>
                 <th>Nombre</th>
@@ -42,8 +42,15 @@
                 </td>
                 <td>@item.FechaPublicacion</td>
                 <td>
-                    <a href="/Publicacion/Ver/@item.Id">Ver</a>
-                </td>
+                    @if (item is Venta)
+                    {
+                        <a href="/Publicacion/VerVenta/@item.Id">Ver</a>
+                    }
+                    else
+                    {
+                        <a href="/Publicacion/VerSubasta/@item.Id">Ver</a>
+                    }
+                    </td>
                 <td>
                     @if (item.CompraRealizadaCliente == null)
                     {

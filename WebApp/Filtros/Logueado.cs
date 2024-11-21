@@ -10,7 +10,7 @@ namespace WebApp.Filtros
             string email = context.HttpContext.Session.GetString("email");
             if (email == null)
             {
-                context.Result = new RedirectResult("/Login/Login");
+                context.Result = new RedirectResult("/Login/Index");
             }
         }
     }

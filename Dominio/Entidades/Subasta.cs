@@ -44,6 +44,21 @@ namespace Dominio.Entidades
             return 0;
         }
 
+        public override Oferta OfertaConMasValor()
+        {
+            Oferta oferta = null;
+            int monto = 0;
+            foreach (Oferta o in Ofertas)
+            {
+                if (o.Monto > monto)
+                {
+                    oferta = o;
+                    monto = o.Monto;
+                }
+            }
+            return oferta;
+        }
+
         public override string ToString()
         {
             string res = base.ToString();

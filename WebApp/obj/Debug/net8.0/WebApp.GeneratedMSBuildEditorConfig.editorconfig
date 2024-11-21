@@ -18,8 +18,8 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\pokea\Documents\proyectos\eComerce\WebApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/pokea/Documents/proyectos/eComerce/WebApp/Views/Login/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+[C:/Users/pokea/Documents/proyectos/eComerce/WebApp/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pokea/Documents/proyectos/eComerce/WebApp/Views/Login/Signin.cshtml]
@@ -30,8 +30,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/pokea/Documents/proyectos/eComerce/WebApp/Views/Publicacion/Ver.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cVmVyLmNzaHRtbA==
+[C:/Users/pokea/Documents/proyectos/eComerce/WebApp/Views/Publicacion/VerSubasta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cVmVyU3ViYXN0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/pokea/Documents/proyectos/eComerce/WebApp/Views/Publicacion/VerVenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHVibGljYWNpb25cVmVyVmVudGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/pokea/Documents/proyectos/eComerce/WebApp/Views/Shared/Error.cshtml]

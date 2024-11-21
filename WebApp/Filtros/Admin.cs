@@ -11,7 +11,7 @@ namespace WebApp.Filtros
             string rol = context.HttpContext.Session.GetString("rol");
             if (rol != "Administrador" || email == null)
             {
-                context.Result = new RedirectResult("/Login/Login");
+                context.Result = new RedirectResult("/Login/Index");
             }
         }
     }

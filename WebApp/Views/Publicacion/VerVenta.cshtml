@@ -1,0 +1,23 @@
+﻿@using Dominio.Entidades;
+
+@{
+    var p = ViewBag.Publicacion;
+}
+
+<h1>Publicación de Venta: @p.Nombre</h1>
+<h2>Articulos:</h2>
+<ul>
+    @foreach (Articulo a in p.Articulos)
+    {
+        <li>@a.Nombre - $@a.Precio</li>
+    }
+    <li>Oferta Relampago: @if (!p.OfertaRelampago) { <span>No</span> } else { <span>Si</span> }</li>
+</ul>
+
+<p class="p-2 bg-success text-white">
+    <span>Precio Total: $@p.PrecioFinal</span>
+    @if (p.OfertaRelampago)
+    {
+        <span class="p-1 rounded bg-danger">-10% OFF</span>
+    }
+</p>

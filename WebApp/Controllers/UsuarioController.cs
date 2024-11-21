@@ -125,6 +125,19 @@ namespace WebApp.Controllers
             {
                 return RedirectToAction("Index");
             }
+            if (HttpContext.Session.GetString("rol") == "Administrador")
+            {
+                return View(new Administrador());
+            }
+            else
+            {
+                return View(new Cliente());
+            }
+        }
+
+        [HttpPost]
+        public IActionResult Modificar(int id, int id2)
+        {
             return View();
         }
     }

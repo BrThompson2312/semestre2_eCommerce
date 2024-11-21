@@ -9,13 +9,13 @@ namespace WebApp.Controllers
         private Sistema _sistema = Sistema.Instancia;
 
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Login(string email, string contrasenia)
+        public IActionResult Index(string email, string contrasenia)
         {
             try
             {
@@ -73,7 +73,7 @@ namespace WebApp.Controllers
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
-            return RedirectToAction("Login");
+            return RedirectToAction("Index");
         }
 
     }

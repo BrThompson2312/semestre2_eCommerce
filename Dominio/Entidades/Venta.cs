@@ -49,6 +49,11 @@ namespace Dominio.Entidades
             return precioFinal;
         }
 
+        public override Oferta OfertaConMasValor()
+        {
+            throw new Exception("No implementado");
+        }
+
         public override string ToString()
         {
             string res = base.ToString();

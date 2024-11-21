@@ -56,6 +56,8 @@ namespace Dominio.Entidades
 
         public abstract decimal PrecioPublicacion(Articulo articulo);
 
+        public abstract Oferta OfertaConMasValor();
+
         public override string ToString()
         {
             string res = "";

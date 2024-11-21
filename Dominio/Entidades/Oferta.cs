@@ -34,9 +34,10 @@ namespace Dominio.Entidades
 
         public override string ToString()
         {
-            string res = $" Id {Id} ";
-            res += $" Usuario: {Usuario} ";
-            res += $" Monto: {Monto} ";
+            //string res = $" Id {Id} ";
+            string res = "";
+            res += $" Cliente: {Usuario.Nombre} {Usuario.Apellido} | ";
+            res += $" Monto: {Monto} | ";
             res += $" Fecha: {Fecha} ";
             return res;
         }

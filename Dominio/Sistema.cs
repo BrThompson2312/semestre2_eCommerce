@@ -1,5 +1,4 @@
 ﻿using Dominio.Entidades;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dominio
 {
@@ -55,6 +54,9 @@ namespace Dominio
 
             Usuario admin;
 
+            admin = new Administrador("Admin", "Admin", "admin", "Admin#123", rol);
+            AgregarUsuario(admin);
+
             admin = new Administrador("Carlos", "Gomez", "carlos.gomez@gmail.com", "passCarlos9@", rol);
             AgregarUsuario(admin);
 
@@ -77,20 +79,20 @@ namespace Dominio
                 (inicio) Datos nuevos! 
             */
 
-            //Usuario admin7 = new Administrador("Javier", "Martinez", "javier.martinez@gmail.com", "JAVIERadmin@", rol); // No tiene numeros
-            //AgregarUsuario(admin7);
+                //Usuario admin7 = new Administrador("Javier", "Martinez", "javier.martinez@gmail.com", "JAVIERadmin@", rol); // No tiene numeros
+                //AgregarUsuario(admin7);
 
-            //Usuario admin8 = new Administrador("Elena", "Ruiz", "elena.ruiz@gmail.com", "ELENARUIZ123@", rol); // No contiene letras minusculas
-            //AgregarUsuario(admin8);
+                //Usuario admin8 = new Administrador("Elena", "Ruiz", "elena.ruiz@gmail.com", "ELENARUIZ123@", rol); // No contiene letras minusculas
+                //AgregarUsuario(admin8);
 
-            //Usuario admin9 = new Administrador("Ricardo", "Pérez", "ricardo.perez@gmail.com", "R123@", rol); // No cumple con minimo de caracteres
-            //AgregarUsuario(admin9);
+                //Usuario admin9 = new Administrador("Ricardo", "Pérez", "ricardo.perez@gmail.com", "R123@", rol); // No cumple con minimo de caracteres
+                //AgregarUsuario(admin9);
 
-            //Usuario admin10 = new Administrador("Marta", "Lopez", "marta.lopez@gmail.com", "MARTAlopez123", rol); // No contiene simbolos
-            //AgregarUsuario(admin10);
+                //Usuario admin10 = new Administrador("Marta", "Lopez", "marta.lopez@gmail.com", "MARTAlopez123", rol); // No contiene simbolos
+                //AgregarUsuario(admin10);
 
-            //Usuario admin11 = new Administrador("Tomás", "Hernandez", "tomas.hernandez@gmail.com", "123456789@", rol); // No contiene letras
-            //AgregarUsuario(admin11);
+                //Usuario admin11 = new Administrador("Tomás", "Hernandez", "tomas.hernandez@gmail.com", "123456789@", rol); // No contiene letras
+                //AgregarUsuario(admin11);
 
             /* 
                 (fin) Datos nuevos! 
@@ -147,20 +149,20 @@ namespace Dominio
                 Datos Nuevos!
             */
 
-            //user = new Cliente("Laura", "Martinez", "laura.martinez@gmail.com", "LAURAmartinez@", 1500, rol); // No contiene numeros
-            //AgregarUsuario(user);
+                //user = new Cliente("Laura", "Martinez", "laura.martinez@gmail.com", "LAURAmartinez@", 1500, rol); // No contiene numeros
+                //AgregarUsuario(user);
 
-            //user = new Cliente("Carlos", "Diaz", "carlos.diaz@gmail.com", "CARLOSDIAZ123@", 1800, rol); // No contiene minusculas
-            //AgregarUsuario(user);
+                //user = new Cliente("Carlos", "Diaz", "carlos.diaz@gmail.com", "CARLOSDIAZ123@", 1800, rol); // No contiene minusculas
+                //AgregarUsuario(user);
 
-            //user = new Cliente("Sofia", "Rodriguez", "bruno.rodriguez@gmail.com", "Sof123@", 1700, rol); // No contiene minimo de caracteres
-            //AgregarUsuario(user);
+                //user = new Cliente("Sofia", "Rodriguez", "bruno.rodriguez@gmail.com", "Sof123@", 1700, rol); // No contiene minimo de caracteres
+                //AgregarUsuario(user);
 
-            //user = new Cliente("Miguel", "Perez", "hernan.perez@gmail.com", "hernanPerez123", 1600, rol); // No contiene simbolos
-            //AgregarUsuario(user);
+                //user = new Cliente("Miguel", "Perez", "hernan.perez@gmail.com", "hernanPerez123", 1600, rol); // No contiene simbolos
+                //AgregarUsuario(user);
 
-            //user = new Cliente("Pedro", "Lopez", "pedro.lopez@gmail.com", "123456789@", 1400, rol); // No contiene letras
-            //AgregarUsuario(user);
+                //user = new Cliente("Pedro", "Lopez", "pedro.lopez@gmail.com", "123456789@", 1400, rol); // No contiene letras
+                //AgregarUsuario(user);
 
             /* 
                 Datos Nuevos!
@@ -408,24 +410,30 @@ namespace Dominio
             // AgregarPublicacion(venta14);
 
             /* ---------------- Precarga de ofertas ---------------- */
-            Usuario cliente1 = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "123", 1000, "cliente");
-            Usuario cliente2 = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "123", 2000, "cliente");
-            Usuario cliente3 = new Cliente("Juan", "Benitez", "juan@gmail.com", "123", 2000, "cliente");
-            Usuario cliente4 = new Cliente("Jorge", "Casuriaga", "jorg@gmail.com", "123", 2000, "cliente");
 
-            Oferta oferta1 = new Oferta(cliente1, 1000, new DateTime(2024, 10, 3));
-            Oferta oferta2 = new Oferta(cliente1, 1000, new DateTime(2024, 12, 3)); // Error, no puede haber otra oferta con el mismo monto del mismo cliente.
-            Oferta oferta3 = new Oferta(cliente1, 2000, new DateTime(2024, 11, 25));
+            Usuario cliente;
+
+            cliente = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "123", 1000, "cliente");
+            Oferta oferta1 = new Oferta(cliente, 1000, new DateTime(2024, 10, 3));
+            Oferta oferta2 = new Oferta(cliente, 1000, new DateTime(2024, 12, 3)); // Error, no puede haber otra oferta con el mismo monto del mismo cliente.
+            Oferta oferta3 = new Oferta(cliente, 2000, new DateTime(2024, 11, 25));
+
+            cliente = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "123", 2000, "cliente");
+            Oferta oferta6 = new Oferta(cliente, 1800, new DateTime(2024, 10, 3));
+            Oferta oferta7 = new Oferta(cliente, 2200, new DateTime(2024, 7, 11));
+            Oferta oferta8 = new Oferta(cliente, 3000, new DateTime(2024, 9, 7));
+
+            cliente = new Cliente("Juan", "Benitez", "juan@gmail.com", "123", 2000, "cliente");
+            Oferta oferta9 = new Oferta(cliente, 2750, new DateTime(2024, 11, 29));
+            Oferta oferta10 = new Oferta(cliente, 3200, new DateTime(2024, 8, 19));
+            Oferta oferta11 = new Oferta(cliente, 2100, new DateTime(2024, 8, 5));
+            
+            cliente = new Cliente("Jorge", "Casuriaga", "jorg@gmail.com", "123", 2000, "cliente");
+            Oferta oferta12 = new Oferta(cliente, 2900, new DateTime(2024, 12, 1));
+            Oferta oferta13 = new Oferta(cliente, 2400, new DateTime(2024, 3, 25));
+
             // Oferta oferta4 = new Oferta(cliente1, 0, new DateTime(2024, 10, 3)); // Monto menor o igual a 0
             // Oferta oferta5 = new Oferta(null, 2000, new DateTime(2024, 10, 3)); // Usuario null
-            Oferta oferta6 = new Oferta(cliente2, 1800, new DateTime(2024, 10, 3));
-            Oferta oferta7 = new Oferta(cliente2, 2200, new DateTime(2024, 7, 11));
-            Oferta oferta8 = new Oferta(cliente2, 3000, new DateTime(2024, 9, 7));
-            Oferta oferta9 = new Oferta(cliente3, 2750, new DateTime(2024, 11, 29));
-            Oferta oferta10 = new Oferta(cliente3, 3200, new DateTime(2024, 8, 19));
-            Oferta oferta11 = new Oferta(cliente3, 2100, new DateTime(2024, 8, 5));
-            Oferta oferta12 = new Oferta(cliente4, 2900, new DateTime(2024, 12, 1));
-            Oferta oferta13 = new Oferta(cliente4, 2400, new DateTime(2024, 3, 25));
 
             /* ---------------- Precarga de subastas ---------------- */
             Publicacion subasta1 = new Subasta("Subasta de accesorios", new DateTime(2024, 10, 3));
@@ -637,6 +645,14 @@ namespace Dominio
             }
             return null;
         }
+
+        //public Publicacion FiltrarOfertaConMasValor(Oferta oferta)
+        //{
+        //    foreach (Oferta o in Publicaciones.Ofertas)
+        //    {
+
+        //    }
+        //}
 
         public IEnumerable<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
         {
