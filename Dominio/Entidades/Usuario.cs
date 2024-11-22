@@ -43,93 +43,11 @@ namespace Dominio.Entidades
             {
                 throw new Exception($"{res}: Email invalido");
             }
-            //if(string.IsNullOrEmpty(Contrasenia)) 
-            //{
-            //    throw new Exception($"{res}: Contraseña invalido");
-            //}
-
             if (!ValidarContrasenia(Contrasenia))
             {
                 throw new Exception($"{res}: Contraseña invalida");
             }
-
-            //var (resb, ms) = ValidarContrasenia2(Contrasenia);
-            //if (!resb)
-            //    throw new Exception(ms);
         }
-
-        //public (bool res, string ms) ValidarContrasenia2(string pass)
-        //{
-        //    if (string.IsNullOrEmpty(pass))
-        //        return (false, "vacio");
-        //    if (pass.Length < 8)
-        //        return (false, "minimo de caracteres");
-
-        //    //bool numbers = false;
-        //    //string nums = "1234567890";
-        //    //for (int i = 0; i < pass.Length; i++)
-        //    //{
-        //    //    for (int k = 0; k < nums.Length; k++)
-        //    //    {
-        //    //        if (pass[i] == nums[k])
-        //    //        {
-        //    //            numbers = true;
-        //    //            break;
-        //    //        }
-        //    //    }
-        //    //    if (numbers) break;
-        //    //}
-
-        //    //if (numbers == false)
-        //    //    return (false, "no numbers");
-
-        //    bool letter = false;
-        //    bool mayus = false;
-        //    bool minus = false;
-        //    bool symbol = false;
-        //    bool digit = false;
-
-        //    for (int i = 0; i < pass.Length; i++)
-        //    {
-        //        if (char.IsLetter(pass[i]))
-        //            letter = true;
-
-        //        if (char.IsSymbol(pass[i]) || char.IsPunctuation(pass[i]))
-        //            symbol = true;
-
-        //        if (char.IsUpper(pass[i]))
-        //            mayus = true;
-
-        //        if (char.IsLower(pass[i]))
-        //            minus = true;
-
-        //        if (char.IsDigit(pass[i]))
-        //            digit = true;
-
-        //        if (letter && symbol && mayus && minus && digit)
-        //            break;
-        //    }
-
-        //    //if (!numbers)
-        //    //    return (false, "no numbers");
-
-        //    if (!letter)
-        //        return (false, "no letters");
-
-        //    if (!mayus)
-        //        return (false, "no mayus");
-
-        //    if (!minus)
-        //        return (false, "no minus");
-
-        //    if (!symbol)
-        //        return (false, "no symbol");
-
-        //    if (!digit)
-        //        return (false, "no digits");
-
-        //    return (true, "cumple todo");
-        //}
 
         public bool ValidarContrasenia(string pass)
         {
@@ -182,6 +100,12 @@ namespace Dominio.Entidades
 
             return true;
         }
+
+        public abstract void RecargarSaldo(int monto);
+
+        public abstract decimal ObtenerSaldo();
+
+        public abstract void DescontarSaldo(decimal monto);
 
         public override string ToString()
         {

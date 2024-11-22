@@ -4,6 +4,13 @@
     var p = ViewBag.Publicacion;
 }
 
+@if (ViewBag.mensaje != null)
+{
+    <div class="alert alert-danger mt-2" role="alert">
+        @ViewBag.mensaje
+    </div>
+}
+
 <h1>Publicación de Venta: @p.Nombre</h1>
 <h2>Articulos:</h2>
 <ul>
@@ -14,10 +21,23 @@
     <li>Oferta Relampago: @if (!p.OfertaRelampago) { <span>No</span> } else { <span>Si</span> }</li>
 </ul>
 
-<p class="p-2 bg-success text-white">
-    <span>Precio Total: $@p.PrecioFinal</span>
+<p class="rounded p-2 bg-success text-white">
+    Precio Total: $@p.PrecioFinal
     @if (p.OfertaRelampago)
     {
         <span class="p-1 rounded bg-danger">-10% OFF</span>
     }
 </p>
+
+@if (p.EstadoPublicacion != Publicacion.Estado.Cerrado)
+{
+    <form method="post" action="/Publicacion/VerVenta?IdPublicacion=@p.Id">
+        <button class="btn btn-primary w-100" style="font-weight: bold" type="submit">
+            Comprar (Saldo $@ViewBag.Saldo)
+        </button>
+    </form>
+}
+else 
+{
+    <p class="bg-danger p-2 rounded text-white text-center" style="font-weight: bold">Comprado!</p>
+}

@@ -5,11 +5,12 @@ namespace Dominio.Entidades
         public int Id {get; set;}
         private static int ultimoId = 0;
         public string Nombre {get; set;}
+        public decimal PrecioFinal { get; set; }
         public Estado EstadoPublicacion {get; set;}
         public DateTime FechaPublicacion {get; set;}
         private List<Articulo> _articulos = new List<Articulo>();
-        public Cliente CompraRealizadaCliente {get; set;}
-        public Administrador CompraFinalizadaAdministrador {get; set;}
+        public Usuario CompraRealizada {get; set;}
+        public Usuario CompraFinalizada {get; set;}
         public DateTime FechaFinalizacionCompra {get; set;}
 
         public IEnumerable<Articulo> Articulos {
@@ -58,6 +59,16 @@ namespace Dominio.Entidades
 
         public abstract Oferta OfertaConMasValor();
 
+        public abstract int CantidadOfertas();
+
+        public abstract decimal ObtenerPrecioFinal();
+
+        public abstract void ComprarVenta(Usuario usuario);
+
+        public abstract void FinalizarVenta(Usuario usuario);
+
+        public abstract void ValidarOferta(int monto);
+
         public override string ToString()
         {
             string res = "";
@@ -72,8 +83,8 @@ namespace Dominio.Entidades
                 res += $"///: {unArticulo}\n";
             }
 
-            res += $"Cliente que realizó la compra: {CompraRealizadaCliente}\n";
-            res += $"Administrador que FINALIZÓ la compra: {CompraFinalizadaAdministrador}\n";
+            res += $"Usuario que realizó la compra: {CompraRealizada}\n";
+            res += $"Usuario que finalizó la compra: {CompraFinalizada}\n";
             res += $"Fecha de compra finalizada: {FechaFinalizacionCompra}\n";
             return res;
         }

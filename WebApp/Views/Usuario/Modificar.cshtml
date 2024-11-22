@@ -1,8 +1,10 @@
 ﻿@using Dominio.Entidades
 
-@if(ViewBag.mensaje != null)
+@if (ViewBag.mensaje_error != null)
 {
-    <div> Error al modificar datos </div>
+    <div class="alert alert-danger mb-2 mt-2" role="alert">
+        @ViewBag.mensaje_error
+    </div>
 }
 
 @{
@@ -13,13 +15,15 @@
     <h1>Modificar</h1>
     <form method="post" class="form-mod d-flex flex-column align-items-start gap-2">
         <label>Nombre</label>
-        <input type="text" value="@u.Nombre"/>
+        <input type="text" name="Nombre" value="@u.Nombre"/>
         <label>Apellido</label>
-        <input type="text" value="@u.Apellido"/>
+        <input type="text" name="Apellido" value="@u.Apellido" />
         <label>Email</label>
-        <input type="text" value="@u.Email"/>
+        <input type="text" name="Email" value="@u.Email" />
         <label>Contraseña</label>
-        <input type="password" value="@u.Contrasenia"/>
+        <input type="password" name="Contrasenia" value="@u.Contrasenia" />
+        <label>Repita Contraseña</label>
+        <input type="password" name="Password2" value="@u.Contrasenia" />
         <button class="btn btn-primary" type="submit">Modificar</button>
     </form>
 </div>

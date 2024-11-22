@@ -1,5 +1,12 @@
 ﻿@using Dominio.Entidades;
 
+@if (ViewBag.mensaje != null)
+{
+    <div class="alert alert-success mb-2 mt-2" role="alert">
+        @ViewBag.mensaje
+    </div>
+}
+
 <div>
     <h1>@ViewBag.Titulo</h1>
 
@@ -8,9 +15,12 @@
             <input type="text" name="nombre" placeholder="Nombre" />
             <input type="submit" value="Filtrar"/>
         </form>
-        <a href="/Publicacion/Index" class="">Ver Todo</a>
-        <a href="/Publicacion/ListadoVentas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver ventas</a>
-        <a href="/Publicacion/ListadoSubastas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver subastas</a>
+        @if (Context.Session.GetString("rol") == "Cliente")
+        {
+            <a href="/Publicacion/Index" class="">Ver Todo</a>
+            <a href="/Publicacion/ListadoVentas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver ventas</a>
+            <a href="/Publicacion/ListadoSubastas" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ver subastas</a>
+        }
     </div>
 
     <table class="table table-striped">
@@ -19,59 +29,56 @@
                 <th>#</th>
                 <th>Nombre</th>
                 <th>Estado</th>
-                <th>Fecha de publicacion</th>
                 <th>Articulos</th>
-                <th>Comprada por</th>
-                <th>Finalizada por</th>
-                <th>Fecha de finalización</th>
+                <th>Precio</th>
             </tr>
         </thead>
         <tbody>
-        @foreach (var item in ViewBag.Publicaciones){
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Nombre</td>
-                <td>
-                    @if (item.EstadoPublicacion == 0)
-                    {
-                        <span class="text-success">@item.EstadoPublicacion</span>
-                    } else if (item.EstadoPublicacion == 1)
-                    {
-                        <span class="text-danger">@item.EstadoPublicacion</span>
-                    }
-                </td>
-                <td>@item.FechaPublicacion</td>
-                <td>
-                    @if (item is Venta)
-                    {
-                        <a href="/Publicacion/VerVenta/@item.Id">Ver</a>
-                    }
-                    else
-                    {
-                        <a href="/Publicacion/VerSubasta/@item.Id">Ver</a>
-                    }
-                    </td>
-                <td>
-                    @if (item.CompraRealizadaCliente == null)
-                    {
-                        <span>---</span>
-                    } else
-                    {
-                        @item.CompraRealizadaCliente
-                    }
-                </td>
-                <td>
-                    @if (item.CompraFinalizadaAdministrador == null)
-                    {
-                        <span>---</span>
-                    }
-                    else
-                    {
-                        @item.CompraRealizadaCliente
-                    }
-                </td>
-                <td>@item.FechaPublicacion</td>
-            </tr>
+
+            @{
+                bool Isclient(Publicacion item)
+                {
+                    var co = Context.Session.GetString("rol") == "Administrador";
+                    return co ? item is Subasta : true;
+                }
+            }
+            @foreach (var item in ViewBag.Publicaciones){
+                @if (Isclient(item))
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Nombre</td>
+                        <td>
+                            @if (item.EstadoPublicacion == Publicacion.Estado.Abierto)
+                            {
+                                <span class="text-success">@item.EstadoPublicacion</span>
+                            } else if (item.EstadoPublicacion == Publicacion.Estado.Cerrado)
+                            {
+                                <span class="text-danger">@item.EstadoPublicacion</span>
+                            }
+                        </td>
+                        <td>
+                            @if (item is Venta)
+                            {
+                                <a href="/Publicacion/VerVenta/@item.Id">Ver</a>
+                            }
+                            else
+                            {
+                                <a href="/Publicacion/VerSubasta/@item.Id">Ver</a>
+                            }
+                        </td>
+                        <td>
+                            @if (item.PrecioFinal != 0)
+                            {
+                                <span class="p-1 rounded text-success" style="font-weight: bold">$@item.PrecioFinal</span>
+                            }
+                            else 
+                            {
+                                <span class="text-danger" style="font-weight: bold">-</span>
+                            }
+                        </td>
+                </tr>
+            }
         }
     </table>
 </div>

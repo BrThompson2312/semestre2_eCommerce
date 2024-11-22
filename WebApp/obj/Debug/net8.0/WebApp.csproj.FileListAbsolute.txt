@@ -276,3 +276,7 @@ C:\Users\pokea\Documents\proyectos\eComerce\WebApp\obj\Debug\net8.0\refint\WebAp
 C:\Users\pokea\Documents\proyectos\eComerce\WebApp\obj\Debug\net8.0\WebApp.pdb
 C:\Users\pokea\Documents\proyectos\eComerce\WebApp\obj\Debug\net8.0\WebApp.genruntimeconfig.cache
 C:\Users\pokea\Documents\proyectos\eComerce\WebApp\obj\Debug\net8.0\ref\WebApp.dll
+C:\Users\pokea\Documents\proyectos\eComerce\WebApp\bin\Debug\net8.0\WebApp.staticwebassets.endpoints.json
+C:\Users\pokea\Documents\proyectos\eComerce\WebApp\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\pokea\Documents\proyectos\eComerce\WebApp\obj\Debug\net8.0\staticwebassets\msbuild.WebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\pokea\Documents\proyectos\eComerce\WebApp\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

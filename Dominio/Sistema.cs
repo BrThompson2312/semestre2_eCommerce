@@ -415,7 +415,7 @@ namespace Dominio
 
             cliente = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "123", 1000, "cliente");
             Oferta oferta1 = new Oferta(cliente, 1000, new DateTime(2024, 10, 3));
-            Oferta oferta2 = new Oferta(cliente, 1000, new DateTime(2024, 12, 3)); // Error, no puede haber otra oferta con el mismo monto del mismo cliente.
+            Oferta oferta2 = new Oferta(cliente, 1000, new DateTime(2024, 12, 3)); // Error, no puede haber otra oferta con el mismo monto que el mismo cliente ha publicado previamente.
             Oferta oferta3 = new Oferta(cliente, 2000, new DateTime(2024, 11, 25));
 
             cliente = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "123", 2000, "cliente");
@@ -426,7 +426,6 @@ namespace Dominio
             cliente = new Cliente("Juan", "Benitez", "juan@gmail.com", "123", 2000, "cliente");
             Oferta oferta9 = new Oferta(cliente, 2750, new DateTime(2024, 11, 29));
             Oferta oferta10 = new Oferta(cliente, 3200, new DateTime(2024, 8, 19));
-            Oferta oferta11 = new Oferta(cliente, 2100, new DateTime(2024, 8, 5));
             
             cliente = new Cliente("Jorge", "Casuriaga", "jorg@gmail.com", "123", 2000, "cliente");
             Oferta oferta12 = new Oferta(cliente, 2900, new DateTime(2024, 12, 1));
@@ -464,7 +463,7 @@ namespace Dominio
             // subasta3.AgregarOferta(oferta6); // Misma oferta
             subasta3.AgregarOferta(oferta7);
             subasta3.AgregarOferta(oferta8);
-            subasta3.AgregarOferta(oferta12);
+            // subasta3.AgregarOferta(oferta12); // Monto ofrecido no supera al precio final actual (que es el monto con mas valor)
 
             Publicacion subasta4 = new Subasta("Subasta de tecnología", new DateTime(2024, 7, 20));
             AgregarPublicacion(subasta4);
@@ -473,7 +472,6 @@ namespace Dominio
             subasta4.AgregarArticulo(articulo33);
             subasta4.AgregarOferta(oferta9);
             subasta4.AgregarOferta(oferta10);
-            subasta4.AgregarOferta(oferta11);
 
             Publicacion subasta5 = new Subasta("Subasta de calzado deportivo", new DateTime(2024, 9, 12));
             AgregarPublicacion(subasta5);
@@ -626,12 +624,34 @@ namespace Dominio
         {
             foreach (Usuario item in _usuarios)
             {
-                if (/*id == null ||*/ item.Id == id)
+                if (item.Id == id)
                 {
                     return item;
                 }
             }
             return null;
+        }
+
+        public void ModificarUsuario(int id, string Nombre, string Apellido, string Email, string Contrasenia, string Password2)
+        {
+            Usuario usuario = FiltrarUsuarioXId(id); ;
+            if (usuario == null)
+            {
+                throw new Exception("Null");
+            }
+            if (Contrasenia != Password2)
+            {
+                throw new Exception("Contraseñas no coinciden");
+            }
+            if (!usuario.ValidarContrasenia(Contrasenia))
+            {
+                throw new Exception("Contraseña invalido");
+            }
+
+            usuario.Nombre = Nombre;
+            usuario.Apellido = Apellido;
+            usuario.Email = Email;
+            usuario.Contrasenia = Contrasenia;
         }
 
         public Publicacion FiltrarPublicacionXId(int id)
@@ -645,14 +665,6 @@ namespace Dominio
             }
             return null;
         }
-
-        //public Publicacion FiltrarOfertaConMasValor(Oferta oferta)
-        //{
-        //    foreach (Oferta o in Publicaciones.Ofertas)
-        //    {
-
-        //    }
-        //}
 
         public IEnumerable<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
         {
@@ -721,5 +733,72 @@ namespace Dominio
             return _auxArticulos;
         }
 
+        public void RecargarSaldoCliente(int id, int recarga)
+        {
+            Usuario usuario = FiltrarUsuarioXId(id);
+            if (usuario == null)
+            {
+                throw new Exception("Null");
+            }
+            usuario.RecargarSaldo(recarga);
+        }
+
+        public void ComprarVenta(int idUser, int idPub, decimal saldo)
+        {
+            Cliente cliente;
+            Usuario usuario = FiltrarUsuarioXId(idUser);
+            Publicacion publicacion = FiltrarPublicacionXId(idPub);
+            if (usuario == null)
+            {
+                throw new Exception("Null");
+            }
+            if (usuario is Administrador)
+            {
+                throw new Exception("Denegado");
+            }
+            else
+            {
+                cliente = (Cliente)usuario;
+            }
+            if (publicacion == null)
+            {
+                throw new Exception("Null");
+            }
+            if (publicacion.EstadoPublicacion == Publicacion.Estado.Cerrado ||
+                publicacion.EstadoPublicacion == Publicacion.Estado.Terminado)
+            {
+                throw new Exception("Compra previamente finalizada");
+            }
+            if (saldo < publicacion.ObtenerPrecioFinal())
+            {
+                throw new Exception("Saldo insuficiente");
+            }
+            publicacion.ComprarVenta(cliente);
+            publicacion.FinalizarVenta(cliente);
+            usuario.DescontarSaldo(publicacion.ObtenerPrecioFinal());
+        }
+
+        public void OfertarSubasta(Publicacion publicacion, int userId, int monto)
+        {
+            if (publicacion == null)
+            {
+                throw new Exception("Null");
+            }
+
+            Usuario usuario = FiltrarUsuarioXId(userId);
+            if (usuario == null)
+            {
+                throw new Exception("Null");
+            }
+
+            DateTime today = DateTime.Today;
+            Oferta oferta = new Oferta(usuario, monto, today);
+            publicacion.AgregarOferta(oferta);
+        }
+
+        public void AdministradorCierraSubasta()
+        {
+
+        }
     }
 }

@@ -5,7 +5,8 @@ using WebApp.Filtros;
 
 namespace WebApp.Controllers
 {
-    [Logueado]
+    [FLogueado]
+    //[FAdmin]
     public class UsuarioController : Controller
     {
         Sistema _sistema = Sistema.Instancia;
@@ -47,14 +48,14 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
-        [Admin]
+        [FAdmin]
         public IActionResult AltaCliente()
         {
             return View(new Cliente());
         }
 
         [HttpPost]
-        [Admin]
+        [FAdmin]
         public IActionResult AltaCliente(Cliente usuario)
         {
             try
@@ -74,7 +75,7 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
-        [Admin]
+        [FAdmin]
         public IActionResult AltaAdministrador()
         {
             ViewBag.Usuarios = _sistema.Usuarios;
@@ -82,7 +83,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        [Admin]
+        [FAdmin]
         public IActionResult AltaAdministrador(Administrador administrador)
         {
             try
@@ -117,26 +118,55 @@ namespace WebApp.Controllers
         [HttpGet]
         public IActionResult Modificar(int id)
         {
-            string emailSession = HttpContext.Session.GetString("email");
-
-            ViewBag.Email = emailSession;
             ViewBag.Usuario = _sistema.FiltrarUsuarioXId(id);
             if (ViewBag.Usuario == null)
             {
                 return RedirectToAction("Index");
             }
-            if (HttpContext.Session.GetString("rol") == "Administrador")
-            {
-                return View(new Administrador());
-            }
-            else
-            {
-                return View(new Cliente());
-            }
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Modificar(int id, int id2)
+        public IActionResult Modificar(int id, string Nombre, string Apellido, string Email, string Contrasenia, string Password2)
+        {
+            Usuario usuario = _sistema.FiltrarUsuarioXId(id);
+            ViewBag.Usuario = usuario;
+            try
+            {
+                _sistema.ModificarUsuario(id, Nombre, Apellido, Email, Contrasenia, Password2);
+
+                return RedirectToAction("Index", new {mensaje="Datos modificados con Exito"});
+            } catch (Exception e)
+            {
+                ViewBag.mensaje_error = e.Message;
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult RecargarSaldo()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult RecargarSaldo(int Recarga)
+        {
+            int idSession = (int)HttpContext.Session.GetInt32("id");
+
+            try
+            {
+                _sistema.RecargarSaldoCliente(idSession, Recarga);
+                ViewBag.mensaje = "Saldo recargado exitosamente";
+            } catch (Exception e)
+            {
+                ViewBag.mensaje_error = e.Message;
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult FinalizarSubasta()
         {
             return View();
         }

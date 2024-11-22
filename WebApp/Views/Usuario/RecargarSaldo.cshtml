@@ -1,0 +1,21 @@
+﻿@if (ViewBag.mensaje_error != null)
+{
+    <div class="alert alert-danger mb-2 mt-2" role="alert">
+        @ViewBag.mensaje_error
+    </div>
+}
+
+@if (ViewBag.mensaje != null)
+{
+    <div class="alert alert-success mb-2 mt-2" role="alert">
+        @ViewBag.mensaje
+    </div>
+}
+
+<h1>Recargar Saldo</h1>
+<p>Cuanto saldo desea recargar?</p>
+
+<form method="post" >
+    <input type="number" name="Recarga"/>
+    <button type="submit">Recargar</button>
+</form>

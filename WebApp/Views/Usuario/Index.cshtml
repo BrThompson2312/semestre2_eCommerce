@@ -7,6 +7,10 @@
     </div>
 }
 
+@{
+    var typeuser = Context.Session.GetString("rol");
+}
+
 <div>
     <h1>Usuarios</h1>
     <div class="m-2">
@@ -39,6 +43,7 @@
                 <th>Apellido</th>
                 <th>Email</th>
                 <th>Contraseña</th>
+                <th>Saldo</th>
                 <th>Tipo</th>
                 <th>@* ver *@</th>
                 <th>@* modificar *@</th>
@@ -48,8 +53,7 @@
             @{
                 bool Isclient(Usuario item)
                 {
-                    var co = Context.Session.GetString("rol") == "Administrador";
-                    return co ? true : item is Cliente;
+                    return typeuser == "Administrador" ? true : item is Cliente;
                 }
             }
             @foreach (Usuario item in ViewBag.Usuarios)
@@ -62,6 +66,14 @@
                         <td>@item.Apellido</td>
                         <td>@item.Email</td>
                         <td>@item.Contrasenia</td>
+                        @if (item is Cliente)
+                        {
+                            <td>$@item.ObtenerSaldo()</td>
+                        }
+                        else
+                        {
+                            <td><span>-</span></td>
+                        }
                         @if (item is Administrador)
                         {
                             <td><span class="text-danger" style="font-weight: bold">Admin</span></td>
@@ -75,7 +87,7 @@
                                 <a href="/Usuario/Ver/@item.Id">Ver</a> 
                             </td>
                             <td>
-                                <a href="/Usuario/Modificar?@item.Id">Modificar</a>
+                                <a href="/Usuario/Modificar/@item.Id">Modificar</a>
                             </td>
                         }
                     </tr>

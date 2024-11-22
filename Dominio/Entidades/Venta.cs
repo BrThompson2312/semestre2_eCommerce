@@ -3,8 +3,6 @@ namespace Dominio.Entidades
     public class Venta : Publicacion
     {
         public bool OfertaRelampago {get; set;}
-        public decimal PrecioFinal {get; set;}
-
         public Venta ( 
             string _nombre, 
             DateTime _fechaPublicacion, 
@@ -50,6 +48,33 @@ namespace Dominio.Entidades
         }
 
         public override Oferta OfertaConMasValor()
+        {
+            throw new Exception("No implementado");
+        }
+
+        public override int CantidadOfertas()
+        {
+            throw new Exception("No implementado");
+        }
+
+        public override decimal ObtenerPrecioFinal()
+        {
+            return PrecioFinal;
+        }
+
+        public override void ComprarVenta(Usuario usuario)
+        {
+            CompraRealizada = usuario;
+            EstadoPublicacion = Estado.Terminado;
+        }
+
+        public override void FinalizarVenta(Usuario usuario)
+        {
+            CompraFinalizada = usuario;
+            EstadoPublicacion = Estado.Cerrado;
+        }
+
+        public override void ValidarOferta(int monto)
         {
             throw new Exception("No implementado");
         }

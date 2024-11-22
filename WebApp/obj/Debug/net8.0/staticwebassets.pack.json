@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebApp.bundle.scp.css",
-      "PackagePath": "staticwebassets\\WebApp.bundle.scp.css"
+      "PackagePath": "staticwebassets\\WebApp.kgyr9w213v.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\wwwroot\\css\\site.css",
@@ -243,6 +243,10 @@
     {
       "Id": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApp.Microsoft.AspNetCore.StaticWebAssets.props",

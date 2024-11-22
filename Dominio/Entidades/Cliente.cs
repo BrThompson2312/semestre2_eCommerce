@@ -2,7 +2,7 @@ namespace Dominio.Entidades
 {
     public class Cliente : Usuario
     {
-        public int Saldo {get; set;}
+        public decimal Saldo {get; set;}
 
         public Cliente()
         {
@@ -27,6 +27,26 @@ namespace Dominio.Entidades
                 throw new Exception($"Cliente: Saldo invalido: {Saldo}");
             }
         }
+
+        public override void RecargarSaldo(int monto)
+        {
+            if (monto <= 0)
+            {
+                throw new Exception("Recarga invalido");
+            }
+            Saldo += monto;
+        }
+
+        public override decimal ObtenerSaldo()
+        {
+            return Saldo;
+        }
+
+        public override void DescontarSaldo(decimal monto)
+        {
+            Saldo -= monto;
+        }
+
 
         public override string ToString()
         {

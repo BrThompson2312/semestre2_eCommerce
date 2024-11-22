@@ -21,6 +21,21 @@ namespace Dominio.Entidades
             base.Validar();
         }
 
+        public override void RecargarSaldo(int monto)
+        {
+            throw new Exception("No implementado");
+        }
+
+        public override void DescontarSaldo(decimal monto)
+        {
+            throw new Exception("No implementado");
+        }
+
+        public override decimal ObtenerSaldo()
+        {
+            return 0;
+        }
+
         public override string ToString()
         {
             return base.ToString();

@@ -4,6 +4,20 @@
     var p = ViewBag.Publicacion;
 }
 
+@if (ViewBag.mensaje != null)
+{
+    <div class="alert alert-danger mb-2 mt-2" role="alert">
+        @ViewBag.mensaje
+    </div>
+}
+
+@if (ViewBag.mensaje_error != null)
+{
+    <div class="alert alert-danger mb-2 mt-2" role="alert">
+        @ViewBag.mensaje_error
+    </div>
+}
+
 <h1>Publicación de Subasta: @p.Nombre</h1>
 <h2>Articulos:</h2>
 <ul>
@@ -22,5 +36,25 @@
 } 
 else
 {
-    <span style="font-weight: bold" class="bg-danger p-2 text-white rounded">No hay ofertas por el momento</span>
+    <p style="font-weight: bold" class="bg-danger p-2 text-white rounded">No hay ofertas por el momento</p>
+}
+
+@if (Context.Session.GetString("rol") != "Administrador")
+{
+    <form method="post" action="/Publicacion/VerSubasta?Id=@p.Id&Monto">
+        <div class="row g-3 align-items-center">
+            <div class="col-auto">
+                <input type="number" class="form-control" name="Monto">
+            </div>
+            <div class="col-auto">
+                <button class="btn btn-primary">Ofertar</button>
+            </div>
+        </div>
+    </form>
+}
+else
+{
+    <form method="post" action="/Publicacion/FinalizarSubasta">
+        <button class="btn btn-danger">Finalizar Subasta</button>
+    </form>
 }

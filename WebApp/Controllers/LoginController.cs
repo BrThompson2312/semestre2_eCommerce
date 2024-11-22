@@ -26,6 +26,7 @@ namespace WebApp.Controllers
                     throw new Exception("Credenciales inválidas");
                 }
 
+                HttpContext.Session.SetInt32("id", unU.Id);
                 HttpContext.Session.SetString("email", unU.Email);
                 HttpContext.Session.SetString("rol", unU.Rol);
 
@@ -52,7 +53,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Signin(Cliente usuario)
+        public IActionResult Signin(Cliente usuario, string Contrasenia2)
         {
             try
             {
@@ -60,9 +61,13 @@ namespace WebApp.Controllers
                 {
                     throw new Exception("Error en el registro");
                 }
-                usuario.Rol = "cliente";
+                if (usuario.Contrasenia != Contrasenia2)
+                {
+                    throw new Exception("Las contraseñas no coinciden");
+                }
+                usuario.Rol = "Cliente";
                 _sistema.AgregarUsuario(usuario);
-                return Redirect("Login");
+                return RedirectToAction("Index");
             } catch (Exception e)
             {
                 ViewBag.mensaje = e.Message;

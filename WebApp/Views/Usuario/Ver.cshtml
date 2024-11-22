@@ -28,15 +28,6 @@
                 @if (u is Cliente){ 
                     <td>@u.Saldo</td>
                 }
-                
-                @if (u is Cliente)
-                {
-                    <td>
-                        <form>
-                            <button class="" type="submit">Recargar Saldo</button>
-                        </form>
-                    </td>
-                }
                 <td>
                     @if (u is Administrador)
                     {

@@ -13,50 +13,85 @@ namespace Dominio.Entidades
         {
         }
 
-        public Subasta (string _nombre, DateTime _fechaPublicacion) : base(_nombre, _fechaPublicacion) {}
+        public Subasta (string _nombre, DateTime _fechaPublicacion) : base(_nombre, _fechaPublicacion) 
+        {
+            PrecioFinal = 0;
+        }
 
         public override void Validar()
         {
             base.Validar();
         }
 
-        public override void AgregarOferta(Oferta unaOferta)
+        public override void AgregarOferta(Oferta oferta)
         {
             string res = $"Subasta id_{Id}({Nombre})";
-            if (unaOferta == null)
+            if (oferta == null)
             {
                 throw new Exception($"{res}: Oferta invalido");
             }
-            if (_ofertas.Contains(unaOferta))
+            if (_ofertas.Contains(oferta))
             {
-                throw new Exception($"{res}: Oferta existente: {unaOferta}");
+                throw new Exception($"{res}: Oferta existente: {oferta}");
             }
-            if (unaOferta.Fecha < FechaPublicacion)
+            if (oferta.Fecha < FechaPublicacion)
             {
-                throw new Exception($"{res}: oferta con fecha menor a la de la publicacion: \n Fecha de publicacion: {FechaPublicacion} \n Fecha de oferta(id_{unaOferta.Id}): {unaOferta.Fecha}");
+                throw new Exception($"{res}: oferta con fecha menor a la de la publicacion: \n Fecha de publicacion: {FechaPublicacion} \n Fecha de oferta(id_{oferta.Id}): {oferta.Fecha}");
             }
-            unaOferta.Validar();
-            _ofertas.Add(unaOferta);
+            if (oferta.Monto > PrecioFinal)
+            {
+                oferta.Validar();
+                PrecioFinal = oferta.Monto;
+                _ofertas.Add(oferta);
+            }
+            else
+            {
+                throw new Exception("Monto insuficiente");
+            }
         }
 
         public override decimal PrecioPublicacion(Articulo articulo)
         {
-            return 0;
+            throw new Exception("No implementado");
         }
 
         public override Oferta OfertaConMasValor()
         {
-            Oferta oferta = null;
-            int monto = 0;
-            foreach (Oferta o in Ofertas)
+            Oferta mioferta = null;
+            if (_ofertas.Count() != 0)
             {
-                if (o.Monto > monto)
-                {
-                    oferta = o;
-                    monto = o.Monto;
-                }
+                mioferta = _ofertas[_ofertas.Count() - 1];
             }
-            return oferta;
+            return mioferta;
+        }
+
+        public override int CantidadOfertas()
+        {
+            return Ofertas.Count();
+        }
+
+        public override decimal ObtenerPrecioFinal()
+        {
+            throw new Exception("No implementado");
+        }
+
+        public override void ComprarVenta(Usuario usuario)
+        {
+            throw new Exception("No implementado");
+        }
+
+        public override void FinalizarVenta(Usuario usuario)
+        {
+            throw new Exception("No implementado");
+        }
+
+        public override void ValidarOferta(int monto)
+        {
+            if (monto < PrecioFinal)
+            {
+                throw new Exception("Insuficiente");
+            }
+            PrecioFinal = monto;
         }
 
         public override string ToString()
