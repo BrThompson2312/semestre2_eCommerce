@@ -21,7 +21,7 @@ namespace Dominio.Entidades
         {
             Abierto,
             Cerrado,
-            Terminado,
+            Cancelado,
         }
 
         public Publicacion() 
@@ -41,7 +41,9 @@ namespace Dominio.Entidades
             {
                 throw new Exception($"Publicacion id_{Id}({Nombre}): Nombre invalido");
             }
-            if (EstadoPublicacion != Estado.Abierto && EstadoPublicacion != Estado.Cerrado && EstadoPublicacion != Estado.Terminado)
+            if (EstadoPublicacion != Estado.Abierto && 
+                EstadoPublicacion != Estado.Cerrado && 
+                EstadoPublicacion != Estado.Cancelado)
             {
                 throw new Exception($"Publicacion: Estado invalido: {EstadoPublicacion}");
             }
@@ -61,13 +63,25 @@ namespace Dominio.Entidades
 
         public abstract int CantidadOfertas();
 
-        public abstract decimal ObtenerPrecioFinal();
-
-        public abstract void ComprarVenta(Usuario usuario);
-
-        public abstract void FinalizarVenta(Usuario usuario);
+        public virtual decimal ObtenerPrecioFinal()
+        {
+            return PrecioFinal;
+        }
 
         public abstract void ValidarOferta(int monto);
+
+        public virtual void FinalizarPublicacion(Usuario usuario1, Usuario usuario2)
+        {
+            CompraRealizada = usuario1;
+            CompraFinalizada = usuario2;
+            EstadoPublicacion = Estado.Cerrado;
+        }
+
+        public virtual void CancelarSubasta(Usuario admin)
+        {
+            CompraFinalizada = admin;
+            EstadoPublicacion = Estado.Cancelado;
+        }
 
         public override string ToString()
         {

@@ -70,21 +70,6 @@ namespace Dominio.Entidades
             return Ofertas.Count();
         }
 
-        public override decimal ObtenerPrecioFinal()
-        {
-            throw new Exception("No implementado");
-        }
-
-        public override void ComprarVenta(Usuario usuario)
-        {
-            throw new Exception("No implementado");
-        }
-
-        public override void FinalizarVenta(Usuario usuario)
-        {
-            throw new Exception("No implementado");
-        }
-
         public override void ValidarOferta(int monto)
         {
             if (monto < PrecioFinal)

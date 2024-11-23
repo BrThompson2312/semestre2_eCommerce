@@ -4,10 +4,10 @@
     var p = ViewBag.Publicacion;
 }
 
-@if (ViewBag.mensaje != null)
+@if (ViewBag.mensaje_error != null)
 {
     <div class="alert alert-danger mt-2" role="alert">
-        @ViewBag.mensaje
+        @ViewBag.mensaje_error
     </div>
 }
 
@@ -29,9 +29,9 @@
     }
 </p>
 
-@if (p.EstadoPublicacion != Publicacion.Estado.Cerrado)
+@if (p.EstadoPublicacion == Publicacion.Estado.Abierto)
 {
-    <form method="post" action="/Publicacion/VerVenta?IdPublicacion=@p.Id">
+    <form method="post" action="/Publicacion/VerVenta?Id=@p.Id">
         <button class="btn btn-primary w-100" style="font-weight: bold" type="submit">
             Comprar (Saldo $@ViewBag.Saldo)
         </button>

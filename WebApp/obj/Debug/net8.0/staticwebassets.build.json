@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qOZbhGiI5IC+95vaq0cSyip79PaQTlQFOTICP69boHM=",
+  "Hash": "qZwBxqFpO3NXPBSv+YstjqlHR6MIgc1ze4NcycQpmf4=",
   "Source": "WebApp",
   "BasePath": "_content/WebApp",
   "Mode": "Default",
@@ -1343,7 +1343,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 08 Nov 2024 20:30:31 GMT"
+          "Value": "Sat, 23 Nov 2024 20:10:51 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1380,7 +1380,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 08 Nov 2024 20:30:31 GMT"
+          "Value": "Sat, 23 Nov 2024 20:10:51 GMT"
         },
         {
           "Name": "Cache-Control",

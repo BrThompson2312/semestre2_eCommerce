@@ -8,10 +8,15 @@ namespace WebApp.Filtros
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             string email = context.HttpContext.Session.GetString("email");
-            string rol = context.HttpContext.Session.GetString("rol");
-            if (rol != "Cliente" || email == null)
+            if (email == null)
             {
                 context.Result = new RedirectResult("/Login/Index");
+            }
+
+            string rol = context.HttpContext.Session.GetString("rol");
+            if (rol != "Cliente")
+            {
+                context.Result = new RedirectResult("/Publicacion/Index");
             }
         }
     }

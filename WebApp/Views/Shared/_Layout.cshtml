@@ -53,6 +53,12 @@
                             if (Context.Session.GetString("rol") == "Cliente")
                             {
                                 <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="ConsultarSaldo">
+                                        <i class="fa-solid fa-wallet"></i>
+                                        Consultar Saldo
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link text-white" asp-area="" asp-controller="Usuario" asp-action="RecargarSaldo">
                                         <i class="fa-solid fa-dollar-sign"></i> 
                                         Recargar Saldo

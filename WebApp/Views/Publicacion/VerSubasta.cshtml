@@ -10,7 +10,6 @@
         @ViewBag.mensaje
     </div>
 }
-
 @if (ViewBag.mensaje_error != null)
 {
     <div class="alert alert-danger mb-2 mt-2" role="alert">
@@ -27,34 +26,59 @@
     }
 </ul>
 
+
 @if (ViewBag.Oferta != null)
 {
     <p>
-        <span style="font-weight: bold" >Oferta actual con más valor: </span>
-        <span class="bg-success p-2 text-white rounded">@ViewBag.Oferta</span>
+        <span style="font-weight: bold">Oferta actual con más valor: </span>
+        <span class="border-bottom border-success p-2 text-success">@ViewBag.Oferta</span>
     </p>
-} 
+}
 else
 {
-    <p style="font-weight: bold" class="bg-danger p-2 text-white rounded">No hay ofertas por el momento</p>
+    @if (p.EstadoPublicacion == Publicacion.Estado.Abierto)
+    {
+        <p style="font-weight: bold" class="border-bottom border-danger p-2 text-danger">No hay ofertas por el momento</p>
+    }
 }
+
 
 @if (Context.Session.GetString("rol") != "Administrador")
 {
-    <form method="post" action="/Publicacion/VerSubasta?Id=@p.Id&Monto">
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-                <input type="number" class="form-control" name="Monto">
+    @if (p.EstadoPublicacion == Publicacion.Estado.Abierto)
+    {
+        <form method="post" action="/Publicacion/VerSubasta?Id=@p.Id&Monto">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <input type="number" class="form-control" name="Monto">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary">Ofertar</button>
+                </div>
             </div>
-            <div class="col-auto">
-                <button class="btn btn-primary">Ofertar</button>
-            </div>
-        </div>
-    </form>
+        </form>
+    }
+    else if (p.EstadoPublicacion == Publicacion.Estado.Cerrado)
+    {
+        <p class="bg-danger text-center p-2 text-white" style="font-weight: bold">Subasta finalizada</p>
+    } else
+    {
+        <p class="bg-warning text-center p-2 text-white" style="font-weight: bold">Subasta cancelada</p>
+    }
 }
 else
 {
-    <form method="post" action="/Publicacion/FinalizarSubasta">
-        <button class="btn btn-danger">Finalizar Subasta</button>
-    </form>
+    if (p.EstadoPublicacion == Publicacion.Estado.Abierto)
+    {
+        <form method="post" action="/Publicacion/FinalizarSubasta?Id=@p.Id">
+            <button class="btn btn-danger">Finalizar Subasta</button>
+        </form>
+    }
+    else if (p.EstadoPublicacion == Publicacion.Estado.Cerrado)
+    {
+        <p class="bg-danger text-center p-2 text-white" style="font-weight: bold">Subasta finalizada</p>
+    } else
+    {
+        <p class="bg-warning text-center p-2 text-white" style="font-weight: bold">Subasta cancelada</p>
+    }
 }

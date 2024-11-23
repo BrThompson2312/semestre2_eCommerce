@@ -479,11 +479,11 @@ namespace Dominio
             subasta5.AgregarArticulo(articulo35);
             subasta5.AgregarArticulo(articulo36);
 
-            Publicacion subasta6 = new Subasta("Subasta de productos de invierno", new DateTime(2024, 12, 1));
-            AgregarPublicacion(subasta6);
-            subasta6.AgregarArticulo(articulo37);
-            subasta6.AgregarArticulo(articulo38);
-            subasta6.AgregarArticulo(articulo39);
+            //Publicacion subasta6 = new Subasta("Subasta de productos de invierno", new DateTime(2024, 12, 1));
+            //AgregarPublicacion(subasta6);
+            //subasta6.AgregarArticulo(articulo37);
+            //subasta6.AgregarArticulo(articulo38);
+            //subasta6.AgregarArticulo(articulo39);
 
             Publicacion subasta7 = new Subasta("Subasta de bolsos y carteras", new DateTime(2024, 5, 10));
             AgregarPublicacion(subasta7);
@@ -516,18 +516,18 @@ namespace Dominio
         }
         /*-------------- Precarga de datos --------------*/
 
-        public void AgregarUsuario(Usuario pUsuario)
+        public void AgregarUsuario(Usuario usuario)
         {
-            if (pUsuario == null)
+            if (usuario == null)
             {
                 throw new Exception("Usuario null");
             }
-            if (_usuarios.Contains(pUsuario))
+            if (_usuarios.Contains(usuario))
             {
-                throw new Exception($"Usuario ya existente: {pUsuario}");
+                throw new Exception($"Usuario ya existente: {usuario}");
             }
-            pUsuario.Validar();
-            _usuarios.Add(pUsuario);
+            usuario.Validar();
+            _usuarios.Add(usuario);
         }
 
         public void AgregarArticulo(Articulo pArticulo)
@@ -743,9 +743,8 @@ namespace Dominio
             usuario.RecargarSaldo(recarga);
         }
 
-        public void ComprarVenta(int idUser, int idPub, decimal saldo)
+        public void FinalizarVenta(int idUser, int idPub, decimal saldo)
         {
-            Cliente cliente;
             Usuario usuario = FiltrarUsuarioXId(idUser);
             Publicacion publicacion = FiltrarPublicacionXId(idPub);
             if (usuario == null)
@@ -754,18 +753,14 @@ namespace Dominio
             }
             if (usuario is Administrador)
             {
-                throw new Exception("Denegado");
-            }
-            else
-            {
-                cliente = (Cliente)usuario;
+                throw new Exception("Acceso Denegado");
             }
             if (publicacion == null)
             {
                 throw new Exception("Null");
             }
             if (publicacion.EstadoPublicacion == Publicacion.Estado.Cerrado ||
-                publicacion.EstadoPublicacion == Publicacion.Estado.Terminado)
+                publicacion.EstadoPublicacion == Publicacion.Estado.Cancelado)
             {
                 throw new Exception("Compra previamente finalizada");
             }
@@ -773,32 +768,60 @@ namespace Dominio
             {
                 throw new Exception("Saldo insuficiente");
             }
-            publicacion.ComprarVenta(cliente);
-            publicacion.FinalizarVenta(cliente);
+            publicacion.FinalizarPublicacion(usuario, usuario);
             usuario.DescontarSaldo(publicacion.ObtenerPrecioFinal());
         }
 
-        public void OfertarSubasta(Publicacion publicacion, int userId, int monto)
+        public void OfertarSubasta(Publicacion subasta, int idSession, int monto)
         {
-            if (publicacion == null)
+            if (subasta == null)
             {
                 throw new Exception("Null");
             }
 
-            Usuario usuario = FiltrarUsuarioXId(userId);
+            Usuario usuario = FiltrarUsuarioXId(idSession);
             if (usuario == null)
             {
                 throw new Exception("Null");
             }
+            decimal saldo = usuario.ObtenerSaldo();
+
+            if (saldo < monto)
+            {
+                throw new Exception("No dispone del saldo suficiente");
+            }
 
             DateTime today = DateTime.Today;
             Oferta oferta = new Oferta(usuario, monto, today);
-            publicacion.AgregarOferta(oferta);
+            subasta.AgregarOferta(oferta);
         }
 
-        public void AdministradorCierraSubasta()
+        public void FinalizarSubasta(int idSession, int idPub)
         {
+            Publicacion publicacion = FiltrarPublicacionXId(idPub);
+            if (publicacion == null)
+            {
+                throw new Exception("Null");
+            }
+            if (publicacion.EstadoPublicacion == Publicacion.Estado.Cerrado)
+            {
+                throw new Exception("Subasta ya cerrada");
+            }
 
+            Usuario admin= FiltrarUsuarioXId(idSession);
+            if (admin == null)
+            {
+                throw new Exception("Null");
+            }
+            if (publicacion.CantidadOfertas() == 0)
+            {
+                publicacion.CancelarSubasta(admin);
+            }
+            else
+            {
+                Usuario cliente = publicacion.OfertaConMasValor().Usuario;
+                publicacion.FinalizarPublicacion(cliente, admin);
+            }
         }
     }
 }

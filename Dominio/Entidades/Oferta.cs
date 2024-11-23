@@ -34,7 +34,6 @@ namespace Dominio.Entidades
 
         public override string ToString()
         {
-            //string res = $" Id {Id} ";
             string res = "";
             res += $" Cliente: {Usuario.Nombre} {Usuario.Apellido} | ";
             res += $" Monto: {Monto} | ";

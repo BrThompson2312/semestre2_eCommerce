@@ -7,6 +7,13 @@
     </div>
 }
 
+@if (ViewBag.mensaje_error != null)
+{
+    <div class="alert alert-danger mb-2 mt-2" role="alert">
+        @ViewBag.mensaje_error
+    </div>
+}
+
 <div>
     <h1>@ViewBag.Titulo</h1>
 
@@ -28,13 +35,16 @@
             <tr>
                 <th>#</th>
                 <th>Nombre</th>
+                @if (Context.Session.GetString("rol") == "Administrador")
+                {
+                    <th>Fecha de publicacion</th>
+                }
                 <th>Estado</th>
                 <th>Articulos</th>
                 <th>Precio</th>
             </tr>
         </thead>
         <tbody>
-
             @{
                 bool Isclient(Publicacion item)
                 {
@@ -48,6 +58,10 @@
                     <tr>
                         <td>@item.Id</td>
                         <td>@item.Nombre</td>
+                        @if (Context.Session.GetString("rol") == "Administrador")
+                        {
+                            <td>@item.FechaPublicacion</td>
+                        }
                         <td>
                             @if (item.EstadoPublicacion == Publicacion.Estado.Abierto)
                             {
@@ -55,6 +69,9 @@
                             } else if (item.EstadoPublicacion == Publicacion.Estado.Cerrado)
                             {
                                 <span class="text-danger">@item.EstadoPublicacion</span>
+                            } else
+                            {
+                                <span class="text-warning">@item.EstadoPublicacion</span>
                             }
                         </td>
                         <td>

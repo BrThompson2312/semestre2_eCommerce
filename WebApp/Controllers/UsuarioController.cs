@@ -60,10 +60,6 @@ namespace WebApp.Controllers
         {
             try
             {
-                if (usuario == null)
-                {
-                    throw new Exception("Error");
-                }
                 _sistema.AgregarUsuario(usuario);
                 return RedirectToAction("Index", new { mensaje = "Se dio de alta el cliente en forma exitosa." });
             }
@@ -88,10 +84,6 @@ namespace WebApp.Controllers
         {
             try
             {
-                if (administrador == null)
-                {
-                    throw new Exception("Error");
-                }
                 _sistema.AgregarUsuario(administrador);
                 return RedirectToAction("index", new { mensaje = "Se dio de alta el administrador en forma exitosa." });
             }
@@ -165,9 +157,14 @@ namespace WebApp.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult FinalizarSubasta()
+        [HttpGet]
+        [FCliente]
+        public IActionResult ConsultarSaldo()
         {
+            int idSession = (int)HttpContext.Session.GetInt32("id");
+            Usuario usuario = _sistema.FiltrarUsuarioXId(idSession);
+            decimal saldo = usuario.ObtenerSaldo();
+            ViewBag.Saldo = saldo;
             return View();
         }
     }
