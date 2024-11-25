@@ -47,7 +47,6 @@ namespace Dominio.Entidades
             Saldo -= monto;
         }
 
-
         public override string ToString()
         {
             string res = base.ToString();

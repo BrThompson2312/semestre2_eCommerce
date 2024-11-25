@@ -22,10 +22,10 @@ namespace Dominio.Entidades
             }
         }
 
-        public override void AgregarArticulo(Articulo pArticulo)
+        public override void AgregarArticulo(Articulo articulo)
         {
-            base.AgregarArticulo(pArticulo);
-            PrecioFinal += PrecioPublicacion(pArticulo);
+            base.AgregarArticulo(articulo);
+            PrecioFinal += PrecioPublicacion(articulo);
         }
 
         public override void AgregarOferta(Oferta unaOferta)

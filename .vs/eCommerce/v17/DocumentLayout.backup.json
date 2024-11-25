@@ -38,8 +38,7 @@
               "RelativeToolTip": "WebApp\\Views\\Publicacion\\VerVenta.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACEAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-23T20:38:25.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T20:38:25.238Z"
             },
             {
               "$type": "Document",
@@ -49,7 +48,7 @@
               "RelativeDocumentMoniker": "WebApp\\Controllers\\PublicacionController.cs",
               "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\PublicacionController.cs",
               "RelativeToolTip": "WebApp\\Controllers\\PublicacionController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAqwEsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAqwFMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T20:36:54.643Z",
               "EditorCaption": ""
@@ -64,8 +63,7 @@
               "RelativeToolTip": "Dominio\\Sistema.cs",
               "ViewState": "AgIAAO8CAAAAAAAAAAAMwOkCAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T20:34:17.253Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T20:34:17.253Z"
             },
             {
               "$type": "Document",
@@ -77,8 +75,7 @@
               "RelativeToolTip": "WebApp\\Views\\Publicacion\\VerSubasta.cshtml",
               "ViewState": "AgIAAB8AAAAAAAAAAAAUwCYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-23T20:22:10.731Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T20:22:10.731Z"
             }
           ]
         }

@@ -79,20 +79,20 @@ namespace Dominio
                 (inicio) Datos nuevos! 
             */
 
-                //Usuario admin7 = new Administrador("Javier", "Martinez", "javier.martinez@gmail.com", "JAVIERadmin@", rol); // No tiene numeros
-                //AgregarUsuario(admin7);
+            // admin = new Administrador("Javier", "Martinez", "javier.martinez@gmail.com", "JAVIERadmin@", rol); // No tiene numeros
+            // AgregarUsuario(admin);
 
-                //Usuario admin8 = new Administrador("Elena", "Ruiz", "elena.ruiz@gmail.com", "ELENARUIZ123@", rol); // No contiene letras minusculas
-                //AgregarUsuario(admin8);
+            // admin = new Administrador("Elena", "Ruiz", "elena.ruiz@gmail.com", "ELENARUIZ123@", rol); // No contiene letras minusculas
+            // AgregarUsuario(admin);
 
-                //Usuario admin9 = new Administrador("Ricardo", "Pérez", "ricardo.perez@gmail.com", "R123@", rol); // No cumple con minimo de caracteres
-                //AgregarUsuario(admin9);
+            // admin = new Administrador("Ricardo", "Pérez", "ricardo.perez@gmail.com", "R123@", rol); // No cumple con minimo de caracteres
+            // AgregarUsuario(admin);
 
-                //Usuario admin10 = new Administrador("Marta", "Lopez", "marta.lopez@gmail.com", "MARTAlopez123", rol); // No contiene simbolos
-                //AgregarUsuario(admin10);
+            // admin = new Administrador("Marta", "Lopez", "marta.lopez@gmail.com", "MARTAlopez123", rol); // No contiene simbolos
+            // AgregarUsuario(admin);
 
-                //Usuario admin11 = new Administrador("Tomás", "Hernandez", "tomas.hernandez@gmail.com", "123456789@", rol); // No contiene letras
-                //AgregarUsuario(admin11);
+            // admin = new Administrador("Tomás", "Hernandez", "tomas.hernandez@gmail.com", "123456789@", rol); // No contiene letras
+            // AgregarUsuario(admin);
 
             /* 
                 (fin) Datos nuevos! 
@@ -135,34 +135,33 @@ namespace Dominio
             user = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010!", 1600, rol);
             AgregarUsuario(user);
 
-
-            // Usuario cliente11 = new Cliente(null, "Vega", "vega@hotmail.com", "vegaPassword123", 1000); // Nombre null
+            // user = new Cliente(null, "Vega", "vega@hotmail.com", "vegaPassword123", 1000); // Nombre null
             // AgregarUsuario(cliente11);
 
-            // Usuario cliente12 = new Cliente("Ramiro", "Santos", "ramiro.santos@gmail.com", "ramiroSantos123", -500); // Saldo negativo
+            // user = new Cliente("Ramiro", "Santos", "ramiro.santos@gmail.com", "ramiroSantos123", -500); // Saldo negativo
             // AgregarUsuario(cliente12);
 
-            // Usuario cliente13 = new Cliente("Gabriel", null, "gabriel@outlook.com", "gabrielOut123", 1700); // Apellido null
+            // user = new Cliente("Gabriel", null, "gabriel@outlook.com", "gabrielOut123", 1700); // Apellido null
             // AgregarUsuario(cliente13);
 
             /* 
                 Datos Nuevos!
             */
 
-                //user = new Cliente("Laura", "Martinez", "laura.martinez@gmail.com", "LAURAmartinez@", 1500, rol); // No contiene numeros
-                //AgregarUsuario(user);
+            // user = new Cliente("Laura", "Martinez", "laura.martinez@gmail.com", "LAURAmartinez@", 1500, rol); // No contiene numeros
+            // AgregarUsuario(user);
 
-                //user = new Cliente("Carlos", "Diaz", "carlos.diaz@gmail.com", "CARLOSDIAZ123@", 1800, rol); // No contiene minusculas
-                //AgregarUsuario(user);
+            // user = new Cliente("Carlos", "Diaz", "carlos.diaz@gmail.com", "CARLOSDIAZ123@", 1800, rol); // No contiene minusculas
+            // AgregarUsuario(user);
 
-                //user = new Cliente("Sofia", "Rodriguez", "bruno.rodriguez@gmail.com", "Sof123@", 1700, rol); // No contiene minimo de caracteres
-                //AgregarUsuario(user);
+            // user = new Cliente("Sofia", "Rodriguez", "bruno.rodriguez@gmail.com", "Sof123@", 1700, rol); // No contiene minimo de caracteres
+            // AgregarUsuario(user);
 
-                //user = new Cliente("Miguel", "Perez", "hernan.perez@gmail.com", "hernanPerez123", 1600, rol); // No contiene simbolos
-                //AgregarUsuario(user);
+            // user = new Cliente("Miguel", "Perez", "hernan.perez@gmail.com", "hernanPerez123", 1600, rol); // No contiene simbolos
+            // AgregarUsuario(user);
 
-                //user = new Cliente("Pedro", "Lopez", "pedro.lopez@gmail.com", "123456789@", 1400, rol); // No contiene letras
-                //AgregarUsuario(user);
+            // user = new Cliente("Pedro", "Lopez", "pedro.lopez@gmail.com", "123456789@", 1400, rol); // No contiene letras
+            // AgregarUsuario(user);
 
             /* 
                 Datos Nuevos!
