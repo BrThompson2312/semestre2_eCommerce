@@ -17,7 +17,6 @@ namespace WebApp.Controllers
             ViewBag.mensaje = mensaje;
             ViewBag.mensaje_error = mensaje_error;
             ViewBag.Publicaciones = _sistema.Publicaciones;
-            ViewBag.CantPublicaciones = _sistema.Publicaciones.Count();
 
             ViewBag.Titulo = "Publicaciones";
             if (HttpContext.Session.GetString("rol") == "Administrador")

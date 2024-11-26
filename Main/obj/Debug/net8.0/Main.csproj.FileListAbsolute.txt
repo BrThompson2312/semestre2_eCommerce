@@ -111,3 +111,12 @@ C:\Users\herna\Desktop\eComerce\Main\obj\Debug\net8.0\refint\Main.dll
 C:\Users\herna\Desktop\eComerce\Main\obj\Debug\net8.0\Main.pdb
 C:\Users\herna\Desktop\eComerce\Main\obj\Debug\net8.0\Main.genruntimeconfig.cache
 C:\Users\herna\Desktop\eComerce\Main\obj\Debug\net8.0\ref\Main.dll
+C:\Users\herna\Desktop\eComerce2024\Main\obj\Debug\net8.0\Main.csproj.AssemblyReference.cache
+C:\Users\herna\Desktop\eComerce2024\Main\obj\Debug\net8.0\Main.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\Desktop\eComerce2024\Main\obj\Debug\net8.0\Main.AssemblyInfoInputs.cache
+C:\Users\herna\Desktop\eComerce2024\Main\obj\Debug\net8.0\Main.AssemblyInfo.cs
+C:\Users\herna\Desktop\eComerce2024\Main\obj\Debug\net8.0\Main.csproj.CoreCompileInputs.cache
+C:\Users\herna\Desktop\eComerce2024\Main\obj\Debug\net8.0\Main.sourcelink.json
+C:\Users\herna\Desktop\eComerce2024\Main\obj\Debug\net8.0\Main.dll
+C:\Users\herna\Desktop\eComerce2024\Main\obj\Debug\net8.0\refint\Main.dll
+C:\Users\herna\Desktop\eComerce2024\Main\obj\Debug\net8.0\Main.pdb

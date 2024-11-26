@@ -57,7 +57,7 @@ namespace WebApp.Controllers
                     throw new Exception("Las contraseñas no coinciden");
                 }
                 _sistema.AgregarUsuario(usuario);
-                return RedirectToAction("Index", new {mensaje="Usuario registrado correctamente"});
+                return RedirectToAction("Index", new {mensaje="Usuario creado con éxito"});
             } catch (Exception e)
             {
                 ViewBag.mensaje = e.Message;

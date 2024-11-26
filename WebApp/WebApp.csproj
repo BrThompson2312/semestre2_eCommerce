@@ -7,14 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Usuario\AltaAdministrador.cshtml" />
-    <Content Remove="Views\Usuario\AltaCliente.cshtml" />
-    <Content Remove="Views\Usuario\Index.cshtml" />
-    <Content Remove="Views\Usuario\Modificar.cshtml" />
-    <Content Remove="Views\Usuario\Ver.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj" />
   </ItemGroup>
 

@@ -1,0 +1,12 @@
+C:\Users\herna\Desktop\eComerce2024\Dominio\bin\Release\net8.0\Dominio.deps.json
+C:\Users\herna\Desktop\eComerce2024\Dominio\bin\Release\net8.0\Dominio.dll
+C:\Users\herna\Desktop\eComerce2024\Dominio\bin\Release\net8.0\Dominio.pdb
+C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\Dominio.sourcelink.json
+C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\Dominio.dll
+C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\refint\Dominio.dll
+C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\Dominio.pdb
+C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\ref\Dominio.dll
