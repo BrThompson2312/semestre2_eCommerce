@@ -755,5 +755,36 @@ namespace Dominio
             }
         }
     
+        public void VaciarPublicaciones()
+        {
+            _publicaciones.Clear();
+        }
+
+        public int CantidadVentas()
+        {
+            int cantidad = 0;
+            foreach (Publicacion p in _publicaciones)
+            {
+                if (p is Venta)
+                {
+                    cantidad++;
+                }
+            }
+            return cantidad;
+        }
+
+        public int CantidadSubastas()
+        {
+            int cantidad = 0;
+            foreach (Publicacion p in _publicaciones)
+            {
+                if (p is Subasta)
+                {
+                    cantidad++;
+                }
+            }
+            return cantidad;
+        }
+
     }
 }

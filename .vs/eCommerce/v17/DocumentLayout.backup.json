@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\views\\login\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\login\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\views\\publicacion\\verventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\publicacion\\verventa.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\views\\publicacion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\publicacion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\views\\publicacion\\versubasta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\publicacion\\versubasta.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\views\\publicacion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\views\\publicacion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,123 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "VerVenta.cshtml",
-              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Publicacion\\VerVenta.cshtml",
-              "RelativeDocumentMoniker": "WebApp\\Views\\Publicacion\\VerVenta.cshtml",
-              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Publicacion\\VerVenta.cshtml",
-              "RelativeToolTip": "WebApp\\Views\\Publicacion\\VerVenta.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-26T19:53:17.13Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PublicacionController.cs",
-              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\PublicacionController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\PublicacionController.cs",
-              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\PublicacionController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\PublicacionController.cs",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAqwHMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T19:47:50.44Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAACoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T19:48:01.885Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAgwAUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T18:57:03.106Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Login\\Index.cshtml",
-              "RelativeDocumentMoniker": "WebApp\\Views\\Login\\Index.cshtml",
-              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Login\\Index.cshtml",
-              "RelativeToolTip": "WebApp\\Views\\Login\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-26T19:53:12.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Signin.cshtml",
-              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Login\\Signin.cshtml",
-              "RelativeDocumentMoniker": "WebApp\\Views\\Login\\Signin.cshtml",
-              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Login\\Signin.cshtml",
-              "RelativeToolTip": "WebApp\\Views\\Login\\Signin.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-26T19:53:13.908Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Sistema.cs",
-              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Sistema.cs",
-              "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
-              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Sistema.cs",
-              "RelativeToolTip": "Dominio\\Sistema.cs",
-              "ViewState": "AgIAACgCAAAAAAAAAAAuwDMCAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T19:53:23.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "VerSubasta.cshtml",
-              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Publicacion\\VerSubasta.cshtml",
-              "RelativeDocumentMoniker": "WebApp\\Views\\Publicacion\\VerSubasta.cshtml",
-              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Publicacion\\VerSubasta.cshtml",
-              "RelativeToolTip": "WebApp\\Views\\Publicacion\\VerSubasta.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-26T19:53:16.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Publicacion\\Index.cshtml",
               "RelativeDocumentMoniker": "WebApp\\Views\\Publicacion\\Index.cshtml",
               "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Publicacion\\Index.cshtml",
               "RelativeToolTip": "WebApp\\Views\\Publicacion\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAC8AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-26T19:53:15.819Z",
+              "WhenOpened": "2024-11-26T21:00:40.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VerSubasta.cshtml",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Publicacion\\VerSubasta.cshtml",
+              "RelativeDocumentMoniker": "WebApp\\Views\\Publicacion\\VerSubasta.cshtml",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Views\\Publicacion\\VerSubasta.cshtml",
+              "RelativeToolTip": "WebApp\\Views\\Publicacion\\VerSubasta.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-26T21:00:25.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sistema.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Sistema.cs",
+              "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Sistema.cs",
+              "RelativeToolTip": "Dominio\\Sistema.cs",
+              "ViewState": "AgIAAAoDAAAAAAAAAAAAAP0CAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T20:55:44.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PublicacionController.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\PublicacionController.cs",
+              "RelativeDocumentMoniker": "WebApp\\Controllers\\PublicacionController.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\PublicacionController.cs",
+              "RelativeToolTip": "WebApp\\Controllers\\PublicacionController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T20:55:33.056Z",
               "EditorCaption": ""
             }
           ]

@@ -30,11 +30,23 @@
         }
     </div>
 
-    @if (ViewBag.CantPublicaciones == 0)
+    @if (Context.Session.GetString("rol") == "Administrador")
     {
-        <div class="alert alert-warning mb-2 mt-2" role="alert">
-            No hay publicaciones
-        </div>
+        if (ViewBag.CantSubastas == 0)
+        {
+            <div class="alert alert-warning mb-2 mt-2" role="alert">
+                No hay Subastas
+            </div>
+        }
+    }
+    else
+    {
+        @if (ViewBag.CantVentas + ViewBag.CantSubastas == 0)
+        {
+            <div class="alert alert-warning mb-2 mt-2" role="alert">
+                No hay Publicaciones
+            </div>
+        }
     }
 
     <table class="table table-striped">
