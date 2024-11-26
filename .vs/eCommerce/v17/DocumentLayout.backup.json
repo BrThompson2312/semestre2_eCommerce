@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\proyectos\\ecomerce\\webapp\\views\\publicacion\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -56,26 +56,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Sistema.cs",
               "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Sistema.cs",
               "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
               "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Sistema.cs",
               "RelativeToolTip": "Dominio\\Sistema.cs",
-              "ViewState": "AgIAAAoDAAAAAAAAAAAAAP0CAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAAQDAAAAAAAAAAAAABUDAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T20:55:44.115Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "PublicacionController.cs",
               "DocumentMoniker": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\PublicacionController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\PublicacionController.cs",
               "ToolTip": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\WebApp\\Controllers\\PublicacionController.cs",
               "RelativeToolTip": "WebApp\\Controllers\\PublicacionController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-26T20:55:33.056Z",
               "EditorCaption": ""
