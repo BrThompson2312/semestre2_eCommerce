@@ -525,6 +525,14 @@ namespace Dominio
             {
                 throw new Exception($"Usuario ya existente: {usuario}");
             }
+            if (usuario is Cliente)
+            {
+                usuario.Rol = "Cliente";
+            }
+            else
+            {
+                usuario.Rol = "Administrador";
+            }
             usuario.Validar();
             _usuarios.Add(usuario);
         }
@@ -553,60 +561,6 @@ namespace Dominio
             _publicaciones.Add(pPublicacion);
         }
 
-        public IEnumerable<Usuario> ListadoAdministradores()
-        {
-            List<Usuario> _auxAdministrador = new List<Usuario>();
-            foreach (Usuario item in _usuarios)
-            {
-                if (item is Administrador)
-                {
-                    Administrador admininistrador = (Administrador)item;
-                    _auxAdministrador.Add(admininistrador);
-                }
-            }
-            return _auxAdministrador;
-        }
-
-        public IEnumerable<Usuario> ListadoClientes()
-        {
-            List<Usuario> _auxCliente = new List<Usuario>();
-            foreach (Usuario item in _usuarios)
-            {
-                if (item is Cliente)
-                {
-                    Cliente cliente = (Cliente)item;
-                    _auxCliente.Add(cliente);
-                }
-            }
-            return _auxCliente;
-        }
-
-        public IEnumerable<Usuario> ListadoUsuariosXNombre(string nombre)
-        {
-            List<Usuario> _auxUsuarios = new List<Usuario>();
-            foreach (Usuario item in _usuarios)
-            {
-                if (nombre == null || item.Nombre.ToLower().Contains(nombre.ToLower()))
-                {
-                    _auxUsuarios.Add(item);
-                }
-            }
-            return _auxUsuarios;
-        }
-
-        public IEnumerable<Usuario> ListadoUsuariosXEmail(string email)
-        {
-            List<Usuario> _auxUsuarios = new List<Usuario>();
-            foreach (Usuario item in _usuarios)
-            {
-                if (email == null || item.Email.ToLower().Contains(email.ToLower()))
-                {
-                    _auxUsuarios.Add(item);
-                }
-            }
-            return _auxUsuarios;
-        }
-    
         public Usuario ObtenerUsuarios(string email, string contrasenia)
         {
             foreach (Usuario item in _usuarios)
@@ -629,28 +583,6 @@ namespace Dominio
                 }
             }
             return null;
-        }
-
-        public void ModificarUsuario(int id, string Nombre, string Apellido, string Email, string Contrasenia, string Password2)
-        {
-            Usuario usuario = FiltrarUsuarioXId(id); ;
-            if (usuario == null)
-            {
-                throw new Exception("Null");
-            }
-            if (Contrasenia != Password2)
-            {
-                throw new Exception("Contraseñas no coinciden");
-            }
-            if (!usuario.ValidarContrasenia(Contrasenia))
-            {
-                throw new Exception("Contraseña invalido");
-            }
-
-            usuario.Nombre = Nombre;
-            usuario.Apellido = Apellido;
-            usuario.Email = Email;
-            usuario.Contrasenia = Contrasenia;
         }
 
         public Publicacion FiltrarPublicacionXId(int id)
@@ -822,5 +754,6 @@ namespace Dominio
                 publicacion.FinalizarPublicacion(cliente, admin);
             }
         }
+    
     }
 }

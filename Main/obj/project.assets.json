@@ -27,19 +27,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\herna\\.nuget\\packages\\": {}
+    "C:\\Users\\pokea\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\herna\\Desktop\\eComerce2024\\Main\\Main.csproj",
+      "projectUniqueName": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Main\\Main.csproj",
       "projectName": "Main",
-      "projectPath": "C:\\Users\\herna\\Desktop\\eComerce2024\\Main\\Main.csproj",
-      "packagesPath": "C:\\Users\\herna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\herna\\Desktop\\eComerce2024\\Main\\obj\\",
+      "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Main\\Main.csproj",
+      "packagesPath": "C:\\Users\\pokea\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Main\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\herna\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pokea\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -47,15 +52,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\herna\\Desktop\\eComerce2024\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\herna\\Desktop\\eComerce2024\\Dominio\\Dominio.csproj"
+            "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\pokea\\Documents\\proyectos\\eComerce\\Dominio\\Dominio.csproj"
             }
           }
         }
@@ -68,8 +72,9 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
-      }
+        "auditMode": "all"
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -90,7 +95,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

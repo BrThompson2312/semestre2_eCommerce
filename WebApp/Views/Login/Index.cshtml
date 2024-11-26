@@ -1,7 +1,13 @@
 ﻿@if (ViewBag.mensaje != null)
 {
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-success" role="alert">
         @ViewBag.mensaje
+    </div>
+}
+@if (ViewBag.mensaje_error != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.mensaje_error
     </div>
 }
 

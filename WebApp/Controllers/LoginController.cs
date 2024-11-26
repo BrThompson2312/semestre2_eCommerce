@@ -9,8 +9,10 @@ namespace WebApp.Controllers
         private Sistema _sistema = Sistema.Instancia;
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string mensaje, string mensaje_error, int n)
         {
+            ViewBag.mensaje = mensaje;
+            ViewBag.mensaje_error = mensaje_error;
             return View();
         }
 
@@ -30,18 +32,11 @@ namespace WebApp.Controllers
                 HttpContext.Session.SetString("email", unU.Email);
                 HttpContext.Session.SetString("rol", unU.Rol);
 
-                if (unU.Rol == "Administrador")
-                {
-                    return Redirect("/Publicacion/Index");
-                }
-                else
-                {
-                    return Redirect("/Publicacion/Index");
-                }
+                return Redirect("/Publicacion/Index");
             }
             catch (Exception e)
             {
-                ViewBag.mensaje = e.Message;
+                ViewBag.mensaje_error = e.Message;
             }
             return View();
         }
@@ -57,17 +52,12 @@ namespace WebApp.Controllers
         {
             try
             {
-                if (usuario == null)
-                {
-                    throw new Exception("Error en el registro");
-                }
                 if (usuario.Contrasenia != Contrasenia2)
                 {
                     throw new Exception("Las contraseñas no coinciden");
                 }
-                usuario.Rol = "Cliente";
                 _sistema.AgregarUsuario(usuario);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new {mensaje="Usuario registrado correctamente"});
             } catch (Exception e)
             {
                 ViewBag.mensaje = e.Message;
