@@ -85,6 +85,10 @@ namespace Dominio.Entidades
 
         public abstract Oferta ObtenerOfertaEspecifica(int i);
 
+        public abstract void AsignarOfertaFinal(Oferta oferta);
+
+        public abstract Oferta ObtenerOfertaFinal();
+
         public override string ToString()
         {
             string res = "";

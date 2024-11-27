@@ -11,9 +11,9 @@ namespace Dominio.Entidades
             string _nombre, 
             string _apellido, 
             string _email, 
-            string _contrasenia,
-            string _rol
-        ) : base(_nombre, _apellido, _email, _contrasenia, _rol) {
+            string _contrasenia
+        ) : base(_nombre, _apellido, _email, _contrasenia) {
+            Rol = "Administrador";
         }
 
         public override void Validar()

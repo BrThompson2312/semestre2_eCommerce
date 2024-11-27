@@ -50,48 +50,46 @@ namespace Dominio
         /*-------------- Precarga de datos --------------*/
         private void PrecargarAdministradores()
         {
-            string rol = "Administrador";
-
             Usuario admin;
 
-            admin = new Administrador("Admin", "Admin", "admin", "Admin#123", rol);
+            admin = new Administrador("Admin", "Admin", "admin", "Admin#123");
             AgregarUsuario(admin);
 
-            admin = new Administrador("Carlos", "Gomez", "carlos.gomez@gmail.com", "passCarlos9@", rol);
+            admin = new Administrador("Carlos", "Gomez", "carlos.gomez@gmail.com", "passCarlos9@");
             AgregarUsuario(admin);
 
-            admin = new Administrador("Lucia", "Fernandez", "lucia.fernandez@gmail.com", "#luciaFernandez123", rol);
+            admin = new Administrador("Lucia", "Fernandez", "lucia.fernandez@gmail.com", "#luciaFernandez123");
             AgregarUsuario(admin);
 
-            //admin = new Administrador("Pedro", "Diaz", "pedro.diaz@gmail", null, rol); // Contrasenia vacia/null
+            //admin = new Administrador("Pedro", "Diaz", "pedro.diaz@gmail", null); // Contrasenia vacia/null
             //AgregarUsuario(admin);
 
-            //admin = new Administrador("Ana", "Martinez", null, "ana12", rol); // Email vacia/null
+            //admin = new Administrador("Ana", "Martinez", null, "ana12"); // Email vacia/null
             //AgregarUsuario(admin);
 
-            //admin = new Administrador(null, "Sanchez", "sanchez.admin@outlook.com", "sanchezAdmin789", rol); // Nombre vacia/null
+            //admin = new Administrador(null, "Sanchez", "sanchez.admin@outlook.com", "sanchezAdmin789"); // Nombre vacia/null
             //AgregarUsuario(admin);
 
-            //admin = new Administrador("Laura", null, "laura.admin@gmail.com", "lauraAdmin101", rol); // Apellido vacio/null
+            //admin = new Administrador("Laura", null, "laura.admin@gmail.com", "lauraAdmin101"); // Apellido vacio/null
             //AgregarUsuario(admin);
 
             /* 
                 (inicio) Datos nuevos! 
             */
 
-            // admin = new Administrador("Javier", "Martinez", "javier.martinez@gmail.com", "JAVIERadmin@", rol); // No tiene numeros
+            // admin = new Administrador("Javier", "Martinez", "javier.martinez@gmail.com", "JAVIERadmin@"); // No tiene numeros
             // AgregarUsuario(admin);
 
-            // admin = new Administrador("Elena", "Ruiz", "elena.ruiz@gmail.com", "ELENARUIZ123@", rol); // No contiene letras minusculas
+            // admin = new Administrador("Elena", "Ruiz", "elena.ruiz@gmail.com", "ELENARUIZ123@"); // No contiene letras minusculas
             // AgregarUsuario(admin);
 
-            // admin = new Administrador("Ricardo", "Pérez", "ricardo.perez@gmail.com", "R123@", rol); // No cumple con minimo de caracteres
+            // admin = new Administrador("Ricardo", "Pérez", "ricardo.perez@gmail.com", "R123@"); // No cumple con minimo de caracteres
             // AgregarUsuario(admin);
 
-            // admin = new Administrador("Marta", "Lopez", "marta.lopez@gmail.com", "MARTAlopez123", rol); // No contiene simbolos
+            // admin = new Administrador("Marta", "Lopez", "marta.lopez@gmail.com", "MARTAlopez123"); // No contiene simbolos
             // AgregarUsuario(admin);
 
-            // admin = new Administrador("Tomás", "Hernandez", "tomas.hernandez@gmail.com", "123456789@", rol); // No contiene letras
+            // admin = new Administrador("Tomás", "Hernandez", "tomas.hernandez@gmail.com", "123456789@"); // No contiene letras
             // AgregarUsuario(admin);
 
             /* 
@@ -105,34 +103,34 @@ namespace Dominio
 
             Usuario user;
 
-            user = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1@", 1000, rol);
+            user = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1@", 1000);
             AgregarUsuario(user);
 
-            user = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22$", 2000, rol);
+            user = new Cliente("María", "Lopez", "maria.lopez@gmail.com", "mariaLopez22$", 2000);
             AgregarUsuario(user);
 
-            user = new Cliente("Juan", "Martinez", "juan.martinez@hotmail.com", "juanMartinez33#", 1500, rol);
+            user = new Cliente("Juan", "Martinez", "juan.martinez@hotmail.com", "juanMartinez33#", 1500);
             AgregarUsuario(user);
 
-            user = new Cliente("Ana", "Sanchez", "ana.sanchez@outlook.com", "anaSanchez44%", 1800, rol);
+            user = new Cliente("Ana", "Sanchez", "ana.sanchez@outlook.com", "anaSanchez44%", 1800);
             AgregarUsuario(user);
 
-            user = new Cliente("Miguel", "Perez", "miguel.perez@gmail.com", "miguelPerez55!", 1200, rol);
+            user = new Cliente("Miguel", "Perez", "miguel.perez@gmail.com", "miguelPerez55!", 1200);
             AgregarUsuario(user);
 
-            user = new Cliente("Laura", "Fernandez", "laura.fernandez@gmail.com", "lauraFernandez66@", 1700, rol);
+            user = new Cliente("Laura", "Fernandez", "laura.fernandez@gmail.com", "lauraFernandez66@", 1700);
             AgregarUsuario(user);
 
-            user = new Cliente("Pedro", "Diaz", "pedro.diaz@gmail.com", "pedroDiaz77$", 1300, rol);
+            user = new Cliente("Pedro", "Diaz", "pedro.diaz@gmail.com", "pedroDiaz77$", 1300);
             AgregarUsuario(user);
 
-            user = new Cliente("Sofia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88#", 2200, rol);
+            user = new Cliente("Sofia", "Gomez", "lucia.gomez@gmail.com", "luciaGomez88#", 2200);
             AgregarUsuario(user);
 
-            user = new Cliente("Sofia", "Rodriguez", "sofia.rodriguez@gmail.com", "sofiaRodriguez99%", 1400, rol);
+            user = new Cliente("Sofia", "Rodriguez", "sofia.rodriguez@gmail.com", "sofiaRodriguez99%", 1400);
             AgregarUsuario(user);
 
-            user = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010!", 1600, rol);
+            user = new Cliente("Diego", "Molina", "diego.molina@gmail.com", "diegoMolina1010!", 1600);
             AgregarUsuario(user);
 
             // user = new Cliente(null, "Vega", "vega@hotmail.com", "vegaPassword123", 1000); // Nombre null
@@ -148,19 +146,19 @@ namespace Dominio
                 Datos Nuevos!
             */
 
-            // user = new Cliente("Laura", "Martinez", "laura.martinez@gmail.com", "LAURAmartinez@", 1500, rol); // No contiene numeros
+            // user = new Cliente("Laura", "Martinez", "laura.martinez@gmail.com", "LAURAmartinez@", 1500); // No contiene numeros
             // AgregarUsuario(user);
 
-            // user = new Cliente("Carlos", "Diaz", "carlos.diaz@gmail.com", "CARLOSDIAZ123@", 1800, rol); // No contiene minusculas
+            // user = new Cliente("Carlos", "Diaz", "carlos.diaz@gmail.com", "CARLOSDIAZ123@", 1800); // No contiene minusculas
             // AgregarUsuario(user);
 
-            // user = new Cliente("Sofia", "Rodriguez", "bruno.rodriguez@gmail.com", "Sof123@", 1700, rol); // No contiene minimo de caracteres
+            // user = new Cliente("Sofia", "Rodriguez", "bruno.rodriguez@gmail.com", "Sof123@", 1700); // No contiene minimo de caracteres
             // AgregarUsuario(user);
 
-            // user = new Cliente("Miguel", "Perez", "hernan.perez@gmail.com", "hernanPerez123", 1600, rol); // No contiene simbolos
+            // user = new Cliente("Miguel", "Perez", "hernan.perez@gmail.com", "hernanPerez123", 1600); // No contiene simbolos
             // AgregarUsuario(user);
 
-            // user = new Cliente("Pedro", "Lopez", "pedro.lopez@gmail.com", "123456789@", 1400, rol); // No contiene letras
+            // user = new Cliente("Pedro", "Lopez", "pedro.lopez@gmail.com", "123456789@", 1400); // No contiene letras
             // AgregarUsuario(user);
 
             /* 
@@ -412,21 +410,26 @@ namespace Dominio
 
             Usuario cliente;
 
-            cliente = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "123", 1000, "cliente");
-            Oferta oferta1 = new Oferta(cliente, 1000, new DateTime(2024, 10, 3));
-            Oferta oferta2 = new Oferta(cliente, 1000, new DateTime(2024, 12, 3)); // Error, no puede haber otra oferta con el mismo monto que el mismo cliente ha publicado previamente.
-            Oferta oferta3 = new Oferta(cliente, 2000, new DateTime(2024, 11, 25));
+            cliente = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "passBruno#123", 900);
+            AgregarUsuario(cliente);
+            Oferta oferta1 = new Oferta(cliente, 6000, new DateTime(2024, 10, 3));
 
-            cliente = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "123", 2000, "cliente");
+            cliente = new Cliente("Hernan", "Mono", "hernanmono@gmail.com", "passHernanMono#123", 3000);
+            AgregarUsuario(cliente);
+            Oferta oferta2 = new Oferta(cliente, 1000, new DateTime(2024, 12, 3)); // Error, no puede haber otra oferta con el mismo monto que el mismo cliente ha publicado previamente.
+            Oferta oferta3 = new Oferta(cliente, 2000, new DateTime(2024, 11, 25)); // Error, oferta con fecha de publicacion invalida
+            Oferta oferta4 = new Oferta(cliente, 2900, new DateTime(2024, 11, 1));
+
+            cliente = new Cliente("Hernan", "Hernandez", "hernanhernandez@gmail.com", "123", 2000);
             Oferta oferta6 = new Oferta(cliente, 1800, new DateTime(2024, 10, 3));
             Oferta oferta7 = new Oferta(cliente, 2200, new DateTime(2024, 7, 11));
             Oferta oferta8 = new Oferta(cliente, 3000, new DateTime(2024, 9, 7));
 
-            cliente = new Cliente("Juan", "Benitez", "juan@gmail.com", "123", 2000, "cliente");
+            cliente = new Cliente("Juan", "Benitez", "juan@gmail.com", "123", 2000);
             Oferta oferta9 = new Oferta(cliente, 2750, new DateTime(2024, 11, 29));
             Oferta oferta10 = new Oferta(cliente, 3200, new DateTime(2024, 8, 19));
             
-            cliente = new Cliente("Jorge", "Casuriaga", "jorg@gmail.com", "123", 2000, "cliente");
+            cliente = new Cliente("Jorge", "Casuriaga", "jorg@gmail.com", "123", 2000);
             Oferta oferta12 = new Oferta(cliente, 2900, new DateTime(2024, 12, 1));
             Oferta oferta13 = new Oferta(cliente, 2400, new DateTime(2024, 3, 25));
 
@@ -439,9 +442,10 @@ namespace Dominio
             subasta1.AgregarArticulo(articulo22);
             subasta1.AgregarArticulo(articulo23);
             subasta1.AgregarArticulo(articulo24);
-            subasta1.AgregarOferta(oferta1);
             // subasta1.AgregarOferta(oferta2); // Oferta debe tener diferente monto si es que el usuario ya ha publicado previamente
             // subasta1.AgregarOferta(oferta3); // Oferta con fecha de publicacion invalida
+            subasta1.AgregarOferta(oferta4);
+            subasta1.AgregarOferta(oferta1);
 
             Publicacion subasta2 = new Subasta("Subasta de relojes", new DateTime(2024, 11, 5));
             AgregarPublicacion(subasta2);
@@ -524,14 +528,6 @@ namespace Dominio
             if (_usuarios.Contains(usuario))
             {
                 throw new Exception($"Usuario ya existente: {usuario}");
-            }
-            if (usuario is Cliente)
-            {
-                usuario.Rol = "Cliente";
-            }
-            else
-            {
-                usuario.Rol = "Administrador";
             }
             usuario.Validar();
             _usuarios.Add(usuario);
@@ -751,12 +747,13 @@ namespace Dominio
             }
             else
             {
-                Usuario cliente = publicacion.OfertaConMasValor().Usuario;
-                //publicacion.FinalizarPublicacion(cliente, admin);
+                Oferta oferta = publicacion.OfertaConMasValor();
+                Usuario cliente = oferta.Usuario;
 
                 if (cliente.ObtenerSaldo() >= publicacion.OfertaConMasValor().Monto)
                 {
                     publicacion.FinalizarPublicacion(cliente, admin);
+                    publicacion.AsignarOfertaFinal(oferta);
                     cliente.DescontarSaldo(publicacion.PrecioFinal);
                 }
                 else
@@ -768,6 +765,7 @@ namespace Dominio
                         if (o.Usuario.ObtenerSaldo() >= o.Monto)
                         {
                             publicacion.FinalizarPublicacion(o.Usuario, admin);
+                            publicacion.AsignarOfertaFinal(o);
                             o.Usuario.DescontarSaldo(publicacion.PrecioFinal);
                             found = true;
                             break;

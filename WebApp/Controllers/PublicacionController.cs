@@ -108,6 +108,7 @@ namespace WebApp.Controllers
                 }
                 ViewBag.Publicacion = subasta;
                 ViewBag.Oferta = subasta.OfertaConMasValor();
+                ViewBag.Vendido = subasta.ObtenerOfertaFinal();
             } catch (Exception e)
             {
                 return RedirectToAction("Index", new {mensaje_error=e.Message});
@@ -121,6 +122,7 @@ namespace WebApp.Controllers
             Publicacion subasta = _sistema.FiltrarPublicacionXId(id);
             ViewBag.Publicacion = subasta;
             ViewBag.Oferta = subasta.OfertaConMasValor();
+            ViewBag.Vendido = subasta.ObtenerOfertaFinal();
             int idSession = (int)HttpContext.Session.GetInt32("id");
 
             try

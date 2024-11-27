@@ -10,3 +10,15 @@ C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\Dominio.dll
 C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\refint\Dominio.dll
 C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\Dominio.pdb
 C:\Users\herna\Desktop\eComerce2024\Dominio\obj\Release\net8.0\ref\Dominio.dll
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\bin\Release\net8.0\Dominio.deps.json
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\bin\Release\net8.0\Dominio.dll
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\bin\Release\net8.0\Dominio.pdb
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\obj\Release\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\obj\Release\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\obj\Release\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\obj\Release\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\obj\Release\net8.0\Dominio.sourcelink.json
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\obj\Release\net8.0\Dominio.dll
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\obj\Release\net8.0\refint\Dominio.dll
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\obj\Release\net8.0\Dominio.pdb
+C:\Users\pokea\Documents\proyectos\eComerce\Dominio\obj\Release\net8.0\ref\Dominio.dll

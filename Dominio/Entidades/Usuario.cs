@@ -18,14 +18,13 @@ namespace Dominio.Entidades
             Id = ultimoId++;
         }
 
-        public Usuario(string _nombre, string _apellido, string _email, string _contrasenia, string _rol)
+        public Usuario(string _nombre, string _apellido, string _email, string _contrasenia)
         {
             Id = ultimoId++;
             Nombre = _nombre;
             Apellido = _apellido;
             Email = _email;
             Contrasenia = _contrasenia;
-            Rol = _rol;
         }
 
         public virtual void Validar()

@@ -315,3 +315,4 @@ C:\Users\herna\Desktop\eComerce2024\WebApp\obj\Debug\net8.0\refint\WebApp.dll
 C:\Users\herna\Desktop\eComerce2024\WebApp\obj\Debug\net8.0\WebApp.pdb
 C:\Users\herna\Desktop\eComerce2024\WebApp\obj\Debug\net8.0\WebApp.genruntimeconfig.cache
 C:\Users\herna\Desktop\eComerce2024\WebApp\obj\Debug\net8.0\ref\WebApp.dll
+C:\Users\pokea\Documents\proyectos\eComerce\WebApp\bin\Debug\net8.0\libman.json

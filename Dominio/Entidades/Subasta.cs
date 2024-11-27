@@ -3,6 +3,7 @@ namespace Dominio.Entidades
     public class Subasta : Publicacion
     {
         private List<Oferta> _ofertas = new List<Oferta>();
+        public Oferta OfertaFinal;
 
         public IEnumerable<Oferta> Ofertas
         {
@@ -82,6 +83,16 @@ namespace Dominio.Entidades
         public override Oferta ObtenerOfertaEspecifica(int i)
         {
             return _ofertas[i];
+        }
+
+        public override void AsignarOfertaFinal(Oferta oferta)
+        {
+            OfertaFinal = oferta;
+        }
+
+        public override Oferta ObtenerOfertaFinal()
+        {
+            return OfertaFinal;
         }
 
         public override string ToString()
