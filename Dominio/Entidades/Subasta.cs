@@ -79,6 +79,11 @@ namespace Dominio.Entidades
             PrecioFinal = monto;
         }
 
+        public override Oferta ObtenerOfertaEspecifica(int i)
+        {
+            return _ofertas[i];
+        }
+
         public override string ToString()
         {
             string res = base.ToString();

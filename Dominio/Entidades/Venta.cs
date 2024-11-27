@@ -62,6 +62,11 @@ namespace Dominio.Entidades
             throw new Exception("No implementado");
         }
 
+        public override Oferta ObtenerOfertaEspecifica(int i)
+        {
+            throw new Exception("No implementado");
+        }
+
         public override string ToString()
         {
             string res = base.ToString();

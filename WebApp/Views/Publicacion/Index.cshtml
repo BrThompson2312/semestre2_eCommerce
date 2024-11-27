@@ -71,7 +71,7 @@
                     return co ? item is Subasta : true;
                 }
             }
-            @foreach (var item in ViewBag.Publicaciones){
+            @foreach (Publicacion item in ViewBag.Publicaciones){
                 @if (Isclient(item))
                 {
                     <tr>

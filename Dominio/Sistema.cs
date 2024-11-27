@@ -744,6 +744,7 @@ namespace Dominio
             {
                 throw new Exception("Null");
             }
+
             if (publicacion.CantidadOfertas() == 0)
             {
                 publicacion.CancelarSubasta(admin);
@@ -751,7 +752,33 @@ namespace Dominio
             else
             {
                 Usuario cliente = publicacion.OfertaConMasValor().Usuario;
-                publicacion.FinalizarPublicacion(cliente, admin);
+                //publicacion.FinalizarPublicacion(cliente, admin);
+
+                if (cliente.ObtenerSaldo() >= publicacion.OfertaConMasValor().Monto)
+                {
+                    publicacion.FinalizarPublicacion(cliente, admin);
+                    cliente.DescontarSaldo(publicacion.PrecioFinal);
+                }
+                else
+                {
+                    bool found = false;
+                    for (int i = publicacion.CantidadOfertas() - 1; i > 0; i--)
+                    {
+                        Oferta o = publicacion.ObtenerOfertaEspecifica(i - 1);
+                        if (o.Usuario.ObtenerSaldo() >= o.Monto)
+                        {
+                            publicacion.FinalizarPublicacion(o.Usuario, admin);
+                            o.Usuario.DescontarSaldo(publicacion.PrecioFinal);
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (found == false)
+                    {
+                        publicacion.CancelarSubasta(admin);
+                    }
+                }
+
             }
         }
     

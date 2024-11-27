@@ -83,6 +83,8 @@ namespace Dominio.Entidades
             EstadoPublicacion = Estado.Cancelado;
         }
 
+        public abstract Oferta ObtenerOfertaEspecifica(int i);
+
         public override string ToString()
         {
             string res = "";

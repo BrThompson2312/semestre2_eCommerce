@@ -33,6 +33,15 @@
         <span style="font-weight: bold">Oferta actual con más valor: </span>
         <span class="border-bottom border-success p-2 text-success">@ViewBag.Oferta</span>
     </p>
+    @if (p.EstadoPublicacion == Publicacion.Estado.Cerrado)
+    {
+        <div style="margin-top: 2em; margin-bottom: 1.5em;">
+            <span style="font-weight: bold">Vendido a: </span>
+            <span class="alert alert-primary">
+                <span>@ViewBag.Oferta</span>
+            </span>
+        </div>
+    }
 }
 else
 {

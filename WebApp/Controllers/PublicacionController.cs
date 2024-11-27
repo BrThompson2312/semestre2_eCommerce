@@ -143,7 +143,7 @@ namespace WebApp.Controllers
             try
             {
                 _sistema.FinalizarSubasta(idSession, Id);
-                return RedirectToAction("Index", new{mensaje= "Subasta finalizada con exito" });
+                return RedirectToAction("Index", new{mensaje="Subasta finalizada con exito"});
             }
             catch (Exception e)
             {
