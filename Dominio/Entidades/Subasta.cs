@@ -85,16 +85,6 @@ namespace Dominio.Entidades
             return _ofertas[i];
         }
 
-        //public override void AsignarOfertaFinal(Oferta oferta)
-        //{
-        //    OfertaFinal = oferta;
-        //}
-
-        //public override Oferta ObtenerOfertaFinal()
-        //{
-        //    return OfertaFinal;
-        //}
-
         public override string ToString()
         {
             string res = base.ToString();
@@ -106,11 +96,6 @@ namespace Dominio.Entidades
             res += "-------------------------\n";
             return res;
         }
-
-        //public override bool Equals(object obj)
-        //{
-        //    return base.Equals(obj);
-        //}
 
     }
 }

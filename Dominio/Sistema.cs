@@ -725,9 +725,7 @@ namespace Dominio
             {
                 throw new Exception("Error");
             }
-
-            //usuario.RecargarSaldo(recarga);
-            cliente.Saldo += recarga;
+            cliente.RecargarSaldo(recarga);
         }
 
         public void FinalizarVenta(Cliente cliente, Venta venta, decimal saldo)
@@ -829,10 +827,10 @@ namespace Dominio
         }
 
         // Temp
-        //public void VaciarPublicaciones()
-        //{
-        //    _publicaciones.Clear();
-        //}
+        public void VaciarPublicaciones()
+        {
+            _publicaciones.Clear();
+        }
 
         public int CantidadVentas()
         {
@@ -844,5 +842,5 @@ namespace Dominio
             return ListadoSubastas().Count();
         }
 
-    }
+    }   
 }

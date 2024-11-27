@@ -6,6 +6,7 @@ namespace Dominio.Entidades
 
         public Cliente()
         {
+            Rol = "Cliente";
         }
 
         public Cliente(
@@ -37,11 +38,6 @@ namespace Dominio.Entidades
             Saldo += monto;
         }
 
-        //public override decimal ObtenerSaldo()
-        //{
-        //    return Saldo;
-        //}
-
         public override void DescontarSaldo(decimal monto)
         {
             Saldo -= monto;
@@ -54,10 +50,5 @@ namespace Dominio.Entidades
             return res;
         }
         
-        //public override bool Equals(object obj)
-        //{
-        //    return base.Equals(obj);
-        //}
-
     }
 }

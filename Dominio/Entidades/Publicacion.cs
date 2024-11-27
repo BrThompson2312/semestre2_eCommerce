@@ -9,7 +9,7 @@ namespace Dominio.Entidades
         public Estado EstadoPublicacion {get; set;}
         public DateTime FechaPublicacion {get; set;}
         private List<Articulo> _articulos = new List<Articulo>();
-        public Usuario CompraRealizada {get; set;}
+        public Cliente CompraRealizada {get; set;}
         public Usuario CompraFinalizada {get; set;}
         public DateTime FechaFinalizacionCompra {get; set;}
 
@@ -49,10 +49,10 @@ namespace Dominio.Entidades
             }
         }
 
-        public virtual void AgregarArticulo(Articulo pArticulo)
+        public virtual void AgregarArticulo(Articulo articulo)
         {
-            pArticulo.Validar();
-            _articulos.Add(pArticulo);
+            articulo.Validar();
+            _articulos.Add(articulo);
         }
 
         public abstract void AgregarOferta(Oferta oferta);
@@ -63,31 +63,28 @@ namespace Dominio.Entidades
 
         public abstract int CantidadOfertas();
 
-        public virtual decimal ObtenerPrecioFinal()
-        {
-            return PrecioFinal;
-        }
-
         public abstract void ValidarOferta(int monto);
 
-        public virtual void FinalizarPublicacion(Usuario usuario1, Usuario usuario2)
+        public virtual void FinalizarPublicacion(Cliente cliente, Usuario usuario2)
         {
-            CompraRealizada = usuario1;
+            CompraRealizada = cliente;
             CompraFinalizada = usuario2;
             EstadoPublicacion = Estado.Cerrado;
+
+            DateTime today = DateTime.Today;
+            FechaFinalizacionCompra = today;
         }
 
         public virtual void CancelarSubasta(Usuario admin)
         {
             CompraFinalizada = admin;
             EstadoPublicacion = Estado.Cancelado;
+
+            DateTime today = DateTime.Today;
+            FechaFinalizacionCompra = today;
         }
 
         public abstract Oferta ObtenerOfertaEspecifica(int i);
-
-        //public abstract void AsignarOfertaFinal(Oferta oferta);
-
-        //public abstract Oferta ObtenerOfertaFinal();
 
         public override string ToString()
         {

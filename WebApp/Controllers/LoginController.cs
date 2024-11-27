@@ -22,7 +22,6 @@ namespace WebApp.Controllers
             try
             {
                 Usuario unU = _sistema.ObtenerUsuarios(email, contrasenia);
-                
                 if (unU == null)
                 {
                     throw new Exception("Credenciales inválidas");
