@@ -102,7 +102,7 @@ namespace Dominio.Entidades
 
         public abstract void RecargarSaldo(int monto);
 
-        public abstract decimal ObtenerSaldo();
+        //public abstract decimal ObtenerSaldo();
 
         public abstract void DescontarSaldo(decimal monto);
 

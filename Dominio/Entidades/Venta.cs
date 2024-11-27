@@ -28,7 +28,7 @@ namespace Dominio.Entidades
             PrecioFinal += PrecioPublicacion(articulo);
         }
 
-        public override void AgregarOferta(Oferta unaOferta)
+        public override void AgregarOferta(Oferta oferta)
         {
             throw new Exception("No implementado");
         }
@@ -67,15 +67,15 @@ namespace Dominio.Entidades
             throw new Exception("No implementado");
         }
 
-        public override void AsignarOfertaFinal(Oferta oferta)
-        {
-            throw new Exception("No implementado");
-        }
+        //public override void AsignarOfertaFinal(Oferta oferta)
+        //{
+        //    throw new Exception("No implementado");
+        //}
 
-        public override Oferta ObtenerOfertaFinal()
-        {
-            throw new Exception("No implementado");
-        }
+        //public override Oferta ObtenerOfertaFinal()
+        //{
+        //    throw new Exception("No implementado");
+        //}
 
         public override string ToString()
         {
@@ -86,10 +86,10 @@ namespace Dominio.Entidades
             return res;
         }
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    return base.Equals(obj);
+        //}
 
     }
 }

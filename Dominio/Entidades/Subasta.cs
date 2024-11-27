@@ -85,15 +85,15 @@ namespace Dominio.Entidades
             return _ofertas[i];
         }
 
-        public override void AsignarOfertaFinal(Oferta oferta)
-        {
-            OfertaFinal = oferta;
-        }
+        //public override void AsignarOfertaFinal(Oferta oferta)
+        //{
+        //    OfertaFinal = oferta;
+        //}
 
-        public override Oferta ObtenerOfertaFinal()
-        {
-            return OfertaFinal;
-        }
+        //public override Oferta ObtenerOfertaFinal()
+        //{
+        //    return OfertaFinal;
+        //}
 
         public override string ToString()
         {
@@ -107,10 +107,10 @@ namespace Dominio.Entidades
             return res;
         }
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    return base.Equals(obj);
+        //}
 
     }
 }

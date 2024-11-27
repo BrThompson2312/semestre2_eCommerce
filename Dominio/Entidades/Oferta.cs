@@ -4,21 +4,21 @@ namespace Dominio.Entidades
     {
         public int Id {get; set;}
         private static int ultimoId = 0;
-        public Usuario Usuario {get; set;}
+        public Cliente Cliente {get; set;}
         public int Monto {get; set;}
         public DateTime Fecha {get; set;}
 
-        public Oferta(Usuario _usuario, int _monto, DateTime _fecha)
+        public Oferta(Cliente _cliente, int _monto, DateTime _fecha)
         {
             Id = ultimoId++;
-            Usuario = _usuario;
+            Cliente = _cliente;
             Monto = _monto;
             Fecha = _fecha;
         }
 
         public void Validar()
         {
-            if (Usuario == null)
+            if (Cliente == null)
             {
                 throw new Exception($"Oferta: Usuario null");
             }
@@ -35,7 +35,7 @@ namespace Dominio.Entidades
         public override string ToString()
         {
             string res = "";
-            res += $" Cliente: {Usuario.Nombre} {Usuario.Apellido} | ";
+            res += $" Cliente: {Cliente.Nombre} {Cliente.Apellido} | ";
             res += $" Monto: {Monto} | ";
             res += $" Fecha: {Fecha} ";
             return res;
@@ -44,7 +44,7 @@ namespace Dominio.Entidades
         public override bool Equals(object obj)
         {
             Oferta oferta = obj as Oferta;
-            return oferta != null && oferta.Id == Id || oferta.Usuario == Usuario && oferta.Monto == Monto;
+            return oferta != null && oferta.Id == Id || oferta.Cliente == Cliente && oferta.Monto == Monto;
         }
 
     }

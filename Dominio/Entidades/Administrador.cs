@@ -31,20 +31,20 @@ namespace Dominio.Entidades
             throw new Exception("No implementado");
         }
 
-        public override decimal ObtenerSaldo()
-        {
-            return 0;
-        }
+        //public override decimal ObtenerSaldo()
+        //{
+        //    return 0;
+        //}
 
         public override string ToString()
         {
             return base.ToString();
         }
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    return base.Equals(obj);
+        //}
         
     }
 }

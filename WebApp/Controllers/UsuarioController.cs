@@ -37,8 +37,13 @@ namespace WebApp.Controllers
         public IActionResult ConsultarSaldo()
         {
             int idSession = (int)HttpContext.Session.GetInt32("id");
-            Usuario usuario = _sistema.FiltrarUsuarioXId(idSession);
-            decimal saldo = usuario.ObtenerSaldo();
+            Cliente cliente = _sistema.FiltrarClienteXId(idSession);
+            if (cliente == null)
+            {
+                throw new Exception("Error");
+            }
+
+            decimal saldo = cliente.Saldo;
             ViewBag.Saldo = saldo;
             return View();
         }

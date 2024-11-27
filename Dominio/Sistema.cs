@@ -50,7 +50,7 @@ namespace Dominio
         /*-------------- Precarga de datos --------------*/
         private void PrecargarAdministradores()
         {
-            Usuario admin;
+            Administrador admin;
 
             admin = new Administrador("Admin", "Admin", "admin", "Admin#123");
             AgregarUsuario(admin);
@@ -99,9 +99,7 @@ namespace Dominio
 
         private void PrecargarClientes()
         {
-            string rol = "Cliente";
-
-            Usuario user;
+            Cliente user;
 
             user = new Cliente("Carlos", "Garcia", "carlos.garcia@gmail.com", "passCarlos1@", 1000);
             AgregarUsuario(user);
@@ -408,7 +406,7 @@ namespace Dominio
 
             /* ---------------- Precarga de ofertas ---------------- */
 
-            Usuario cliente;
+            Cliente cliente;
 
             cliente = new Cliente("Bruno", "Gomez", "brunogomez2312@gmail.com", "passBruno#123", 900);
             AgregarUsuario(cliente);
@@ -581,13 +579,73 @@ namespace Dominio
             return null;
         }
 
+        public Administrador FiltrarAdministradorXId(int id)
+        {
+            foreach (Usuario item in _usuarios)
+            {
+                if (item is Administrador)
+                {
+                    if (item.Id == id)
+                    {
+                        return (Administrador)item;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public Cliente FiltrarClienteXId(int id)
+        {
+            foreach (Usuario item in _usuarios)
+            {
+                if (item is Cliente)
+                {
+                    if (item.Id == id)
+                    {
+                        return (Cliente)item;
+                    }
+                }
+            }
+            return null;
+        }
+
         public Publicacion FiltrarPublicacionXId(int id)
         {
             foreach (Publicacion item in _publicaciones)
             {
-                if (id == null || id == item.Id)
+                if (/*id == null ||*/ id == item.Id)
                 {
                     return item;
+                }
+            }
+            return null;
+        }
+
+        public Venta FiltrarVentaXId(int id)
+        {
+            foreach (Publicacion item in _publicaciones)
+            {
+                if (item is Venta)
+                {
+                    if (/*id == null ||*/ id == item.Id)
+                    {
+                        return (Venta)item;
+                    }
+                }
+            }
+            return null;
+        }
+
+        public Subasta FiltrarSubastaXId(int id)
+        {
+            foreach (Publicacion item in _publicaciones)
+            {
+                if (item is Subasta)
+                {
+                    if (/*id == null ||*/ id == item.Id)
+                    {
+                        return (Subasta)item;
+                    }
                 }
             }
             return null;
@@ -662,153 +720,128 @@ namespace Dominio
 
         public void RecargarSaldoCliente(int id, int recarga)
         {
-            Usuario usuario = FiltrarUsuarioXId(id);
-            if (usuario == null)
+            Cliente cliente = FiltrarClienteXId(id);
+            if (cliente == null)
             {
-                throw new Exception("Null");
+                throw new Exception("Error");
             }
-            usuario.RecargarSaldo(recarga);
+
+            //usuario.RecargarSaldo(recarga);
+            cliente.Saldo += recarga;
         }
 
-        public void FinalizarVenta(int idUser, int idPub, decimal saldo)
+        public void FinalizarVenta(Cliente cliente, Venta venta, decimal saldo)
         {
-            Usuario usuario = FiltrarUsuarioXId(idUser);
-            Publicacion publicacion = FiltrarPublicacionXId(idPub);
-            if (usuario == null)
+            if (cliente == null)
             {
                 throw new Exception("Null");
             }
-            if (usuario is Administrador)
-            {
-                throw new Exception("Acceso Denegado");
-            }
-            if (publicacion == null)
+            if (venta == null)
             {
                 throw new Exception("Null");
             }
-            if (publicacion.EstadoPublicacion == Publicacion.Estado.Cerrado ||
-                publicacion.EstadoPublicacion == Publicacion.Estado.Cancelado)
+
+            if (venta.EstadoPublicacion == Publicacion.Estado.Cerrado ||
+                venta.EstadoPublicacion == Publicacion.Estado.Cancelado)
             {
                 throw new Exception("Compra previamente finalizada");
             }
-            if (saldo < publicacion.ObtenerPrecioFinal())
+            if (saldo < venta.PrecioFinal)
             {
                 throw new Exception("Saldo insuficiente");
             }
-            publicacion.FinalizarPublicacion(usuario, usuario);
-            usuario.DescontarSaldo(publicacion.ObtenerPrecioFinal());
+
+            venta.FinalizarPublicacion(cliente, cliente);
+            cliente.DescontarSaldo(venta.PrecioFinal);
         }
 
-        public void OfertarSubasta(Publicacion subasta, int idSession, int monto)
+        public void OfertarSubasta(Subasta subasta, int idSession, int monto)
         {
             if (subasta == null)
             {
-                throw new Exception("Null");
+                throw new Exception("Error");
             }
 
-            Usuario usuario = FiltrarUsuarioXId(idSession);
-            if (usuario == null)
+            Cliente cliente = FiltrarClienteXId(idSession);
+            if (cliente == null)
             {
-                throw new Exception("Null");
+                throw new Exception("Error");
             }
-            decimal saldo = usuario.ObtenerSaldo();
 
+            decimal saldo = cliente.Saldo;
             if (saldo < monto)
             {
                 throw new Exception("No dispone del saldo suficiente");
             }
 
             DateTime today = DateTime.Today;
-            Oferta oferta = new Oferta(usuario, monto, today);
+            Oferta oferta = new Oferta(cliente, monto, today);
             subasta.AgregarOferta(oferta);
         }
 
         public void FinalizarSubasta(int idSession, int idPub)
         {
-            Publicacion publicacion = FiltrarPublicacionXId(idPub);
-            if (publicacion == null)
-            {
-                throw new Exception("Null");
-            }
-            if (publicacion.EstadoPublicacion == Publicacion.Estado.Cerrado)
-            {
-                throw new Exception("Subasta ya cerrada");
-            }
+            Subasta subasta = FiltrarSubastaXId(idPub);
+            if (subasta == null) 
+                throw new Exception("Subasta no existente");
 
-            Usuario admin= FiltrarUsuarioXId(idSession);
+            if (subasta.EstadoPublicacion == Publicacion.Estado.Cerrado) 
+                throw new Exception("Subasta previamente cerrada");
+
+            Administrador admin= FiltrarAdministradorXId(idSession);
             if (admin == null)
-            {
-                throw new Exception("Null");
-            }
+                throw new Exception("Error");
 
-            if (publicacion.CantidadOfertas() == 0)
+            if (subasta.CantidadOfertas() == 0)
             {
-                publicacion.CancelarSubasta(admin);
+                subasta.CancelarSubasta(admin);
             }
             else
             {
-                Oferta oferta = publicacion.OfertaConMasValor();
-                Usuario cliente = oferta.Usuario;
+                Oferta oferta = subasta.OfertaConMasValor();
+                Cliente cliente = oferta.Cliente;
 
-                if (cliente.ObtenerSaldo() >= publicacion.OfertaConMasValor().Monto)
+                if (cliente.Saldo >= oferta.Monto)
                 {
-                    publicacion.FinalizarPublicacion(cliente, admin);
-                    publicacion.AsignarOfertaFinal(oferta);
-                    cliente.DescontarSaldo(publicacion.PrecioFinal);
+                    subasta.OfertaFinal = oferta;
+                    subasta.FinalizarPublicacion(cliente, admin);
+                    cliente.DescontarSaldo(subasta.PrecioFinal);
                 }
                 else
                 {
                     bool found = false;
-                    for (int i = publicacion.CantidadOfertas() - 1; i > 0; i--)
+                    for (int i = subasta.CantidadOfertas() - 1; i > 0; i--)
                     {
-                        Oferta o = publicacion.ObtenerOfertaEspecifica(i - 1);
-                        if (o.Usuario.ObtenerSaldo() >= o.Monto)
+                        Oferta auxOferta = subasta.ObtenerOfertaEspecifica(i - 1);
+                        Cliente auxCliente = auxOferta.Cliente;
+                        if (auxCliente.Saldo >= auxOferta.Monto)
                         {
-                            publicacion.FinalizarPublicacion(o.Usuario, admin);
-                            publicacion.AsignarOfertaFinal(o);
-                            o.Usuario.DescontarSaldo(publicacion.PrecioFinal);
+                            subasta.OfertaFinal = auxOferta;
+                            subasta.FinalizarPublicacion(auxCliente, admin);
+                            auxCliente.DescontarSaldo(subasta.PrecioFinal);
                             found = true;
                             break;
                         }
                     }
-                    if (found == false)
-                    {
-                        publicacion.CancelarSubasta(admin);
-                    }
+                    if (found == false) subasta.CancelarSubasta(admin);
                 }
-
             }
         }
-    
-        public void VaciarPublicaciones()
-        {
-            _publicaciones.Clear();
-        }
+
+        // Temp
+        //public void VaciarPublicaciones()
+        //{
+        //    _publicaciones.Clear();
+        //}
 
         public int CantidadVentas()
         {
-            int cantidad = 0;
-            foreach (Publicacion p in _publicaciones)
-            {
-                if (p is Venta)
-                {
-                    cantidad++;
-                }
-            }
-            return cantidad;
+            return ListadoVentas().Count();
         }
 
         public int CantidadSubastas()
         {
-            int cantidad = 0;
-            foreach (Publicacion p in _publicaciones)
-            {
-                if (p is Subasta)
-                {
-                    cantidad++;
-                }
-            }
-            return cantidad;
+            return ListadoSubastas().Count();
         }
 
     }

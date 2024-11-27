@@ -37,10 +37,10 @@ namespace Dominio.Entidades
             Saldo += monto;
         }
 
-        public override decimal ObtenerSaldo()
-        {
-            return Saldo;
-        }
+        //public override decimal ObtenerSaldo()
+        //{
+        //    return Saldo;
+        //}
 
         public override void DescontarSaldo(decimal monto)
         {
@@ -54,10 +54,10 @@ namespace Dominio.Entidades
             return res;
         }
         
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
+        //public override bool Equals(object obj)
+        //{
+        //    return base.Equals(obj);
+        //}
 
     }
 }

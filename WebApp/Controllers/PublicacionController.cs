@@ -16,37 +16,46 @@ namespace WebApp.Controllers
         {
             ViewBag.mensaje = mensaje;
             ViewBag.mensaje_error = mensaje_error;
-            ViewBag.Publicaciones = _sistema.Publicaciones;
-            ViewBag.Subastas = _sistema.Publicaciones;
-            //_sistema.VaciarPublicaciones();
 
+            ViewBag.Publicaciones = _sistema.Publicaciones;
             ViewBag.CantVentas = _sistema.CantidadVentas();
             ViewBag.CantSubastas = _sistema.CantidadSubastas();
+            ViewBag.CantidadTotal = _sistema.CantidadVentas() + _sistema.CantidadSubastas();
 
             ViewBag.Titulo = "Publicaciones";
             if (HttpContext.Session.GetString("rol") == "Administrador")
             {
                 ViewBag.Titulo = "Subastas";
             }
-
             return View();
         }
 
         [HttpGet]
         [FCliente]
-        public IActionResult ListadoVentas()
+        public IActionResult ListadoVentas(string mensaje)
         {
-            ViewBag.Publicaciones = _sistema.ListadoVentas();
+            ViewBag.mensaje = mensaje;
             ViewBag.Titulo = "Ventas";
+
+            ViewBag.Publicaciones = _sistema.ListadoVentas();
+            ViewBag.CantVentas = _sistema.CantidadVentas();
+            ViewBag.CantSubastas = _sistema.CantidadSubastas();
+            ViewBag.CantidadTotal = _sistema.CantidadVentas() + _sistema.CantidadSubastas();
+            
             return View("Index");
         }
 
         [HttpGet]
         public IActionResult ListadoSubastas(string mensaje)
         {
-            ViewBag.Publicaciones = _sistema.ListadoSubastas();
             ViewBag.mensaje = mensaje;
             ViewBag.Titulo = "Subastas";
+
+            ViewBag.Publicaciones = _sistema.ListadoSubastas();
+            ViewBag.CantVentas = _sistema.CantidadVentas();
+            ViewBag.CantSubastas = _sistema.CantidadSubastas();
+            ViewBag.CantidadTotal = _sistema.CantidadVentas() + _sistema.CantidadSubastas();
+
             return View("Index");
         }
 
@@ -63,14 +72,28 @@ namespace WebApp.Controllers
         public IActionResult VerVenta(int id)
         {
             int idSession = (int)HttpContext.Session.GetInt32("id");
-            ViewBag.Publicacion = _sistema.FiltrarPublicacionXId(id);
-            ViewBag.IdSession = idSession;
-            decimal saldo = _sistema.FiltrarUsuarioXId(idSession).ObtenerSaldo();
-            ViewBag.Saldo = saldo;
-
-            if (ViewBag.Publicacion == null)
+            try
             {
-                return RedirectToAction("Index", new {mensaje_error="Venta inexistente"});
+                Venta venta = _sistema.FiltrarVentaXId(id);
+                if (venta == null)
+                {
+                    throw new Exception("Venta inexistente");
+                }
+
+                Cliente cliente = _sistema.FiltrarClienteXId(idSession);
+                if (cliente == null)
+                {
+                    throw new Exception("Error");
+                }
+
+                ViewBag.Venta = venta;
+                ViewBag.IdSession = idSession;
+                decimal saldo = cliente.Saldo;
+                ViewBag.Saldo = saldo;
+
+            } catch (Exception e)
+            {
+                ViewBag.mensaje_error = e.Message;
             }
             return View();
         }
@@ -80,35 +103,40 @@ namespace WebApp.Controllers
         public IActionResult VerVenta(int Id, int n)
         {
             int idSession = (int)HttpContext.Session.GetInt32("id");
-            ViewBag.Publicacion = _sistema.FiltrarPublicacionXId(Id);
-            ViewBag.IdSession = idSession;
-            decimal saldo = _sistema.FiltrarUsuarioXId(idSession).ObtenerSaldo();
-            ViewBag.Saldo = saldo;
-
             try
             {
-                _sistema.FinalizarVenta(idSession, Id, saldo);
+                Cliente cliente = _sistema.FiltrarClienteXId(idSession);
+                Venta venta = _sistema.FiltrarVentaXId(Id);
+
+                ViewBag.Venta = venta;
+                ViewBag.IdSession = idSession;
+                decimal saldo = cliente.Saldo;
+                ViewBag.Saldo = saldo;
+
+                _sistema.FinalizarVenta(cliente, venta, saldo);
                 return RedirectToAction("Index", new {mensaje="Compra realizada con exito"});
             } catch (Exception e)
             {
-                ViewBag.mensaje_error = e.Message; 
+                ViewBag.mensaje_error = e.Message;
             }
             return View();
         }
 
         [HttpGet]
-        public IActionResult VerSubasta(int id)
+        public IActionResult VerSubasta(int Id)
         {
             try
             {
-                Publicacion subasta = _sistema.FiltrarPublicacionXId(id);
+                Subasta subasta = _sistema.FiltrarSubastaXId(Id);
                 if (subasta == null)
                 {
-                    throw new Exception("Subasta no existente");
+                    throw new Exception("Subasta inexistente");
                 }
-                ViewBag.Publicacion = subasta;
+
+                ViewBag.Subasta = subasta;
                 ViewBag.Oferta = subasta.OfertaConMasValor();
-                ViewBag.Vendido = subasta.ObtenerOfertaFinal();
+                ViewBag.Vendido = subasta.OfertaFinal;
+
             } catch (Exception e)
             {
                 return RedirectToAction("Index", new {mensaje_error=e.Message});
@@ -117,17 +145,19 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult VerSubasta(int id, int monto)
+        public IActionResult VerSubasta(int Id, int monto)
         {
-            Publicacion subasta = _sistema.FiltrarPublicacionXId(id);
-            ViewBag.Publicacion = subasta;
-            ViewBag.Oferta = subasta.OfertaConMasValor();
-            ViewBag.Vendido = subasta.ObtenerOfertaFinal();
             int idSession = (int)HttpContext.Session.GetInt32("id");
-
             try
             {
+                Subasta subasta = _sistema.FiltrarSubastaXId(Id);
+
+                ViewBag.Subasta = subasta;
+                ViewBag.Oferta = subasta.OfertaConMasValor();
+                ViewBag.Vendido = subasta.OfertaFinal;
+
                 _sistema.OfertarSubasta(subasta, idSession, monto);
+
                 return RedirectToAction("Index", new {mensaje="Subasta realizada con exito"});
             } catch (Exception e)
             {
