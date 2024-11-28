@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Main", "Main\Main.csproj", "{BF5EEDAF-2342-4EF4-9107-5EE4D49AFD84}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dominio", "Dominio\Dominio.csproj", "{62F240F7-4894-4C43-81FC-EF7B2D16C692}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{2B273125-6435-4093-B20D-49E4D1719B85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{2B273125-6435-4093-B20D-49E4D1719B85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BF5EEDAF-2342-4EF4-9107-5EE4D49AFD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF5EEDAF-2342-4EF4-9107-5EE4D49AFD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF5EEDAF-2342-4EF4-9107-5EE4D49AFD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF5EEDAF-2342-4EF4-9107-5EE4D49AFD84}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62F240F7-4894-4C43-81FC-EF7B2D16C692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62F240F7-4894-4C43-81FC-EF7B2D16C692}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62F240F7-4894-4C43-81FC-EF7B2D16C692}.Release|Any CPU.ActiveCfg = Release|Any CPU

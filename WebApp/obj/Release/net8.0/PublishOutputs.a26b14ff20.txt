@@ -1,0 +1,10 @@
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\WebApp.exe
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\libman.json
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\WebApp.dll
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\WebApp.deps.json
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\WebApp.runtimeconfig.json
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\WebApp.pdb
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\Dominio.dll
+C:\Users\herna\Desktop\semestre2_eCommerce\WebApp\obj\Release\net8.0\PubTmp\Out\Dominio.pdb
