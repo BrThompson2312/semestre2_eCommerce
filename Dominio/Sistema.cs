@@ -12,10 +12,16 @@ namespace Dominio
         {
             get { return _usuarios; }
         }
+
         public IEnumerable<Publicacion> Publicaciones
         {
-            get { return _publicaciones; }
+            get 
+            {
+                _publicaciones.Sort();
+                return _publicaciones; 
+            }
         }
+
         public IEnumerable<Articulo> Articulos
         {
             get { return _articulos; }
@@ -651,18 +657,18 @@ namespace Dominio
             return null;
         }
 
-        public IEnumerable<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
-        {
-            List <Publicacion> _auxPublicaciones = new List<Publicacion>();
-            foreach (Publicacion item in _publicaciones)
-            {
-                if (item.FechaPublicacion >= pFechaInicio && item.FechaFinalizacionCompra <= pFechaFin)
-                {
-                    _auxPublicaciones.Add(item);
-                }
-            }
-            return _auxPublicaciones;
-        }
+        //public IEnumerable<Publicacion> ListadoPublicaciones(DateTime pFechaInicio, DateTime pFechaFin)
+        //{
+        //    List <Publicacion> _auxPublicaciones = new List<Publicacion>();
+        //    foreach (Publicacion item in _publicaciones)
+        //    {
+        //        if (item.FechaPublicacion >= pFechaInicio && item.FechaFinalizacionCompra <= pFechaFin)
+        //        {
+        //            _auxPublicaciones.Add(item);
+        //        }
+        //    }
+        //    return _auxPublicaciones;
+        //}
 
         public IEnumerable<Publicacion> ListadoPublicacionesXNombre(string nombre)
         {

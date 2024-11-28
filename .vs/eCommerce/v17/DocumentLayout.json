@@ -1,38 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\",
+  "WorkspaceRootPath": "C:\\Users\\pokea\\Documents\\temp\\semestre2_eCommerce\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\herna\\desktop\\semestre2_ecommerce\\dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\temp\\semestre2_ecommerce\\webapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\herna\\desktop\\semestre2_ecommerce\\dominio\\entidades\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidades\\administrador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\herna\\desktop\\semestre2_ecommerce\\dominio\\entidades\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidades\\cliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\herna\\desktop\\semestre2_ecommerce\\dominio\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidades\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\herna\\desktop\\semestre2_ecommerce\\webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\pokea\\documents\\temp\\semestre2_ecommerce\\webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\herna\\desktop\\semestre2_ecommerce\\dominio\\entidades\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidades\\publicacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\herna\\desktop\\semestre2_ecommerce\\dominio\\entidades\\oferta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\entidades\\oferta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|c:\\users\\herna\\desktop\\semestre2_ecommerce\\webapp\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2B273125-6435-4093-B20D-49E4D1719B85}|WebApp\\WebApp.csproj|solutionrelative:webapp\\controllers\\publicacioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|c:\\users\\pokea\\documents\\temp\\semestre2_ecommerce\\dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{62F240F7-4894-4C43-81FC-EF7B2D16C692}|Dominio\\Dominio.csproj|solutionrelative:dominio\\sistema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,105 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Administrador.cs",
-              "DocumentMoniker": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Administrador.cs",
-              "RelativeDocumentMoniker": "Dominio\\Entidades\\Administrador.cs",
-              "ToolTip": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Administrador.cs",
-              "RelativeToolTip": "Dominio\\Entidades\\Administrador.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAAACgAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\temp\\semestre2_eCommerce\\WebApp\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "WebApp\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\temp\\semestre2_eCommerce\\WebApp\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "WebApp\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:53:06.295Z",
+              "WhenOpened": "2024-11-28T12:48:28.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\WebApp\\Controllers\\LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\temp\\semestre2_eCommerce\\WebApp\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "WebApp\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\WebApp\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\temp\\semestre2_eCommerce\\WebApp\\Controllers\\LoginController.cs",
               "RelativeToolTip": "WebApp\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAAB4AAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:42:45.058Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Oferta.cs",
-              "DocumentMoniker": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Oferta.cs",
-              "RelativeDocumentMoniker": "Dominio\\Entidades\\Oferta.cs",
-              "ToolTip": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Oferta.cs",
-              "RelativeToolTip": "Dominio\\Entidades\\Oferta.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAwwDIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T22:16:48.729Z"
+              "WhenOpened": "2024-11-28T12:48:17.94Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Cliente.cs",
-              "DocumentMoniker": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Cliente.cs",
-              "RelativeDocumentMoniker": "Dominio\\Entidades\\Cliente.cs",
-              "ToolTip": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Cliente.cs",
-              "RelativeToolTip": "Dominio\\Entidades\\Cliente.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:21:52.283Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Usuario.cs",
-              "RelativeDocumentMoniker": "Dominio\\Entidades\\Usuario.cs",
-              "ToolTip": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Usuario.cs",
-              "RelativeToolTip": "Dominio\\Entidades\\Usuario.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAmwGkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T21:20:26.168Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "PublicacionController.cs",
-              "DocumentMoniker": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\WebApp\\Controllers\\PublicacionController.cs",
-              "RelativeDocumentMoniker": "WebApp\\Controllers\\PublicacionController.cs",
-              "ToolTip": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\WebApp\\Controllers\\PublicacionController.cs",
-              "RelativeToolTip": "WebApp\\Controllers\\PublicacionController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAswBkAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T20:59:24.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Publicacion.cs",
-              "DocumentMoniker": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Publicacion.cs",
-              "RelativeDocumentMoniker": "Dominio\\Entidades\\Publicacion.cs",
-              "ToolTip": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Entidades\\Publicacion.cs",
-              "RelativeToolTip": "Dominio\\Entidades\\Publicacion.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAwwA0AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T20:16:16.014Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Sistema.cs",
-              "DocumentMoniker": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Sistema.cs",
+              "DocumentMoniker": "C:\\Users\\pokea\\Documents\\temp\\semestre2_eCommerce\\Dominio\\Sistema.cs",
               "RelativeDocumentMoniker": "Dominio\\Sistema.cs",
-              "ToolTip": "C:\\Users\\herna\\Desktop\\semestre2_eCommerce\\Dominio\\Sistema.cs",
+              "ToolTip": "C:\\Users\\pokea\\Documents\\temp\\semestre2_eCommerce\\Dominio\\Sistema.cs",
               "RelativeToolTip": "Dominio\\Sistema.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAhwDYAAABLAAAAAAAAAA==",
+              "ViewState": "AgIAAAcDAAAAAAAAAAAqwBQDAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T20:10:20.485Z",
+              "WhenOpened": "2024-11-28T12:36:19.412Z",
               "EditorCaption": ""
             }
           ]

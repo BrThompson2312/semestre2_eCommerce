@@ -1,6 +1,6 @@
 namespace Dominio.Entidades
 {
-    public abstract class Publicacion : IValidar
+    public abstract class Publicacion : IValidar , IComparable<Publicacion>
     {
         public int Id {get; set;}
         private static int ultimoId = 0;
@@ -111,5 +111,15 @@ namespace Dominio.Entidades
             Publicacion publicacion = obj as Publicacion;
             return publicacion != null && publicacion.Id == Id;
         }
+
+        public int CompareTo (Publicacion other)
+        {
+            if (other == null)
+            {
+                return -1;
+            }
+            return FechaPublicacion.CompareTo(other.FechaPublicacion);
+        }
+
     }
 }
